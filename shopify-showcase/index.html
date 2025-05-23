@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centered Slide Presentation</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <div id="particles"></div>
+
+  <header>
+    <nav>
+      <a href="/"> <img src="../assets/logo.png" alt="PixelPlugins Logo" class="logo"></a>
+    </nav>
+  </header>
+
+  <main class="min-h-screen bg-[#18181a] text-white flex items-center justify-center px-4 py-10">
+    <!-- Slide Container -->
+    <div class="w-full max-w-[1000px] mx-auto">
+      <div class="slide-container">
+        <div class="slide active" id="slide1">
+          <h1 class="slide-title">Shopify Loyalty Integration Showcase</h1>
+          <p class="slide-subtitle">Custom App Development by Pixel Plugins</p>
+          <div class="slide-content" style="margin: 0 auto; width: 100%; text-align: center;">
+            <p class="text-secondary">
+              A showcase of our Shopify loyalty integration for a retail brand.<br />
+              Customers earn and redeem in-store points through their online account.
+            </p>
+            <img src="../assets/shopify-logo.png" style="margin-top: 50px;" alt="Shopify Logo" class="logo" />
+          </div>
+          <div class="slide-footer">Slide 1 of 7</div>
+        </div>
+
+        <div class="slide" id="slide2">
+          <h2 class="slide-title">What We Did</h2>
+          <div class="slide-content">
+            <p class="mb-4">We built a private Shopify app for a retail brand to connect their in-store loyalty program
+              with their online store.</p>
+            <p>The integration enables real-time point syncing between systems and allows customers to:</p>
+            <ul>
+              <li>Link loyalty accounts via phone number</li>
+              <li>Earn points for online purchases</li>
+              <li>Redeem points for discounts directly at checkout</li>
+            </ul>
+          </div>
+          <div class="slide-footer">Slide 2 of 7</div>
+        </div>
+
+        <div class="slide" id="slide3">
+          <h2 class="slide-title">How It Works – Customer Side</h2>
+          <div class="slide-content">
+            <ol class="list-decimal list-inside text-left space-y-3">
+              <li>
+                <strong>Step 1:</strong> Customer logs into their Shopify account.
+              </li>
+              <li>
+                <strong>Step 2:</strong> On the account page, they can connect their in-store loyalty account using their phone number.
+              </li>
+              <li>
+                <strong>Step 3:</strong> A 4-digit verification code is sent via SMS to securely link the account.
+              </li>
+              <li>
+                <strong>Step 4:</strong> Once connected, customers can view available rewards and redeem them using their points.
+              </li>
+              <li>
+                <strong>Step 5:</strong> When a reward is redeemed, a Shopify discount code is automatically generated and applied at checkout.
+              </li>
+            </ol>
+          </div>
+          <div class="slide-footer">Slide 3 of 7</div>
+        </div>
+
+        <div class="slide" id="slide4">
+          <h2 class="slide-title">Admin Panel Features</h2>
+          <div class="slide-content">
+            <p class="mb-4">
+              The admin interface gives brand owners the ability to configure how customers redeem rewards. Admins can add and manage rewards through a dedicated rewards creation page.
+            </p>
+            <p class="mb-2 font-semibold">Reward Creation Includes:</p>
+            <ul class="list-disc list-inside space-y-2">
+              <li><strong>Reward Name:</strong> e.g. “$15 off entire order”</li>
+              <li><strong>Reward Type:</strong> Percentage, Fixed Amount, or Free Shipping</li>
+              <li><strong>Reward Value:</strong> e.g. 15%, $5, etc.</li>
+              <li><strong>Applies To:</strong> Entire Order, Specific Collections, or Specific Products</li>
+              <li><strong>Required Points:</strong> e.g. 300 points to redeem</li>
+            </ul>
+            <p class="mt-4">
+              When a customer redeems a reward, a corresponding Shopify discount code is automatically generated and applied at checkout — no manual steps required from the admin.
+            </p>
+          </div>
+          <div class="slide-footer">Slide 4 of 7</div>
+        </div>
+
+        <div class="slide" id="slide5">
+          <h2 class="slide-title">Screens & Flow</h2>
+          <div class="screens-flow-container">
+            <div class="screen-image-item">
+              <img src="../assets/1.png" alt="Shopify Login Screen" class="screen-image" onclick="openModal(this.src)">
+              <div class="caption">Shopify Login</div>
+            </div>
+            <div class="screen-image-item">
+              <img src="../assets/2.png" alt="Account Page with Connect Button" class="screen-image"
+                onclick="openModal(this.src)">
+              <div class="caption">Account Page with "Connect"</div>
+            </div>
+            <div class="screen-image-item">
+              <img src="../assets/3.png" alt="Phone Entry Popup" class="screen-image" onclick="openModal(this.src)">
+              <div class="caption">Phone Entry Popup</div>
+            </div>
+            <div class="screen-image-item">
+              <img src="../assets/4.png" alt="OTP Verification Screen" class="screen-image"
+                onclick="openModal(this.src)">
+              <div class="caption">OTP Verification</div>
+            </div>
+            <div class="screen-image-item">
+              <img src="../assets/5.png" alt="Rewards Modal" class="screen-image" onclick="openModal(this.src)">
+              <div class="caption">Rewards Modal</div>
+            </div>
+            <div class="screen-image-item">
+              <img src="../assets/6.png" alt="Connected Status Screen" class="screen-image"
+                onclick="openModal(this.src)">
+              <div class="caption">Connected Status</div>
+            </div>
+          </div>
+          <div class="slide-footer">Slide 5 of 7</div>
+        </div>
+
+        <div class="slide" id="slide6">
+          <h2 class="slide-title">Tech Stack</h2>
+          <div class="tech-stack-grid">
+            <div class="tech-item">Shopify Custom App</div>
+            <div class="tech-item">Loyalty System Integration</div>
+            <div class="tech-item">Node.js Backend & Javascript</div>
+          </div>
+          <div class="slide-footer">Slide 6 of 7</div>
+        </div>
+
+        <div class="slide" id="slide7">
+          <h2 class="slide-title">Built by Pixel Plugins</h2>
+          <div class="slide-content">
+            <p class="mb-2 text-[#a1a1a3]">Custom Shopify Apps. Loyalty Systems. Scalable Integrations.</p>
+            <p class="mt-4">Contact us: <a href="mailto:support@pixelplugins.com" class="underline text-[#90aba0]">support@pixelplugins.com</a></p>
+          </div>
+          <div class="slide-footer">Slide 7 of 7</div>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button id="prevBtn" class="nav-button" disabled>Previous</button>
+        <button id="nextBtn" class="nav-button">Next</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/terms-and-conditions">Terms & Conditions</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/return-policy">Return Policy</a>
+    </div>
+    <p>&copy; 2025 PixelPlugins. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <img id="modalImage" class="modal-content" src="" alt="Modal Image">
+  </div>
+
+
+  <script>
+    let currentSlide = 1;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function showSlide(slideNumber) {
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active', 'prev-slide');
+        if (index + 1 === slideNumber) {
+          slide.classList.add('active');
+        } else if (index + 1 < slideNumber) {
+          slide.classList.add('prev-slide');
+        }
+      });
+      updateNavButtons();
+    }
+
+    function updateNavButtons() {
+      prevBtn.disabled = currentSlide === 1;
+      nextBtn.disabled = currentSlide === totalSlides;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (currentSlide > 1) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    });
+
+    // Modal functionality
+    function openModal(imgSrc) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      modal.style.display = "block";
+      modalImg.src = imgSrc;
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('imageModal');
+      modal.style.display = "none";
+    }
+
+    // Close modal when clicking outside the image
+    window.onclick = function (event) {
+      const modal = document.getElementById('imageModal');
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+
+    showSlide(currentSlide);
+  </script>
+
+  <script src="../main.js"></script>
+</body>
+
+</html>
