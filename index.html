@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PixelPlugins - Scalable Software, AI Solutions & Custom Plugins</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="main.js"></script>
 </head>
+
 <body>
     <div id="particles"></div>
-    
+
     <header>
         <nav>
             <img src="/assets/logo.png" alt="PixelPlugins Logo" class="logo">
@@ -19,7 +23,8 @@
     <main>
         <section id="hero" class="hero">
             <h1>Crafting Scalable Software, Apps, and Data Solutions</h1>
-            <p>We build custom digital products, backend systems, and intelligent tools that power businesses. From full-stack development to AI-driven solutions, our work is built to scale and last.</p>
+            <p>We build custom digital products, backend systems, and intelligent tools that power businesses. From
+                full-stack development to AI-driven solutions, our work is built to scale and last.</p>
             <a href="#contact" class="cta-button">Get in Touch</a>
         </section>
 
@@ -34,17 +39,20 @@
                 <div class="service-card">
                     <i class="ph ph-brain"></i>
                     <h3>AI, ML & Predictive Systems</h3>
-                    <p>AI-powered automation, forecasting, and data-driven decision tools built on real-world machine learning.</p>
+                    <p>AI-powered automation, forecasting, and data-driven decision tools built on real-world machine
+                        learning.</p>
                 </div>
                 <div class="service-card">
                     <i class="ph ph-code"></i>
                     <h3>Custom Software & System Integrations</h3>
-                    <p>From web and mobile apps to powerful tools and connected systems — we design, build, and integrate custom solutions tailored to your business.</p>
+                    <p>From web and mobile apps to powerful tools and connected systems — we design, build, and
+                        integrate custom solutions tailored to your business.</p>
                 </div>
                 <div class="service-card">
                     <i class="ph ph-shopping-cart"></i>
                     <h3>Shopify & Buildfire Plugins</h3>
-                    <p>Custom apps and plugin development for platforms like Shopify and Buildfire — trusted by white-label partners and growing stores.</p>
+                    <p>Custom apps and plugin development for platforms like Shopify and Buildfire — trusted by
+                        white-label partners and growing stores.</p>
                 </div>
                 <div class="service-card">
                     <i class="ph ph-cloud"></i>
@@ -56,6 +64,7 @@
 
         <section id="contact" class="contact">
             <h2>Contact Us</h2>
+
             <form action="https://formspree.io/f/mdkgbraj" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -69,7 +78,7 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" required></textarea>
                 </div>
-                <button type="submit" class="cta-button">Send Message</button>
+                <button onclick="validateThenExecuteCaptcha()" class="cta-button g-recaptcha">Submit</button>
             </form>
         </section>
     </main>
@@ -82,6 +91,4 @@
         </div>
         <p>&copy; 2025 PixelPlugins. All rights reserved.</p>
     </footer>
-
-    <script src="main.js"></script>
 </body>
