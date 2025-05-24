@@ -36,23 +36,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
-function validateThenExecuteCaptcha() {
-    const form = document.querySelector("form[action*='formspree']");
-
-    // Run native validation
-    if (!form.checkValidity()) {
-        form.reportValidity(); // shows the validation errors in the browser
-        return;
-    }
-
-    // Form is valid — trigger reCAPTCHA
-    grecaptcha.execute();
-}
-
 function onSubmit(token) {
     const form = document.querySelector("form[action*='formspree']");
     if (form) {
+        if (!form.checkValidity()) {
+            debugger;
+            form.reportValidity(); // shows the validation errors in the browser
+            return;
+        }
         form.submit();
     }
 }
