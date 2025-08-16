@@ -324,7 +324,10 @@ h2 {
 }
 
 .client-logo img {
-    height: 60px;
+    max-height: 60px;
+    max-width: 200px;
+    width: auto;
+    height: auto;
     opacity: 0.8;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
