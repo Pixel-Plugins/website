@@ -310,6 +310,30 @@ h2 {
     color: var(--text-secondary);
 }
 
+.clients {
+    text-align: center;
+}
+
+.clients-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.client-logo img {
+    height: 60px;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.client-logo img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
 .contact {
     background: var(--surface);
     border-radius: 15px;
