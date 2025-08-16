@@ -44,6 +44,10 @@ body {
     animation: float 6s infinite, twinkle 3s infinite;
 }
 
+.grecaptcha-badge{
+    opacity: 0;
+}
+
 @keyframes float {
 
     0%,
