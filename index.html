@@ -154,17 +154,24 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" required></textarea>
                 </div>
-                <button class="cta-button g-recaptcha" data-sitekey="6Ld4iEcrAAAAABgmXsfcyod6wxwXfIEzz_SZQjcA" data-callback="onSubmit">Submit</button>
+                <button class="cta-button g-recaptcha" data-sitekey="6LemzqcrAAAAAL_1-mV4vLLQ3_dFRSdw5u_FUR1k" data-callback="onSubmit">Submit</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <div class="footer-links">
-            <a href="/terms-and-conditions">Terms & Conditions</a>
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/return-policy">Return Policy</a>
-        </div>
-        <p>&copy; 2025 PixelPlugins. All rights reserved.</p>
-    </footer>
+    <div class="footer-links">
+        <a href="/terms-and-conditions">Terms & Conditions</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/return-policy">Return Policy</a>
+    </div>
+    <p>San Diego, California, USA</p>
+    <p>&copy; <span id="year"></span> PixelPlugins. All rights reserved.</p>
+</footer>
+
+<script>
+  // Set current year dynamically
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
