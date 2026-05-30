@@ -2,7 +2,7 @@
    PIXEL PLUGINS — style.css
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
 
 :root {
     --bg:            #06060e;
@@ -95,11 +95,38 @@ nav {
     gap: 2rem;
 }
 
-.logo-link { display: flex; align-items: center; }
+.logo-link { display: flex; align-items: center; text-decoration: none; }
 
-.logo {
-    height: 38px;
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #f0f0f8;
+}
+
+.logo-icon {
+    height: 14px;
     width: auto;
+    margin-top: 1px;
+}
+
+.logo-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6b7280;
 }
 
 .nav-links {
@@ -755,10 +782,8 @@ footer {
 }
 
 .footer-logo {
-    width: 95px;
-    height: auto;
+    display: inline-flex;
     margin-bottom: 0.5rem;
-    display: block;
 }
 
 .footer-brand p {
