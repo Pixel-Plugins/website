@@ -633,10 +633,50 @@ h2 {
    PRODUCTS
    ============================================================ */
 
+.products {
+    position: relative;
+}
+
+.products::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 500px;
+    background: radial-gradient(ellipse at center,
+        rgba(0, 212, 255, 0.12) 0%,
+        rgba(0, 212, 255, 0.04) 50%,
+        transparent 75%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.products::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(ellipse at center,
+        rgba(139, 92, 246, 0.14) 0%,
+        rgba(139, 92, 246, 0.04) 50%,
+        transparent 75%);
+    pointer-events: none;
+    z-index: 0;
+}
+
 .product-card {
     position: relative;
-    background: var(--surface);
-    border: 1px solid rgba(197, 9, 58, 0.2);
+    z-index: 1;
+    background: linear-gradient(135deg,
+        rgba(0, 212, 255, 0.07) 0%,
+        rgba(139, 92, 246, 0.07) 50%,
+        var(--surface) 100%);
+    border: 1px solid var(--border-hover);
     border-radius: var(--radius-lg);
     padding: 3.5rem;
     display: grid;
@@ -644,21 +684,29 @@ h2 {
     gap: 4rem;
     align-items: center;
     overflow: hidden;
+    box-shadow:
+        0 8px 60px rgba(0, 212, 255, 0.08),
+        0 0 80px rgba(139, 92, 246, 0.06),
+        inset 0 1px 0 rgba(0, 212, 255, 0.2);
     transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
 .product-card:hover {
-    border-color: rgba(197, 9, 58, 0.45);
-    box-shadow: 0 24px 60px rgba(197, 9, 58, 0.08), 0 0 0 1px rgba(197, 9, 58, 0.06);
+    border-color: rgba(0, 212, 255, 0.65);
+    box-shadow:
+        0 12px 80px rgba(0, 212, 255, 0.14),
+        0 0 120px rgba(139, 92, 246, 0.1),
+        inset 0 1px 0 rgba(0, 212, 255, 0.3);
 }
 
 .product-card-glow {
     position: absolute;
     top: 0;
-    left: 8%;
-    right: 8%;
+    left: 0;
+    right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(197, 9, 58, 0.7), transparent);
+    background: linear-gradient(90deg, transparent 5%, var(--primary) 35%, var(--secondary) 65%, transparent 95%);
+    opacity: 1;
 }
 
 .product-logo {
@@ -681,7 +729,7 @@ h2 {
 }
 
 .product-logo-text span {
-    color: #c5093a;
+    color: var(--primary);
 }
 
 .product-tagline {
@@ -690,7 +738,7 @@ h2 {
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #c5093a;
+    color: var(--primary);
     margin-bottom: 1.25rem;
 }
 
@@ -715,12 +763,12 @@ h2 {
     align-items: center;
     gap: 0.7rem;
     font-size: 0.88rem;
-    color: var(--text-muted);
+    color: var(--text);
 }
 
 .product-features li i {
     font-size: 1.1rem;
-    color: #c5093a;
+    color: var(--primary);
     flex-shrink: 0;
 }
 
@@ -729,7 +777,7 @@ h2 {
     align-items: center;
     gap: 0.55rem;
     padding: 0.875rem 1.875rem;
-    background: linear-gradient(130deg, #c5093a 0%, #9e0730 100%);
+    background: linear-gradient(130deg, var(--primary) 0%, var(--secondary) 100%);
     color: #fff;
     font-family: var(--font-body);
     font-weight: 600;
@@ -738,13 +786,26 @@ h2 {
     border-radius: 30px;
     text-decoration: none;
     transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-product::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(130deg, rgba(255,255,255,0.18), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.25s var(--ease);
 }
 
 .btn-product:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(197, 9, 58, 0.4);
+    box-shadow: 0 8px 28px rgba(0, 212, 255, 0.38), 0 2px 8px rgba(139, 92, 246, 0.2);
     color: #fff;
 }
+
+.btn-product:hover::after { opacity: 1; }
 
 /* Right visual panel */
 
@@ -763,20 +824,20 @@ h2 {
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #ff8fab;
-    border: 1px solid rgba(197, 9, 58, 0.3);
+    color: var(--primary);
+    border: 1px solid var(--border);
     padding: 0.45rem 1rem 0.45rem 0.75rem;
     border-radius: 30px;
-    background: rgba(197, 9, 58, 0.06);
+    background: var(--primary-dim);
     width: fit-content;
 }
 
 .badge-dot {
     width: 7px;
     height: 7px;
-    background: #c5093a;
+    background: var(--primary);
     border-radius: 50%;
-    box-shadow: 0 0 10px #c5093a, 0 0 22px rgba(197, 9, 58, 0.5);
+    box-shadow: 0 0 10px var(--primary), 0 0 22px var(--glow);
     animation: pulse-dot 2s ease-in-out infinite;
     flex-shrink: 0;
 }
@@ -788,7 +849,7 @@ h2 {
 }
 
 .product-stat {
-    background: var(--surface-2);
+    background: var(--primary-dim);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.25rem 1rem;
@@ -801,17 +862,17 @@ h2 {
 }
 
 .product-card:hover .product-stat {
-    border-color: rgba(197, 9, 58, 0.2);
+    border-color: var(--border-hover);
 }
 
 .product-stat i {
     font-size: 1.4rem;
-    color: #c5093a;
+    color: var(--primary);
 }
 
 .product-stat span {
     font-size: 0.75rem;
-    color: var(--text-muted);
+    color: var(--text);
     font-weight: 500;
     line-height: 1.3;
 }
