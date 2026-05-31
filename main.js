@@ -80,7 +80,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 /* ---- Scroll reveal (IntersectionObserver) ---- */
 (function () {
-    const els = document.querySelectorAll('.card, .section-header, .client-item, .contact-inner');
+    const els = document.querySelectorAll('.card, .section-header, .client-item, .contact-inner, .product-card');
     if (!els.length) return;
 
     els.forEach(el => el.classList.add('reveal'));
