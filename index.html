@@ -21,7 +21,8 @@
     <meta name="facebook-domain-verification" content="6ew9ocj0i7qjqh1loqigjd9umc642s" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
     <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="/assets/brand/favicon-32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="/assets/brand/favicon-16.png" sizes="16x16" type="image/png">
@@ -31,184 +32,104 @@
 </head>
 
 <body>
-    <div id="particles-js"></div>
-    <div class="grid-overlay"></div>
 
-    <header id="header">
-        <nav>
-            <a href="/" class="logo-link">
-                <span class="logo-text">
-                    <span class="logo-row">Pixel <img src="/assets/brand/pixel-mark.svg" alt="" class="logo-icon"></span>
-                    <span class="logo-sub">Plugins</span>
-                </span>
-            </a>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#top" class="logo-stack"><span class="logo-lockup"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span><span class="sub">Plugins</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#clients">Clients</a></li>
-                <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
+                <li><a href="#contact" class="nav-cta">Get in touch</a></li>
             </ul>
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-        </nav>
-    </header>
+            <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
 
-    <main>
+    <main id="top">
 
         <!-- Hero -->
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <div class="hero-tag">
-                    <span class="tag-dot"></span>
-                    PIXEL PLUGINS
-                </div>
-                <h1 class="hero-title">
-                    <span>Build Smarter.</span>
-                    <span>Scale Faster.</span>
-                    <span class="highlight">Stay Compliant.</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Modern SaaS architecture, audit-ready compliance, and intelligent plugins —
-                    all crafted for growth.
-                </p>
+        <section class="hero">
+            <div class="hero-field" data-field="hero"></div>
+            <div class="hero-inner">
+                <div class="eyebrow"><span class="dot"></span>Pixel Plugins</div>
+                <h1>Build smarter. Scale faster. <span class="hl">Stay compliant.</span></h1>
+                <p class="hero-sub">Modern SaaS architecture, audit-ready compliance, and intelligent plugins — all crafted for growth.</p>
                 <div class="hero-actions">
-                    <a href="#contact" class="btn-primary">
-                        <i class="ph ph-rocket-launch"></i>
-                        Work With Us
-                    </a>
-                    <a href="#services" class="btn-ghost">
-                        Explore Services
-                        <i class="ph ph-arrow-right"></i>
-                    </a>
+                    <a href="#contact" class="btn-primary"><i class="ph-light ph-rocket-launch"></i> Work with us</a>
+                    <a href="#services" class="btn-ghost">Explore services <i class="ph-light ph-arrow-right"></i></a>
                 </div>
-            </div>
-            <div class="hero-scroll">
-                <span>Scroll</span>
-                <div class="scroll-line"></div>
             </div>
         </section>
 
         <!-- About -->
-        <section id="about" class="section about">
-            <div class="section-header">
-                <span class="section-label">WHO WE ARE</span>
-                <h2>About Pixel Plugins</h2>
-                <p>We don't just build software — we architect growth. Scalable systems, modern infrastructures, and intelligent tools for businesses that refuse to stand still.</p>
-            </div>
-            <div class="cards-grid cards-3">
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-rocket-launch"></i></div>
-                    <h3>Growth Architecture</h3>
-                    <p>Scalable foundations that evolve with your business and keep technical debt in check.</p>
+        <section class="section about" id="about" style="overflow:hidden">
+            <div class="about-cb" data-cb="about"></div>
+            <div class="container">
+                <div class="sec-head">
+                    <span class="sec-label"><span class="n">01</span> Who we are</span>
+                    <h2>We don't just build software — we <span class="hl">architect growth</span>.</h2>
+                    <p>We've built and run businesses across industries ourselves — so we don't just take a spec, build it, and take your money. We dig into what actually matters at your stage, phase the work so you can validate before betting big, and engineer for the infrastructure cost that fits where your business actually is today.</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-users-three"></i></div>
-                    <h3>Collaborative Partners</h3>
-                    <p>We work alongside your team, aligning strategy and execution every step of the way.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-shield"></i></div>
-                    <h3>Secure by Design</h3>
-                    <p>Security and compliance are baked in from day one — not bolted on later.</p>
+                <div class="cards c3">
+                    <div class="card"><div class="ic"><i class="ph-light ph-briefcase"></i></div><h3>We Run Businesses, Too</h3><p>We own and operate companies across industries, so we advise like an owner — not a vendor billing by the hour.</p></div>
+                    <div class="card"><div class="ic"><i class="ph-light ph-flow-arrow"></i></div><h3>Phased, Not All-In</h3><p>We split roadmaps into testable phases so you validate real demand before committing to anything huge — no rebuild-and-regret six months in.</p></div>
+                    <div class="card"><div class="ic"><i class="ph-light ph-piggy-bank"></i></div><h3>Cost-Disciplined by Default</h3><p>We architect for the minimum infrastructure your current stage actually needs — scalable when it matters, not gold-plated when it doesn't.</p></div>
                 </div>
             </div>
         </section>
 
         <!-- Services -->
-        <section id="services" class="section services">
-            <div class="section-header">
-                <span class="section-label">WHAT WE DO</span>
-                <h2>Our Expertise</h2>
-                <p>End-to-end engineering for the modern stack — from architecture to deployment.</p>
-            </div>
-            <div class="cards-grid cards-3">
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-stack"></i></div>
-                    <h3>SaaS Architecture &amp; Scalability</h3>
-                    <p>High-performance systems designed to handle growth without spiraling costs or complexity.</p>
+        <section class="section services" id="services">
+            <div class="container">
+                <div class="sec-head">
+                    <span class="sec-label"><span class="n">02</span> What we do</span>
+                    <h2>Our <span class="hl">expertise</span></h2>
+                    <p>Custom B2B software built the way we'd build it for our own companies — from core SaaS platforms to the regulated, high-growth industries built on precision: insurance, telecom, fintech and healthcare.</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-shield-check"></i></div>
-                    <h3>Compliance &amp; Audit Readiness</h3>
-                    <p>SOC 2, GDPR, HIPAA gap analysis and audit prep so you pass with confidence.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-brain"></i></div>
-                    <h3>AI, ML &amp; Predictive Systems</h3>
-                    <p>Intelligent automation and forecasting that turn data into smarter decisions.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-arrows-clockwise"></i></div>
-                    <h3>Platform Modernization &amp; Migrations</h3>
-                    <p>Seamless upgrades — from MongoDB migrations to full cloud shifts — with zero downtime.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-plug"></i></div>
-                    <h3>Custom Plugins for Shopify &amp; BuildFire</h3>
-                    <p>Extensions that drive engagement, conversions, and user experience.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-cloud"></i></div>
-                    <h3>Secure Infrastructure &amp; DevOps</h3>
-                    <p>Cloud automation, CI/CD pipelines, and hardened networks you can rely on.</p>
+                <div class="cards c3">
+                    <div class="card industry"><span class="industry-tag">Industry solution</span><div class="ic"><i class="ph-light ph-broadcast"></i></div><h3>Insurance &amp; Telecom</h3><p>Claims automation, KYC pipelines and telecom systems built to the audit and reliability standards these industries demand.</p></div>
+                    <div class="card industry"><span class="industry-tag">Industry solution</span><div class="ic"><i class="ph-light ph-fingerprint"></i></div><h3>Data Validation</h3><p>AI-assisted data-integrity pipelines that catch bad data before it becomes a bad decision — built to audit standards.</p></div>
+                    <div class="card industry"><span class="industry-tag">Industry solution</span><div class="ic"><i class="ph-light ph-brain"></i></div><h3>AI Solutions</h3><p>Intelligent automation, predictive models and AI-driven workflows built for regulated industries.</p></div>
+                    <div class="card industry"><span class="industry-tag">Industry solution</span><div class="ic"><i class="ph-light ph-credit-card"></i></div><h3>Fintech &amp; Payments</h3><p>Secure payment infrastructure and fintech integrations built for scale and compliance.</p></div>
+                    <div class="card industry"><span class="industry-tag">Industry solution</span><div class="ic"><i class="ph-light ph-heartbeat"></i></div><h3>Healthcare Solutions</h3><p>HIPAA-ready systems and workflows for healthcare providers and health-tech platforms.</p></div>
+                    <div class="card"><span class="core-tag">Core service</span><div class="ic"><i class="ph-light ph-stack"></i></div><h3>SaaS &amp; B2B Custom Solutions</h3><p>High-performance, custom-built B2B platforms designed to scale with your business, not spiral your costs.</p></div>
+                    <div class="card"><span class="core-tag">Core service</span><div class="ic"><i class="ph-light ph-shield-check"></i></div><h3>Compliance &amp; Audit Readiness</h3><p>SOC 2, GDPR, HIPAA gap analysis and audit prep so you pass with confidence.</p></div>
+                    <div class="card"><span class="core-tag">Core service</span><div class="ic"><i class="ph-light ph-arrows-clockwise"></i></div><h3>Platform Modernization &amp; Migrations</h3><p>Seamless upgrades — from MongoDB migrations to full cloud shifts — with zero downtime.</p></div>
+                    <div class="card"><span class="core-tag">Core service</span><div class="ic"><i class="ph-light ph-plugs-connected"></i></div><h3>Custom Plugins &amp; Integrations</h3><p>Shopify, BuildFire and similar platforms, extended exactly how your business needs.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- Products -->
-        <section id="products" class="section products">
-            <div class="section-header">
-                <span class="section-label">OUR PRODUCTS</span>
-                <h2>Built by Pixel Plugins</h2>
-                <p>We don't just build for clients — we ship our own products too.</p>
-            </div>
-            <div class="product-card">
-                <div class="product-card-glow"></div>
-                <div class="product-info">
-                    <div class="product-logo">
-                        <img src="/assets/dmnexa/logo.png" alt="Dm Nexa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                        <span class="product-logo-text" style="display:none">Dm<span>Nexa</span></span>
-                    </div>
-                    <p class="product-tagline">AI Order Assistant for Social Sellers</p>
-                    <p class="product-description">
-                        Turn Instagram DMs, WhatsApp threads, and customer chats into clean,
-                        structured orders — automatically. Built for sellers who run their
-                        business through conversations.
-                    </p>
-                    <ul class="product-features">
-                        <li><i class="ph ph-instagram-logo"></i> Instagram inbox integrated via webhooks</li>
-                        <li><i class="ph ph-robot"></i> AI extracts order details from messy conversations</li>
-                        <li><i class="ph ph-clipboard-text"></i> Draft orders for seller review &amp; confirmation</li>
-                        <li><i class="ph ph-chat-circle-dots"></i> Supports Instagram, WhatsApp, SMS &amp; more</li>
-                    </ul>
-                    <a href="https://dmnexa.com" target="_blank" rel="noopener noreferrer" class="btn-product">
-                        Visit Dm Nexa
-                        <i class="ph ph-arrow-up-right"></i>
-                    </a>
+        <!-- Products / DM Nexa -->
+        <section class="section products" id="products">
+            <div class="container">
+                <div class="sec-head">
+                    <span class="sec-label"><span class="n">03</span> Our products</span>
+                    <h2>Built by Pixel Plugins</h2>
+                    <p>We don't just build for clients — we ship our <span class="hl">own products</span> too.</p>
                 </div>
-                <div class="product-visual">
-                    <div class="product-badge">
-                        <span class="badge-dot"></span>
-                        Live Product
+                <div class="product-card">
+                    <div class="product-main">
+                        <img class="dmnexa-logo" src="assets/dmnexa/logo.png" alt="Dm Nexa" onerror="this.style.display='none'">
+                        <div class="product-tag">AI order assistant for social sellers</div>
+                        <p class="desc">Turn Instagram DMs, WhatsApp threads, and customer chats into clean, structured orders — automatically. Built for sellers who run their business through conversations.</p>
+                        <ul class="feat-list">
+                            <li><i class="ph-light ph-instagram-logo"></i>Instagram inbox integrated via webhooks</li>
+                            <li><i class="ph-light ph-robot"></i>AI extracts order details from messy conversations</li>
+                            <li><i class="ph-light ph-clipboard-text"></i>Draft orders for seller review &amp; confirmation</li>
+                            <li><i class="ph-light ph-chats-circle"></i>Supports Instagram, WhatsApp, SMS &amp; more</li>
+                        </ul>
+                        <a href="https://dmnexa.com" target="_blank" rel="noopener noreferrer" class="btn-nexa">Visit Dm Nexa <i class="ph-light ph-arrow-up-right"></i></a>
                     </div>
-                    <div class="product-stat-grid">
-                        <div class="product-stat">
-                            <i class="ph ph-chat-circle-dots"></i>
-                            <span>Paste any chat</span>
-                        </div>
-                        <div class="product-stat">
-                            <i class="ph ph-magic-wand"></i>
-                            <span>AI structures it</span>
-                        </div>
-                        <div class="product-stat">
-                            <i class="ph ph-check-circle"></i>
-                            <span>Seller confirms</span>
-                        </div>
-                        <div class="product-stat">
-                            <i class="ph ph-package"></i>
-                            <span>Order is ready</span>
+                    <div class="product-side">
+                        <span class="live-badge"><span class="dot"></span>Live product</span>
+                        <div class="flow-grid">
+                            <div class="flow-step"><div class="si"><i class="ph-light ph-chat-circle-dots"></i></div><span class="sl"><span class="sn">Step 1</span>Paste any chat</span></div>
+                            <div class="flow-step"><div class="si"><i class="ph-light ph-magic-wand"></i></div><span class="sl"><span class="sn">Step 2</span>AI structures it</span></div>
+                            <div class="flow-step"><div class="si"><i class="ph-light ph-check-circle"></i></div><span class="sl"><span class="sn">Step 3</span>Seller confirms</span></div>
+                            <div class="flow-step"><div class="si"><i class="ph-light ph-package"></i></div><span class="sl"><span class="sn">Step 4</span>Order is ready</span></div>
                         </div>
                     </div>
                 </div>
@@ -216,95 +137,62 @@
         </section>
 
         <!-- Clients -->
-        <section id="clients" class="section clients">
-            <div class="section-header">
-                <span class="section-label">TRUSTED BY</span>
-                <h2>Where We've Worked</h2>
-            </div>
-            <div class="clients-row">
-                <div class="client-item">
-                    <img src="assets/projects/flywheel.png" alt="Flywheel">
+        <section class="section clients" id="clients">
+            <div class="container">
+                <div class="dot-div" data-strip="divider"></div>
+                <div class="sec-head" style="margin:0 auto 2rem;text-align:center">
+                    <span class="sec-label" style="justify-content:center"><span class="n">04</span> Trusted by</span>
+                    <h2>Where we've <span class="hl">worked</span></h2>
                 </div>
-                <div class="client-item">
-                    <img src="assets/projects/buildfire.svg" alt="BuildFire">
+                <div class="clients-row">
+                    <span class="client-logo fw"><img src="assets/projects/flywheel.png" alt="Flywheel"><span>Flywheel</span></span>
+                    <img class="client-logo" src="assets/projects/buildfire-ink.svg" alt="BuildFire">
+                    <img class="client-logo" src="assets/projects/shopify-logo-ink.png" alt="Shopify">
                 </div>
-                <div class="client-item">
-                    <img src="assets/projects/shopify-logo.png" alt="Shopify">
-                </div>
+                <p class="clients-note">Platforms we build on &amp; partners we've delivered for.</p>
             </div>
         </section>
 
         <!-- Why -->
-        <section id="why" class="section why">
-            <div class="section-header">
-                <span class="section-label">WHY US</span>
-                <h2>Why Choose Pixel Plugins?</h2>
-                <p>Results-driven engineering with a track record that speaks for itself.</p>
-            </div>
-            <div class="cards-grid cards-3">
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-trend-up"></i></div>
-                    <h3>Proven Growth</h3>
-                    <p>Reduced AWS costs by 30% while improving reliability and performance.</p>
+        <section class="section why" id="why">
+            <div class="container">
+                <div class="sec-head">
+                    <span class="sec-label"><span class="n">05</span> Why us</span>
+                    <h2>Why choose <span class="hl">Pixel Plugins?</span></h2>
+                    <p>We build like we own it — cost-disciplined, phased, and proven at serious scale.</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-cloud-check"></i></div>
-                    <h3>Zero-Downtime Migrations</h3>
-                    <p>Migrated legacy systems to modern cloud platforms without a single hour of downtime.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-file-lock"></i></div>
-                    <h3>Audit Confidence</h3>
-                    <p>Supported companies through SOC 2 Type I &amp; II audits with no major findings.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-compass"></i></div>
-                    <h3>Strategic Advisory</h3>
-                    <p>Guidance that aligns technology choices with your long-term business strategy.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-wrench"></i></div>
-                    <h3>Custom-Built Solutions</h3>
-                    <p>Software tailored from scratch to solve your unique challenges — no templates.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="ph ph-rocket"></i></div>
-                    <h3>Scalable Platforms</h3>
-                    <p>Secure, future-ready infrastructure that grows seamlessly with your business.</p>
+                <div class="cards c2">
+                    <div class="card"><div class="ic"><i class="ph-light ph-handshake"></i></div><h3>An Owner's Mindset</h3><p>We run businesses across industries ourselves, so we'll tell you when something isn't worth building yet — instead of billing for it anyway.</p></div>
+                    <div class="card"><div class="ic"><i class="ph-light ph-flow-arrow"></i></div><h3>Phased Delivery, Validated Early</h3><p>We break roadmaps into testable phases so you prove demand before committing budget to anything large.</p></div>
+                    <div class="card"><div class="ic"><i class="ph-light ph-piggy-bank"></i></div><h3>Engineered for Efficient Cost</h3><p>We size your infrastructure to where your business actually is today — not the stack that looks impressive in a slide deck.</p></div>
+                    <div class="card"><div class="ic"><i class="ph-light ph-chart-line-up"></i></div><h3>Proven Across Regulated Industries</h3><p>Highly scalable systems built for insurance, fintech, telecom and healthcare — serving millions of users and high-volume transactions, backed by SOC 2-audited infrastructure and zero-downtime migrations.</p></div>
                 </div>
             </div>
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="section contact">
-            <div class="contact-inner">
-                <div class="section-header">
-                    <span class="section-label">LET'S TALK</span>
-                    <h2>Contact Us</h2>
-                    <p>Ready to build something great? Tell us about your project.</p>
+        <section class="section contact" id="contact" style="overflow:hidden">
+            <div class="contact-field" data-field="contact"></div>
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="sec-head" style="margin-bottom:0">
+                        <span class="sec-label"><span class="n">06</span> Let's talk</span>
+                        <h2>Ready to build something <span class="hl">great?</span></h2>
+                        <p>Tell us about your project. We'll come back with a clear plan, timeline and fixed quote — usually within a few days.</p>
+                    </div>
+                    <form action="https://formspree.io/f/mdkgbraj" method="POST" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
+                            <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required></div>
+                        </div>
+                        <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about your project…" required></textarea></div>
+                        <button type="submit" class="btn-primary g-recaptcha"
+                            data-sitekey="6LemzqcrAAAAAL_1-mV4vLLQ3_dFRSdw5u_FUR1k"
+                            data-callback="onSubmit">
+                            <i class="ph-light ph-paper-plane-tilt"></i> Send message
+                        </button>
+                    </form>
                 </div>
-                <form action="https://formspree.io/f/mdkgbraj" method="POST" class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary g-recaptcha"
-                        data-sitekey="6LemzqcrAAAAAL_1-mV4vLLQ3_dFRSdw5u_FUR1k"
-                        data-callback="onSubmit">
-                        <i class="ph ph-paper-plane-tilt"></i>
-                        Send Message
-                    </button>
-                </form>
             </div>
         </section>
 
@@ -313,12 +201,7 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-brand">
-                <div class="footer-logo">
-                    <span class="logo-text">
-                        <span class="logo-row">Pixel <img src="/assets/brand/pixel-mark.svg" alt="" class="logo-icon"></span>
-                        <span class="logo-sub">Plugins</span>
-                    </span>
-                </div>
+                <a href="#top" class="logo-stack"><span class="logo-lockup"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span><span class="sub">Plugins</span></a>
                 <p>San Diego, California, USA</p>
             </div>
             <div class="footer-links">
@@ -327,19 +210,9 @@
                 <a href="/return-policy/">Return Policy</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; <span id="year"></span> PixelPlugins. All rights reserved.</p>
-        </div>
+        <div class="footer-bottom">© <span id="year"></span> Pixel Plugins. All rights reserved.</div>
     </footer>
 
-    <!-- particles.js for pixel star background -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <!-- Phosphor Icons v2 (sync, end of body so all DOM is ready) -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <script src="main.js"></script>
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
 </body>
-
 </html>

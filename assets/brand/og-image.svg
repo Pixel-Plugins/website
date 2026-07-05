@@ -1,43 +1,48 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
     <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
-      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#1B1730" stroke-opacity="0.045" stroke-width="1"/>
     </pattern>
     <radialGradient id="glow-l" cx="0" cy="50%" r="70%" gradientUnits="objectBoundingBox">
-      <stop offset="0%" stop-color="#2B7FFF" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="#2B7FFF" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#5FBE85" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#5FBE85" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glow-r" cx="100%" cy="50%" r="60%" gradientUnits="objectBoundingBox">
-      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    <radialGradient id="glow-r" cx="100%" cy="30%" r="60%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#FF6B57" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#FF6B57" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-b" cx="70%" cy="100%" r="60%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#14B88A" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#14B88A" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="630" fill="#06060e"/>
+  <rect width="1200" height="630" fill="#F6F5FC"/>
   <rect width="1200" height="630" fill="url(#grid)"/>
   <rect width="1200" height="630" fill="url(#glow-l)"/>
   <rect width="1200" height="630" fill="url(#glow-r)"/>
+  <rect width="1200" height="630" fill="url(#glow-b)"/>
 
   <!-- Pixel mark icon -->
   <svg x="88" y="205" width="196" height="152" viewBox="17.5 27.5 85 65">
-    <polyline points="48,32 22,60 48,88" fill="none" stroke="#2B7FFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-    <polyline points="72,32 98,60 72,88" fill="none" stroke="#2B7FFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="52" y="52" width="16" height="16" rx="3.5" fill="#22D3EE"/>
+    <polyline points="48,32 22,60 48,88" fill="none" stroke="#95DDAC" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="72,32 98,60 72,88" fill="none" stroke="#95DDAC" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="52" y="52" width="16" height="16" rx="3.5" fill="#FFB020"/>
   </svg>
 
   <!-- Vertical divider -->
-  <line x1="346" y1="155" x2="346" y2="475" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <line x1="346" y1="155" x2="346" y2="475" stroke="#1B1730" stroke-opacity="0.1" stroke-width="1"/>
 
   <!-- Wordmark -->
-  <text x="396" y="306" font-family="Arial, Helvetica, sans-serif" font-size="80" font-weight="700" fill="#f0f0f8" letter-spacing="-2">Pixel Plugins</text>
+  <text x="396" y="306" font-family="Arial, Helvetica, sans-serif" font-size="80" font-weight="700" fill="#1B1730" letter-spacing="-2">Pixel Plugins</text>
 
   <!-- Tagline line 1 -->
-  <text x="398" y="376" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#6b7280">Modern SaaS architecture, audit-ready compliance,</text>
+  <text x="398" y="376" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#726C8C">Modern SaaS architecture, audit-ready compliance,</text>
   <!-- Tagline line 2 -->
-  <text x="398" y="414" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#6b7280">and intelligent plugins — all crafted for growth.</text>
+  <text x="398" y="414" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#726C8C">and intelligent plugins — all crafted for growth.</text>
 
   <!-- Domain pill -->
-  <rect x="396" y="452" width="252" height="44" rx="22" fill="#2B7FFF" fill-opacity="0.12" stroke="#2B7FFF" stroke-opacity="0.35" stroke-width="1"/>
-  <text x="522" y="480" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#2B7FFF" text-anchor="middle" letter-spacing="0.3">pixelplugins.com</text>
+  <rect x="396" y="452" width="252" height="44" rx="22" fill="#5FBE85" fill-opacity="0.14" stroke="#5FBE85" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="522" y="480" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#3A8F5F" text-anchor="middle" letter-spacing="0.3">pixelplugins.com</text>
 </svg>

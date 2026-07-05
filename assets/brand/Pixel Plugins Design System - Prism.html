@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pixel Plugins — Prism Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css"/>
+<link rel="stylesheet" href="ds-prism.css"/>
+</head>
+<body>
+
+<!-- header -->
+<header class="ds-header">
+  <div class="ds-header-inner">
+    <span class="logo-lockup" style="font-size:24px"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span>
+    <span class="crumb">Prism — Design System</span>
+    <span class="ver-chip">Edition III · 2026</span>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-bloom" data-field="hero"></div>
+  <span class="eyebrow">The Prism System</span>
+  <h1>Modern, colorful,<br/>never <span class="hl">shouting</span>.</h1>
+  <p>A fresh identity for Pixel Plugins — a light, cool-tinted canvas with a deliberate, vibrant palette. The same precise engineering, dressed for right now.</p>
+</section>
+
+<div class="wrap">
+
+  <!-- LOGO -->
+  <section class="section" id="logo">
+    <div class="section-head">
+      <span class="section-label"><span class="n">01</span> Identity</span>
+      <h2>The <span class="hl">Code Cursor</span> mark</h2>
+      <p>The same logo, re-dressed for Prism — indigo chevrons wrapping a coral pixel. Bold two-tone, set in Space Grotesk.</p>
+    </div>
+
+    <div class="sub-label">Primary lockup</div>
+    <div class="logo-hero panel tint" style="margin-bottom:1.5rem">
+      <span class="logo-stack">
+        <span class="logo-lockup" style="font-size:78px"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span>
+        <span class="sub">Plugins</span>
+      </span>
+    </div>
+
+    <div class="grid g2" style="margin-bottom:2.5rem">
+      <div class="logo-hero panel dark">
+        <span class="logo-stack on-dark">
+          <span class="logo-lockup on-dark" style="font-size:58px"><span class="word">Pixel</span><span class="mk" data-mk="paper"></span></span>
+          <span class="sub">Plugins</span>
+        </span>
+      </div>
+      <div class="logo-hero panel">
+        <span class="logo-lockup" style="font-size:96px"><span class="word">P</span><span class="mk" data-mk="brand"></span></span>
+      </div>
+    </div>
+
+    <div class="sub-label">The mark &amp; color variants</div>
+    <div class="grid g4" style="margin-bottom:2.5rem">
+      <div class="mark-cell"><span class="box" data-mk="brand"></span><span class="cap">Primary</span></div>
+      <div class="mark-cell"><span class="box" data-mk="amber"></span><span class="cap">Amber</span></div>
+      <div class="mark-cell"><span class="box" data-mk="ink"></span><span class="cap">Ink mono</span></div>
+      <div class="mark-cell dark"><span class="box" data-mk="paper"></span><span class="cap">Reversed</span></div>
+    </div>
+
+    <div class="grid g2" style="margin-bottom:2.5rem">
+      <div class="panel">
+        <div class="sub-label">Clear space &amp; min size</div>
+        <div class="clearspace">
+          <div class="cs-frame"><div class="cs-inner"><span class="mk-only" data-mk="brand"></span></div></div>
+          <p style="color:var(--muted);font-size:0.92rem;max-width:200px;line-height:1.7">
+            Leave breathing room of at least one pixel-height on every side. Never below 20px tall.</p>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="sub-label">App icon &amp; favicon</div>
+        <div class="icon-sizes">
+          <div class="fav-chip"><div class="appicon"><span data-mk="onfill"></span></div><span class="cap">app · 512</span></div>
+          <div class="fav-chip"><div class="fav-box" style="width:48px;height:48px"><span data-mk="brand"></span></div><span class="cap">48</span></div>
+          <div class="fav-chip"><div class="fav-box" style="width:32px;height:32px"><span data-mk="brand"></span></div><span class="cap">32</span></div>
+          <div class="fav-chip"><div class="fav-box" style="width:20px;height:20px"><span data-mk="brand"></span></div><span class="cap">16</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-label">A few things to avoid</div>
+    <div class="donts">
+      <div class="dont"><div class="stage"><span data-mk="wrong" style="display:block;height:44px;width:58px"></span></div><span class="tag"><i class="ph-light ph-x"></i>Off-palette</span></div>
+      <div class="dont"><div class="stage"><span data-mk="brand" style="display:block;height:44px;width:90px;transform:scaleX(1.7)"></span></div><span class="tag"><i class="ph-light ph-x"></i>Stretch</span></div>
+      <div class="dont"><div class="stage"><span data-mk="brand" style="display:block;height:44px;width:58px;transform:rotate(16deg)"></span></div><span class="tag"><i class="ph-light ph-x"></i>Rotate</span></div>
+      <div class="dont"><div class="stage"><span data-mk="brand" style="display:block;height:44px;width:58px;filter:drop-shadow(0 3px 5px rgba(0,0,0,0.4))"></span></div><span class="tag"><i class="ph-light ph-x"></i>Shadow</span></div>
+    </div>
+  </section>
+
+  <!-- COLOR -->
+  <section class="section" id="color">
+    <div class="section-head">
+      <span class="section-label"><span class="n">02</span> Color</span>
+      <h2>A palette with <span class="hl">purpose</span></h2>
+      <p>Four colors, each with a job: mint leads, coral energizes, emerald confirms, amber highlights. Used deliberately — never as a gradient wash. Click any swatch to copy.</p>
+    </div>
+
+    <div class="sub-label">Brand palette</div>
+    <div class="swatches" style="margin-bottom:2rem">
+      <div class="swatch copy" data-copy="#95DDAC"><div class="chip" style="background:#95DDAC"></div><div class="meta"><div class="name">Mint</div><div class="hex">#95DDAC <i class="ph-light ph-copy"></i></div></div></div>
+      <div class="swatch copy" data-copy="#FF6B57"><div class="chip" style="background:#FF6B57"></div><div class="meta"><div class="name">Coral</div><div class="hex">#FF6B57 <i class="ph-light ph-copy"></i></div></div></div>
+      <div class="swatch copy" data-copy="#14B88A"><div class="chip" style="background:#14B88A"></div><div class="meta"><div class="name">Emerald</div><div class="hex">#14B88A <i class="ph-light ph-copy"></i></div></div></div>
+      <div class="swatch copy" data-copy="#FFB020"><div class="chip" style="background:#FFB020"></div><div class="meta"><div class="name">Amber</div><div class="hex">#FFB020 <i class="ph-light ph-copy"></i></div></div></div>
+    </div>
+
+    <div class="sub-label">Canvas &amp; ink</div>
+    <div class="swatches">
+      <div class="swatch copy" data-copy="#F6F5FC"><div class="chip" style="background:#F6F5FC;border-color:var(--line)"></div><div class="meta"><div class="name">Paper</div><div class="hex">#F6F5FC <i class="ph-light ph-copy"></i></div></div></div>
+      <div class="swatch copy" data-copy="#EEEBF9"><div class="chip" style="background:#EEEBF9"></div><div class="meta"><div class="name">Paper Deep</div><div class="hex">#EEEBF9 <i class="ph-light ph-copy"></i></div></div></div>
+      <div class="swatch copy" data-copy="#1B1730"><div class="chip" style="background:#1B1730"></div><div class="meta"><div class="name">Ink</div><div class="hex">#1B1730 <i class="ph-light ph-copy"></i></div></div></div>
+      <div class="swatch copy" data-copy="#726C8C"><div class="chip" style="background:#726C8C"></div><div class="meta"><div class="name">Muted</div><div class="hex">#726C8C <i class="ph-light ph-copy"></i></div></div></div>
+      <div class="swatch copy" data-copy="#E4E0F3"><div class="chip" style="background:#E4E0F3"></div><div class="meta"><div class="name">Hairline</div><div class="hex">#E4E0F3 <i class="ph-light ph-copy"></i></div></div></div>
+    </div>
+  </section>
+
+  <!-- ARTWORK -->
+  <section class="section" id="artwork">
+    <div class="section-head">
+      <span class="section-label"><span class="n">03</span> Artwork</span>
+      <h2>Pixels that <span class="hl">drift</span></h2>
+      <p>Two motifs, same palette. <b>Pixel Bloom</b> — small colored pixels that gently float and twinkle, like the namesake come alive. <b>Color Bloom</b> — a soft watercolor wash for calmer moments. Both reusable, documented below.</p>
+    </div>
+
+    <div class="sub-label">Pixel Bloom — animated</div>
+    <div class="pb-banner" style="margin-bottom:1.2rem" data-field-container="banner"></div>
+    <div class="snippet" style="margin-bottom:2.5rem">
+      <span class="k">&lt;div</span> <span class="a">class</span>=<span class="s">"pixel-bloom"</span> <span class="a">data-field</span>=<span class="s">"my-id"</span><span class="k">&gt;&lt;/div&gt;</span><br/>
+      <span class="c">// then: generateFloatField(el, { count: 46 })  — see the Artwork script at the bottom of this page</span>
+    </div>
+
+    <div class="sub-label">Color Bloom — watercolor wash</div>
+    <div class="cb-banner" style="margin-bottom:2.5rem" data-cb="banner"></div>
+
+    <div class="sub-label">Dot-strip divider</div>
+    <p style="color:var(--muted);font-size:0.95rem;line-height:1.7;max-width:600px;margin-bottom:1.2rem">
+      A calm row of brand-colored dots — use it wherever you'd reach for a horizontal rule.</p>
+    <div class="wave-div" data-strip="divider"></div>
+  </section>
+
+  <!-- TYPE -->
+  <section class="section" id="type">
+    <div class="section-head">
+      <span class="section-label"><span class="n">04</span> Typography</span>
+      <h2>One typeface, <span class="hl">full range</span></h2>
+      <p><b>Plus Jakarta Sans</b> carries everything — display, body and UI — at different weights and a tight tracking that feels current without chasing trends. The logo stays in <b>Space Grotesk</b>.</p>
+    </div>
+
+    <div class="grid g3" style="margin-bottom:2.5rem">
+      <div class="type-card"><div class="fname">Jakarta 800</div><div class="frole">Display</div><div class="alpha" style="font-weight:800;letter-spacing:-0.02em">Aa Bb Cc 123</div></div>
+      <div class="type-card"><div class="fname" style="font-weight:500">Jakarta 500</div><div class="frole">Body / UI</div><div class="alpha">Aa Bb Cc 123</div></div>
+      <div class="type-card is-logo"><div class="fname" style="font-family:var(--font-logo);font-weight:700">Space Grotesk</div><div class="frole">Logotype</div><div class="alpha">Aa Bb Cc 123</div></div>
+    </div>
+
+    <div class="panel">
+      <div class="scale-row"><div class="spec">Jakarta 800 · -0.03em · 2.8rem</div><div class="demo t-hero">Modern, colorful, never <span class="hl">shouting</span></div></div>
+      <div class="scale-row"><div class="spec">Jakarta 700 · -0.02em · 2rem</div><div class="demo t-h2">A confident heading</div></div>
+      <div class="scale-row"><div class="spec">Jakarta 700 · 0.78rem · 0.08em</div><div class="demo t-label">Section Label</div></div>
+      <div class="scale-row"><div class="spec">Jakarta 400 · 1.02rem · 1.7 lh</div><div class="demo t-body">Modern SaaS architecture, audit-ready compliance, and intelligent plugins.</div></div>
+      <div class="scale-row"><div class="spec">Jakarta 600 · 0.82rem</div><div class="demo t-small">Caption &amp; meta</div></div>
+    </div>
+  </section>
+
+  <!-- FOUNDATIONS -->
+  <section class="section" id="foundations">
+    <div class="section-head">
+      <span class="section-label"><span class="n">05</span> Foundations</span>
+      <h2>Bold but <span class="hl">tidy</span></h2>
+      <p>Confident radii, generous rhythm, and shadows with real lift instead of a glow.</p>
+    </div>
+
+    <div class="grid g2" style="margin-bottom:2.5rem">
+      <div class="panel">
+        <div class="sub-label">Corner radius</div>
+        <div class="radius-demo">
+          <div class="r" style="border-radius:10px">10px</div>
+          <div class="r" style="border-radius:16px">16px</div>
+          <div class="r" style="border-radius:30px">30px · pill</div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="sub-label">Spacing rhythm</div>
+        <div class="token-row"><span class="lab">0.5rem</span><div class="space-bar" style="width:8px"></div></div>
+        <div class="token-row"><span class="lab">1rem</span><div class="space-bar" style="width:16px"></div></div>
+        <div class="token-row"><span class="lab">1.5rem</span><div class="space-bar" style="width:24px"></div></div>
+        <div class="token-row"><span class="lab">2.5rem</span><div class="space-bar" style="width:40px"></div></div>
+        <div class="token-row"><span class="lab">5rem</span><div class="space-bar" style="width:80px"></div></div>
+      </div>
+    </div>
+
+    <div class="sub-label">Surface &amp; edge</div>
+    <div class="fx-grid">
+      <div class="fx soft">soft lift</div>
+      <div class="fx bold-border">bold border</div>
+      <div class="fx wash">color wash</div>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section class="section" id="components">
+    <div class="section-head">
+      <span class="section-label"><span class="n">06</span> Components</span>
+      <h2>The working <span class="hl">parts</span></h2>
+      <p>Buttons, cards and fields in the Prism dialect — bold pill buttons, crisp borders, and color used with intent.</p>
+    </div>
+
+    <div class="sub-label">Buttons &amp; tags</div>
+    <div class="panel" style="margin-bottom:2rem">
+      <div class="demo-stack">
+        <a class="btn-primary">Work with us</a>
+        <a class="btn-ghost">Explore services</a>
+        <a class="btn-text">Read the story <i class="ph-light ph-arrow-right"></i></a>
+        <span class="tag-pill"><span class="dot"></span>Pixel Plugins</span>
+        <span class="tag-pill emerald"><span class="dot"></span>Live</span>
+        <span class="tag-pill amber"><span class="dot"></span>New</span>
+      </div>
+    </div>
+
+    <div class="sub-label">Cards</div>
+    <div class="grid g3" style="margin-bottom:2rem">
+      <div class="card"><span class="num">01</span><h3>SaaS Architecture</h3><p>High-performance systems built to scale without spiraling cost.</p></div>
+      <div class="card"><span class="num">02</span><h3>Audit Readiness</h3><p>SOC 2, GDPR &amp; HIPAA preparation so you pass with confidence.</p></div>
+      <div class="card"><span class="num">03</span><h3>Intelligent Plugins</h3><p>Automation and forecasting that turn your data into decisions.</p></div>
+    </div>
+
+    <div class="grid g2">
+      <div class="panel">
+        <div class="sub-label">Form fields</div>
+        <div class="form-demo">
+          <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"/></div>
+          <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your project…" style="min-height:80px"></textarea></div>
+          <a class="btn-primary">Send message</a>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="sub-label">Iconography · Phosphor Light</div>
+        <div class="demo-stack" style="gap:1.4rem;font-size:1.7rem;color:var(--ink-soft)">
+          <i class="ph-light ph-pen-nib"></i>
+          <i class="ph-light ph-stack"></i>
+          <i class="ph-light ph-shield-check"></i>
+          <i class="ph-light ph-sparkle"></i>
+          <i class="ph-light ph-plugs-connected"></i>
+          <i class="ph-light ph-cloud"></i>
+          <i class="ph-light ph-compass"></i>
+        </div>
+        <p style="color:var(--muted);font-size:0.95rem;line-height:1.6;margin-top:1.3rem">
+          Light weight keeps icons crisp without competing with the bold display type.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="ds-footer">
+  <div class="ds-footer-inner">
+    <span class="logo-lockup" style="font-size:22px"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span>
+    <span class="muted">Prism Edition · San Diego · © 2026 Pixel Plugins</span>
+  </div>
+</footer>
+
+<div id="toast">Copied</div>
+
+<script>
+/* ---- logo mark: indigo chevrons + coral pixel ---- */
+function markSVG(variant, tight) {
+  var C = {
+    brand:  { stroke: '#95DDAC', fill: '#FFB020' },
+    amber:  { stroke: '#FFB020', fill: '#FFB020' },
+    ink:    { stroke: '#1B1730', fill: '#1B1730' },
+    paper:  { stroke: '#F6F5FC', fill: '#FFB020' },
+    onfill: { stroke: '#ffffff', fill: '#ffffff' },
+    wrong:  { stroke: '#7BA05B', fill: '#C99BC0' }
+  }[variant] || { stroke: '#95DDAC', fill: '#FFB020' };
+  var vb = tight ? '17.5 27.5 85 65' : '0 0 120 120';
+  return '<svg viewBox="' + vb + '" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display:block" xmlns="http://www.w3.org/2000/svg">'
+    + '<polyline points="48,32 22,60 48,88" fill="none" stroke="' + C.stroke + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>'
+    + '<polyline points="72,32 98,60 72,88" fill="none" stroke="' + C.stroke + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>'
+    + '<rect x="52" y="52" width="16" height="16" rx="3.5" fill="' + C.fill + '"/>'
+    + '</svg>';
+}
+document.querySelectorAll('[data-mk]').forEach(function (el) {
+  el.innerHTML = markSVG(el.getAttribute('data-mk'), el.hasAttribute('data-tight') || el.classList.contains('mk'));
+});
+
+/* ---- Pixel Bloom: floating, twinkling pixel field ---- */
+function mulberry(s) { return function () { s |= 0; s = s + 0x6D2B79F5 | 0; var t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+var PRISM = ['#95DDAC', '#FF6B57', '#14B88A', '#FFB020'];
+function generateFloatField(el, opts) {
+  opts = opts || {};
+  var count = opts.count || 32, seed = opts.seed || 7, r = mulberry(seed);
+  el.classList.add('pixel-bloom');
+  for (var i = 0; i < count; i++) {
+    var d = document.createElement('div');
+    var size = 6 + r() * 13;
+    var color = PRISM[Math.floor(r() * PRISM.length)];
+    var dur = 3.5 + r() * 3.5, delay = -r() * 6, op = 0.28 + r() * 0.45;
+    d.className = 'pixel-dot';
+    d.style.cssText = 'position:absolute;left:' + (r() * 100).toFixed(1) + '%;top:' + (r() * 100).toFixed(1) + '%;'
+      + 'width:' + size.toFixed(1) + 'px;height:' + size.toFixed(1) + 'px;background:' + color + ';'
+      + '--o:' + op.toFixed(2) + ';opacity:' + op.toFixed(2) + ';'
+      + 'animation:pbFloat ' + dur.toFixed(2) + 's ease-in-out ' + delay.toFixed(2) + 's infinite;';
+    el.appendChild(d);
+  }
+}
+document.querySelectorAll('[data-field]').forEach(function (el) { generateFloatField(el, { seed: el.getAttribute('data-field') === 'hero' ? 11 : 21, count: el.getAttribute('data-field') === 'hero' ? 30 : 12 }); });
+document.querySelectorAll('[data-field-container]').forEach(function (el) { generateFloatField(el, { seed: 42, count: 46 }); });
+
+/* ---- Color Bloom: soft watercolor wash in the vibrant palette ---- */
+function wcFilter(id, seed, scale, blur, freq) {
+  return '<filter id="' + id + '" x="-45%" y="-45%" width="190%" height="190%">'
+    + '<feTurbulence type="fractalNoise" baseFrequency="' + (freq || 0.013) + '" numOctaves="4" seed="' + seed + '" result="n"/>'
+    + '<feDisplacementMap in="SourceGraphic" in2="n" scale="' + scale + '" xChannelSelector="R" yChannelSelector="G"/>'
+    + '<feGaussianBlur stdDeviation="' + (blur == null ? 1.4 : blur) + '"/></filter>';
+}
+function watercolor(id, w, h, blobs) {
+  var defs = '', body = '';
+  blobs.forEach(function (b, i) {
+    var fid = id + '-f' + i;
+    defs += wcFilter(fid, b.seed != null ? b.seed : i * 7 + 3, b.scale || 34, b.blur, b.freq);
+    body += '<g style="mix-blend-mode:multiply" filter="url(#' + fid + ')"><ellipse cx="' + b.cx + '" cy="' + b.cy + '" rx="' + b.rx + '" ry="' + b.ry + '" fill="' + b.c + '" opacity="' + b.op + '" transform="rotate(' + (b.rot || 0) + ' ' + b.cx + ' ' + b.cy + ')"/></g>';
+  });
+  return '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs>' + defs + '</defs>' + body + '</svg>';
+}
+function colorBloom() {
+  return watercolor('cb', 1100, 300, [
+    { c: '#95DDAC', cx: 260, cy: 150, rx: 260, ry: 170, op: 0.28, seed: 8, scale: 44, rot: -6 },
+    { c: '#FF6B57', cx: 560, cy: 170, rx: 220, ry: 150, op: 0.24, seed: 14, scale: 40, rot: 10 },
+    { c: '#14B88A', cx: 830, cy: 140, rx: 210, ry: 150, op: 0.22, seed: 22, scale: 40, rot: -8 },
+    { c: '#FFB020', cx: 660, cy: 210, rx: 140, ry: 100, op: 0.2,  seed: 30, scale: 34, rot: 0 }
+  ]);
+}
+document.querySelectorAll('[data-cb]').forEach(function (el) { el.innerHTML = colorBloom(); });
+
+/* ---- Pixel-strip divider (rounded squares, like Atelier) ---- */
+function dotStrip(w) {
+  var r = mulberry(9), cell = 16, body = '<g style="mix-blend-mode:multiply">';
+  for (var gx = 0; gx < w; gx += cell) {
+    for (var row = 0; row < 2; row++) {
+      var t = gx / w, fade = Math.sin(t * Math.PI);
+      if (r() > fade * 0.85) continue;
+      var color = PRISM[Math.floor(r() * PRISM.length)];
+      var s = cell - 4 - (r() * 3);
+      body += '<rect x="' + (gx + r() * 1.5).toFixed(1) + '" y="' + (row * cell + r() * 1.5).toFixed(1) + '" width="' + s.toFixed(1) + '" height="' + s.toFixed(1) + '" rx="' + (s * 0.28).toFixed(1) + '" fill="' + color + '" opacity="' + (0.55 * fade + 0.15).toFixed(2) + '"/>';
+    }
+  }
+  body += '</g>';
+  return '<svg viewBox="0 0 ' + w + ' ' + (cell * 2) + '" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">' + body + '</svg>';
+}
+document.querySelectorAll('[data-strip]').forEach(function (el) { el.innerHTML = dotStrip(1100); });
+
+/* ---- copy-to-clipboard ---- */
+var toast = document.getElementById('toast'), toastT;
+document.querySelectorAll('.copy').forEach(function (el) {
+  el.addEventListener('click', function () {
+    var v = el.getAttribute('data-copy');
+    if (navigator.clipboard) navigator.clipboard.writeText(v);
+    toast.textContent = 'Copied  ' + v;
+    toast.classList.add('show');
+    clearTimeout(toastT);
+    toastT = setTimeout(function () { toast.classList.remove('show'); }, 1400);
+  });
+});
+</script>
+</body>
+</html>
