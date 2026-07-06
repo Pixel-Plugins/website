@@ -6,16 +6,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
-    /* canvas — light, cool-tinted, not cream */
-    --paper:    #F6F5FC;
-    --paper-2:  #EEEBF9;
-    --card:     #FFFFFF;
-    --ink:      #1B1730;
-    --ink-soft: #423C5C;
-    --muted:    #726C8C;
-    --faint:    #A29CBB;
-    --line:     #E4E0F3;
-    --line-2:   #ECE9F8;
+    /* canvas — warm cream, not lavender */
+    --paper:    #FFFCF6;
+    --paper-2:  #F8F3EC;
+    --card:     #FFFFFC;
+    --ink:      #211B12;
+    --ink-soft: #4A4232;
+    --muted:    #7D7460;
+    --faint:    #B3A98F;
+    --line:     #ECE1CB;
+    --line-2:   #F3EADA;
 
     /* vibrant, deliberate palette — used as accents, not gradients */
     --indigo:      #95DDAC;
@@ -82,7 +82,7 @@ img { max-width: 100%; display: block; }
    ============================================================ */
 .nav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(246,245,252,0.85);
+    background: rgba(255,252,246,0.85);
     backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
 }
@@ -93,7 +93,7 @@ img { max-width: 100%; display: block; }
 /* header/nav used by the standalone policy & showcase pages */
 header {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(246,245,252,0.85);
+    background: rgba(255,252,246,0.85);
     backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
     padding: 0 2.5rem;
@@ -226,7 +226,7 @@ img.client-logo { height: 30px; width: auto; display: block; }
 .flow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .flow-step { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1.4rem 1rem; text-align: center; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
 .flow-step:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-.flow-step .si { width: 42px; height: 42px; margin: 0 auto 0.8rem; border-radius: 50%; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-size: 1.35rem; color: var(--nexa); }
+.flow-step .si { width: 46px; height: 46px; margin: 0 auto 0.8rem; border-radius: 50%; border: 1px solid var(--nexa); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--nexa); }
 .flow-step .sl { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--ink); }
 .flow-step .sn { display: block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
 
@@ -325,7 +325,7 @@ main { display: block; }
 }
 @media (max-width: 600px) {
     .container, .nav-inner, .hero-inner, .footer-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .nav-links { display: none; position: absolute; top: 80px; left: 0; right: 0; background: rgba(246,245,252,0.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); padding: 1.5rem 2.5rem; flex-direction: column; align-items: flex-start; gap: 1.4rem; }
+    .nav-links { display: none; position: absolute; top: 80px; left: 0; right: 0; background: rgba(255,252,246,0.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); padding: 1.5rem 2.5rem; flex-direction: column; align-items: flex-start; gap: 1.4rem; }
     .nav-links.open { display: flex; }
     .menu-toggle { display: flex; }
     .cards.c3, .cards.c2 { grid-template-columns: 1fr; }
