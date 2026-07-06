@@ -21,30 +21,40 @@
     <link rel="icon" href="/assets/brand/favicon-32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="/assets/brand/favicon-16.png" sizes="16x16" type="image/png">
     <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon-180.png" sizes="180x180">
-    <link rel="stylesheet" href="../../style.css">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div id="particles"></div>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="logo-stack"><span class="logo-lockup"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span><span class="sub">Plugins</span></a>
+            <ul class="nav-links">
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/#clients">Clients</a></li>
+                <li><a href="/articles/">Resources</a></li>
+                <li><a href="/#contact" class="nav-cta">Get in touch</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
 
-    <header>
-        <nav>
-            <a href="/" class="logo-link">
-                <span class="logo-text">
-                    <span class="logo-row">Pixel <img src="../assets/brand/pixel-mark.svg" alt="" class="logo-icon"></span>
-                    <span class="logo-sub">Plugins</span>
-                </span>
-            </a>
-        </nav>
-    </header>
+    <section class="page-hero">
+        <div class="container">
+            <span class="eyebrow"><span class="dot"></span>Guide</span>
+            <h1 class="page-title">BuildFire AI Chatbot Plugin</h1>
+            <p class="page-sub">Step-by-step guide to setting up your AI Chatbot API key in BuildFire.</p>
+        </div>
+    </section>
 
     <main>
-        <div class="policy-content">
-            <h1>🤖 BuildFire AI Chatbot Plugin</h1>
-            <h2>Overview</h2>
+        <div class="container">
+        <div class="prose">
+            <h2><i class="ph-light ph-info"></i> Overview</h2>
             <p>The AI Chatbot plugin lets you add ChatGPT-powered conversations to your app. To activate it, you'll need your own OpenAI API key.</p>
 
-            <h2>🔑 Generate Your OpenAI API Key</h2>
+            <h2><i class="ph-light ph-key"></i> Generate Your OpenAI API Key</h2>
             <h3>1. Sign In to OpenAI</h3>
             <ul>
                 <li>Go to <a href="https://platform.openai.com/" target="_blank">platform.openai.com</a>.</li>
@@ -61,7 +71,7 @@
                 <li>Name the key, pick the project, and copy the key &mdash; you won't be able to see it again.</li>
             </ul>
 
-            <h2>⚙️ Configure the Plugin</h2>
+            <h2><i class="ph-light ph-gear-six"></i> Configure the Plugin</h2>
             <h3>3. Add Your Key in BuildFire</h3>
             <ul>
                 <li>Open your app in the BuildFire control panel.</li>
@@ -88,23 +98,31 @@
             </ul>
             <p>You can manage your vector stores directly in OpenAI <a href="https://platform.openai.com/storage/vector_stores" target="_blank" rel="noopener noreferrer">here</a>.</p>
 
-            <h2>🎨 Design the Chat Experience</h2>
+            <h2><i class="ph-light ph-palette"></i> Design the Chat Experience</h2>
             <p>In the Design tab you can change the chat title, placeholder text, button label, and colors to match your app's theme. When you're done, click <strong>Save Design Settings</strong>.</p>
 
-            <h2>Security Reminder</h2>
+            <h2><i class="ph-light ph-shield-warning"></i> Security Reminder</h2>
             <p>Keep your OpenAI key private. If it becomes compromised, delete it on the OpenAI site and create a new one.</p>
+        </div>
         </div>
     </main>
 
     <footer>
-        <div class="footer-links">
-            <a href="/terms-and-conditions">Terms & Conditions</a>
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/return-policy">Return Policy</a>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="/" class="logo-stack"><span class="logo-lockup"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span><span class="sub">Plugins</span></a>
+                <p>San Diego, California, USA</p>
+            </div>
+            <div class="footer-links">
+                <a href="/articles/">Resources</a>
+                <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
+                <a href="/privacy-policy/">Privacy Policy</a>
+                <a href="/return-policy/">Return Policy</a>
+            </div>
         </div>
-        <p>&copy; 2025 PixelPlugins. All rights reserved.</p>
+        <div class="footer-bottom">© <span id="year"></span> Pixel Plugins. All rights reserved.</div>
     </footer>
 
-    <script src="../../main.js"></script>
+    <script src="../main.js"></script>
 </body>
 </html>

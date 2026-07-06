@@ -20,25 +20,34 @@
     <link rel="icon" href="/assets/brand/favicon-16.png" sizes="16x16" type="image/png">
     <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon-180.png" sizes="180x180">
     <link rel="stylesheet" href="../style.css">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
-    <div id="particles"></div>
-    
-    <header>
-        <nav>
-            <a href="/" class="logo-link">
-                <span class="logo-text">
-                    <span class="logo-row">Pixel <img src="../assets/brand/pixel-mark.svg" alt="" class="logo-icon"></span>
-                    <span class="logo-sub">Plugins</span>
-                </span>
-            </a>
-        </nav>
-    </header>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="logo-stack"><span class="logo-lockup"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span><span class="sub">Plugins</span></a>
+            <ul class="nav-links">
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/#clients">Clients</a></li>
+                <li><a href="/articles/">Resources</a></li>
+                <li><a href="/#contact" class="nav-cta">Get in touch</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="eyebrow"><span class="dot"></span>Legal</span>
+            <h1 class="page-title">Terms and Conditions</h1>
+            <p class="page-sub">The rules governing use of our services.</p>
+        </div>
+    </section>
 
     <main>
-        <div class="policy-content">
-            <h1>Terms and Conditions</h1>
+        <div class="container">
+        <div class="prose">
             <p>Pixel Plugins provides subscription-based software services, digital products, and custom development services. By accessing, purchasing, subscribing to, or using any of our services, you agree to these Terms and Conditions.</p>
 
             <h3>1. Services</h3>
@@ -126,15 +135,23 @@
             <h3>15. Contact</h3>
             <p>If you have any questions regarding these Terms and Conditions, contact us at <a href="mailto:support@pixelplugins.com">support@pixelplugins.com</a>.</p>
         </div>
+        </div>
     </main>
 
     <footer>
-        <div class="footer-links">
-            <a href="/terms-and-conditions">Terms & Conditions</a>
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/return-policy">Return Policy</a>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="/" class="logo-stack"><span class="logo-lockup"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span><span class="sub">Plugins</span></a>
+                <p>San Diego, California, USA</p>
+            </div>
+            <div class="footer-links">
+                <a href="/articles/">Resources</a>
+                <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
+                <a href="/privacy-policy/">Privacy Policy</a>
+                <a href="/return-policy/">Return Policy</a>
+            </div>
         </div>
-        <p>&copy; 2025 PixelPlugins. All rights reserved.</p>
+        <div class="footer-bottom">© <span id="year"></span> Pixel Plugins. All rights reserved.</div>
     </footer>
 
     <script src="../main.js"></script>
