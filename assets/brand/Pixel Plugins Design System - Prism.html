@@ -271,13 +271,13 @@
 /* ---- logo mark: indigo chevrons + coral pixel ---- */
 function markSVG(variant, tight) {
   var C = {
-    brand:  { stroke: '#95DDAC', fill: '#FFB020' },
+    brand:  { stroke: '#5FBE85', fill: '#FFB020' },
     amber:  { stroke: '#FFB020', fill: '#FFB020' },
     ink:    { stroke: '#211B12', fill: '#211B12' },
     paper:  { stroke: '#FFFCF6', fill: '#FFB020' },
     onfill: { stroke: '#ffffff', fill: '#ffffff' },
     wrong:  { stroke: '#7BA05B', fill: '#C99BC0' }
-  }[variant] || { stroke: '#95DDAC', fill: '#FFB020' };
+  }[variant] || { stroke: '#5FBE85', fill: '#FFB020' };
   var vb = tight ? '17.5 27.5 85 65' : '0 0 120 120';
   return '<svg viewBox="' + vb + '" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display:block" xmlns="http://www.w3.org/2000/svg">'
     + '<polyline points="48,32 22,60 48,88" fill="none" stroke="' + C.stroke + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>'
