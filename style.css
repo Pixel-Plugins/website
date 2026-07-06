@@ -332,6 +332,7 @@ main { display: block; }
     .form-row { grid-template-columns: 1fr; }
     .hero-field { width: 460px; height: 460px; right: -160px; }
     .clients-row { gap: 2rem; }
+    .product-side { display: none; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
     .footer-links { flex-direction: column; gap: 1rem; }
 
