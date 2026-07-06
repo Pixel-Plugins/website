@@ -26,32 +26,34 @@
 </head>
 
 <body>
-  <div id="particles"></div>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo-stack"><span class="logo-lockup"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span><span class="sub">Plugins</span></a>
+      <ul class="nav-links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#clients">Clients</a></li>
+        <li><a href="/articles/">Resources</a></li>
+        <li><a href="/#contact" class="nav-cta">Get in touch</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
 
-  <header>
-    <nav>
-      <a href="/" class="logo-link">
-        <span class="logo-text">
-          <span class="logo-row">Pixel <img src="../assets/brand/pixel-mark.svg" alt="" class="logo-icon"></span>
-          <span class="logo-sub">Plugins</span>
-        </span>
-      </a>
-    </nav>
-  </header>
-
-  <main class="min-h-screen bg-[#18181a] text-white flex items-center justify-center px-4 py-10">
+  <main class="showcase-main">
     <!-- Slide Container -->
-    <div class="w-full max-w-[1000px] mx-auto">
+    <div class="showcase-inner">
       <div class="slide-container">
         <div class="slide active" id="slide1">
           <h1 class="slide-title">Shopify Loyalty Integration Showcase</h1>
           <p class="slide-subtitle">Custom App Development by Pixel Plugins</p>
           <div class="slide-content" style="margin: 0 auto; width: 100%; text-align: center;">
-            <p class="text-secondary">
+            <p style="color: var(--muted);">
               A showcase of our Shopify loyalty integration for a retail brand.<br />
               Customers earn and redeem in-store points through their online account.
             </p>
-            <img src="../assets/projects/shopify-logo.png" style="margin-top: 50px;" alt="Shopify Logo" class="logo" />
+            <img src="../assets/projects/shopify-logo-ink.png" style="max-width: 200px; margin: 50px auto 0;" alt="Shopify Logo" />
           </div>
           <div class="slide-footer">Slide 1 of 7</div>
         </div>
@@ -59,7 +61,7 @@
         <div class="slide" id="slide2">
           <h2 class="slide-title">What We Did</h2>
           <div class="slide-content">
-            <p class="mb-4">We built a private Shopify app for a retail brand to connect their in-store loyalty program
+            <p>We built a private Shopify app for a retail brand to connect their in-store loyalty program
               with their online store.</p>
             <p>The integration enables real-time point syncing between systems and allows customers to:</p>
             <ul>
@@ -74,7 +76,7 @@
         <div class="slide" id="slide3">
           <h2 class="slide-title">How It Works – Customer Side</h2>
           <div class="slide-content">
-            <ol class="list-decimal list-inside text-left space-y-3">
+            <ol>
               <li>
                 <strong>Step 1:</strong> Customer logs into their Shopify account.
               </li>
@@ -98,11 +100,11 @@
         <div class="slide" id="slide4">
           <h2 class="slide-title">Admin Panel Features</h2>
           <div class="slide-content">
-            <p class="mb-4">
+            <p>
               The admin interface gives brand owners the ability to configure how customers redeem rewards. Admins can add and manage rewards through a dedicated rewards creation page.
             </p>
-            <p class="mb-2 font-semibold">Reward Creation Includes:</p>
-            <ul class="list-disc list-inside space-y-2">
+            <p><strong>Reward Creation Includes:</strong></p>
+            <ul>
               <li><strong>Reward Name:</strong> e.g. “$15 off entire order”</li>
               <li><strong>Reward Type:</strong> Percentage, Fixed Amount, or Free Shipping</li>
               <li><strong>Reward Value:</strong> e.g. 15%, $5, etc.</li>
@@ -162,8 +164,8 @@
           <h2 class="slide-title">Built by Pixel Plugins</h2>
           <p class="slide-subtitle">Custom Shopify Apps. Loyalty Systems. Scalable Integrations.</p>
           <div class="slide-content" style="margin: 0 auto; width: 100%; text-align: center;">
-            <p class="mt-4">Contact us: <a href="mailto:support@pixelplugins.com" class="underline text-[#90aba0]">support@pixelplugins.com</a></p>
-            <img src="../assets/projects/shopify-logo.png" style="margin-top: 50px;" alt="Shopify Logo" class="logo" />
+            <p>Contact us: <a href="mailto:support@pixelplugins.com" style="color: var(--indigo-d); text-decoration: underline;">support@pixelplugins.com</a></p>
+            <img src="../assets/projects/shopify-logo-ink.png" style="max-width: 200px; margin: 50px auto 0;" alt="Shopify Logo" />
           </div>
           <div class="slide-footer">Slide 7 of 7</div>
         </div>
@@ -177,12 +179,19 @@
   </main>
 
   <footer>
-    <div class="footer-links">
-      <a href="/terms-and-conditions">Terms & Conditions</a>
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/return-policy">Return Policy</a>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo-stack"><span class="logo-lockup"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span><span class="sub">Plugins</span></a>
+        <p>San Diego, California, USA</p>
+      </div>
+      <div class="footer-links">
+        <a href="/articles/">Resources</a>
+        <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/return-policy/">Return Policy</a>
+      </div>
     </div>
-      <p>&copy; 2025 PixelPlugins. All rights reserved.</p>
+    <div class="footer-bottom">© <span id="year"></span> Pixel Plugins. All rights reserved.</div>
   </footer>
 
   <!-- Modal -->

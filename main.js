@@ -4,7 +4,7 @@
 
 /* ---- logo mark: mint chevrons + amber pixel ---- */
 function markSVG(variant) {
-    var C = { brand: { s: '#95DDAC', f: '#FFB020' }, paper: { s: '#F6F5FC', f: '#FFB020' } }[variant] || { s: '#95DDAC', f: '#FFB020' };
+    var C = { brand: { s: '#5FBE85', f: '#FFB020' }, paper: { s: '#FFFCF6', f: '#FFB020' } }[variant] || { s: '#5FBE85', f: '#FFB020' };
     return '<svg viewBox="17.5 27.5 85 65" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display:block" xmlns="http://www.w3.org/2000/svg"><polyline points="48,32 22,60 48,88" fill="none" stroke="' + C.s + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><polyline points="72,32 98,60 72,88" fill="none" stroke="' + C.s + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><rect x="52" y="52" width="16" height="16" rx="3.5" fill="' + C.f + '"/></svg>';
 }
 document.querySelectorAll('[data-mk]').forEach(function (el) { el.innerHTML = markSVG(el.getAttribute('data-mk')); });

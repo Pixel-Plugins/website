@@ -21,30 +21,40 @@
     <link rel="icon" href="/assets/brand/favicon-32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="/assets/brand/favicon-16.png" sizes="16x16" type="image/png">
     <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon-180.png" sizes="180x180">
-    <link rel="stylesheet" href="../../style.css">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div id="particles"></div>
-    
-    <header>
-        <nav>
-            <a href="/" class="logo-link">
-                <span class="logo-text">
-                    <span class="logo-row">Pixel <img src="../assets/brand/pixel-mark.svg" alt="" class="logo-icon"></span>
-                    <span class="logo-sub">Plugins</span>
-                </span>
-            </a>
-        </nav>
-    </header>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="logo-stack"><span class="logo-lockup"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span><span class="sub">Plugins</span></a>
+            <ul class="nav-links">
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/#clients">Clients</a></li>
+                <li><a href="/articles/">Resources</a></li>
+                <li><a href="/#contact" class="nav-cta">Get in touch</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="eyebrow"><span class="dot"></span>Guide</span>
+            <h1 class="page-title">Dynamic Form Builder</h1>
+            <p class="page-sub">A HIPAA-ready dynamic form builder plugin for BuildFire.</p>
+        </div>
+    </section>
 
     <main>
-        <div class="policy-content">
-            <h1>🛠 How to Build and Use the Dynamic Form Builder</h1>
-            <h2>Overview</h2>
+        <div class="container">
+        <div class="prose">
+            <h2><i class="ph-light ph-info"></i> Overview</h2>
             <p>The Dynamic Form Builder allows you to create custom forms for data collection, such as medical intake forms. This guide will help you add, configure, preview, and publish your form with ease.</p>
 
-            <h2>📋 Step-by-Step Guide to Building Your Form</h2>
+            <h2><i class="ph-light ph-list-checks"></i> Step-by-Step Guide to Building Your Form</h2>
 
             <h3>1. Access the Form Builder</h3>
             <p>Open the Dynamic Form Builder interface. You’ll see:</p>
@@ -89,7 +99,7 @@
             <p>Use the "Preview on Mobile" button (bottom of the live preview) to see how the form will look on mobile devices.</p>
             <p>Ensure all required fields are present and working.</p>
 
-            <h2>✅ Final Steps</h2>
+            <h2><i class="ph-light ph-check-circle"></i> Final Steps</h2>
 
             <h3>6. Save Your Form</h3>
             <p>Click the green “Save” button on the top right to store your form. You can return later to edit it or publish it.</p>
@@ -106,7 +116,7 @@
                 <li>Click Apply Filters.</li>
             </ul>
 
-            <h2>🔗 Integration Setup</h2>
+            <h2><i class="ph-light ph-link"></i> Integration Setup</h2>
 
             <h3>8. Set Up Email Integration</h3>
             <p>Navigate to the Integration Setup page:</p>
@@ -115,7 +125,7 @@
                 <li>Click Save.</li>
             </ul>
 
-            <h2>📌 Tips for Effective Form Design</h2>
+            <h2><i class="ph-light ph-push-pin"></i> Tips for Effective Form Design</h2>
             <ul>
                 <li>Group related questions logically (e.g., contact info first, medical conditions later).</li>
                 <li>Use required fields only when necessary to reduce friction.</li>
@@ -123,17 +133,25 @@
                 <li>Always preview before finalizing.</li>
             </ul>
         </div>
+        </div>
     </main>
 
     <footer>
-        <div class="footer-links">
-            <a href="/terms-and-conditions">Terms & Conditions</a>
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/return-policy">Return Policy</a>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="/" class="logo-stack"><span class="logo-lockup"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span><span class="sub">Plugins</span></a>
+                <p>San Diego, California, USA</p>
+            </div>
+            <div class="footer-links">
+                <a href="/articles/">Resources</a>
+                <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
+                <a href="/privacy-policy/">Privacy Policy</a>
+                <a href="/return-policy/">Return Policy</a>
+            </div>
         </div>
-        <p>&copy; 2025 PixelPlugins. All rights reserved.</p>
+        <div class="footer-bottom">© <span id="year"></span> Pixel Plugins. All rights reserved.</div>
     </footer>
 
-    <script src="../../main.js"></script>
+    <script src="../main.js"></script>
 </body>
 </html>

@@ -6,15 +6,15 @@
 
 :root {
     /* canvas — light, cool-tinted, not cream */
-    --paper:    #F6F5FC;
-    --paper-2:  #EEEBF9;
+    --paper:    #FFFCF6;
+    --paper-2:  #FBF3E6;
     --card:     #FFFFFF;
-    --ink:      #1B1730;
-    --ink-soft: #423C5C;
-    --muted:    #726C8C;
-    --faint:    #A29CBB;
-    --line:     #E4E0F3;
-    --line-2:   #ECE9F8;
+    --ink:      #211B12;
+    --ink-soft: #4A4232;
+    --muted:    #7D7460;
+    --faint:    #B3A98F;
+    --line:     #ECE1CB;
+    --line-2:   #F3EADA;
 
     /* vibrant, deliberate palette — used as accents, not gradients */
     --indigo:   #95DDAC;   /* primary */
@@ -58,7 +58,7 @@ body {
    ============================================================ */
 .ds-header {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(246, 245, 252, 0.86);
+    background: rgba(255, 252, 246, 0.86);
     backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
 }
