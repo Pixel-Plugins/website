@@ -183,6 +183,8 @@ header nav {
 
 /* ---- clients ---- */
 .clients { text-align: center; }
+.clients-groups { display: flex; flex-direction: column; align-items: center; gap: 2.75rem; }
+.clients-group-label { font-family: var(--font-body); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
 .clients-row { display: flex; align-items: center; justify-content: center; gap: 4.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
 .client-logo { transition: transform 0.4s var(--ease), filter 0.4s var(--ease); }
 img.client-logo { height: 30px; width: auto; display: block; }
@@ -190,7 +192,6 @@ img.client-logo { height: 30px; width: auto; display: block; }
 .client-logo.fw { display: inline-flex; align-items: center; gap: 0.7rem; }
 .client-logo.fw img { height: 44px; width: auto; display: block; }
 .client-logo.fw span { font-family: var(--font-logo); font-weight: 700; font-size: 1.5rem; color: var(--ink); letter-spacing: -0.025em; }
-.clients-note { font-size: 1rem; color: var(--muted); margin-top: 2.5rem; font-weight: 500; }
 .dot-div { width: 100%; height: 32px; margin: 0 auto 3rem; max-width: 520px; }
 .dot-div svg { width: 100%; height: 100%; }
 
