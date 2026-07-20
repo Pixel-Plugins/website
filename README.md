@@ -62,8 +62,9 @@ Production: the site is static — deploy the root directory as-is (Vite is only
 │       ├── 5.png                     # Rewards modal
 │       └── 6.png                     # Connected status screen
 │
-├── shopify-showcase/
-│   └── index.html                    # Shopify Loyalty Integration case study (slideshow)
+├── work/
+│   └── shopify-loyalty-integration/
+│       └── index.html                # Shopify Loyalty Integration case study (slideshow)
 │
 ├── articles/
 │   ├── buildfire-ai-chatbot.html     # Article: BuildFire AI Chatbot plugin setup guide
@@ -131,7 +132,7 @@ All inner pages share `style.css` and `main.js` from the root. They use the `.po
 ## Showcases
 
 ### Shopify Loyalty Integration
-**Path:** `/shopify-showcase/`
+**Path:** `/work/shopify-loyalty-integration/` (moved from `/shopify-showcase/`, which now redirects here)
 
 A 7-slide interactive case study showcasing a custom Shopify private app that connects in-store loyalty programs to an online Shopify store.
 
@@ -249,7 +250,7 @@ The full standalone design system reference lives at:
 |--------|-----------|-------|
 | Flywheel | `assets/projects/flywheel.png` | Shown in `#clients` section |
 | BuildFire | `assets/projects/buildfire.svg` | Shown in `#clients`; also has articles and a plugin showcase |
-| Shopify | `assets/projects/shopify-logo.png` | Shown in `#clients`; full case study at `/shopify-showcase/` |
+| Shopify | `assets/projects/shopify-logo.png` | Shown in `#clients`; full case study at `/work/shopify-loyalty-integration/` |
 
 ---
 
