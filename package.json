@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync:partials": "node scripts/sync-partials.mjs"
   },
   "devDependencies": {
     "vite": "^5.4.2"
