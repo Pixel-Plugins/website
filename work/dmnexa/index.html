@@ -146,13 +146,13 @@
         <div class="container">
         <div class="prose">
             <h3>The problem</h3>
-            <p>Social sellers and home businesses often run their entire order process through chat — Instagram DMs, WhatsApp threads, direct messages. That works fine at low volume and breaks down fast at higher volume: orders get missed, details get misread, and sellers end up doing manual data entry against their own conversation history.</p>
+            <p>Social sellers and home businesses often run their entire order process through Instagram DMs. That works fine at low volume and breaks down fast at higher volume: orders get missed, details get misread, and sellers end up doing manual data entry against their own conversation history.</p>
 
             <h3>What we built</h3>
-            <p>DMNexa is an AI agent that sits on top of a seller's existing conversations. It reads incoming messages through an Instagram webhook integration, uses AI to extract order details from unstructured, conversational text, and produces a draft order — not a final one. The seller reviews and confirms before anything is committed, which keeps a human in the loop on exactly the step that needs one.</p>
+            <p>DMNexa is an AI agent that sits on top of a seller's existing conversations. It reads incoming Instagram messages automatically, uses AI to extract order details from unstructured, conversational text, and produces a draft order — not a final one. The seller reviews and confirms before anything is committed, which keeps a human in the loop on exactly the step that needs one.</p>
 
             <h3>Why it's built this way</h3>
-            <p>We designed DMNexa around the same principle we apply to every AI agent build: the AI proposes, a person confirms. That's why it supports multiple channels (Instagram, WhatsApp, SMS) but always routes through the same draft-then-review flow, instead of auto-confirming orders directly from a chat parse.</p>
+            <p>We designed DMNexa around the same principle we apply to every AI agent build: the AI proposes, a person confirms. That's why it always routes through the same draft-then-review flow on Instagram, instead of auto-confirming orders directly from a chat parse.</p>
 
             <h3>Technologies</h3>
             <p>Cross-platform app (iOS, Android, and web) with a Node.js API, PostgreSQL, Firebase for auth and hosting, Google Cloud Task queues for background processing, and Stripe for subscription billing.</p>
