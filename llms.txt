@@ -1,8 +1,10 @@
 # PixelPlugins
 
-> PixelPlugins is a San Diego-based product engineering company building custom SaaS platforms, AI agents and automation, BuildFire plugins, and Shopify integrations for growing and regulated businesses.
+> PixelPlugins is a San Diego-based product engineering company building custom SaaS platforms, B2B software, AI agents and automation, native mobile apps, BuildFire plugins, and Shopify integrations for growing and regulated businesses.
 
 PixelPlugins builds real, shipped software, not prototypes. Proof includes DMNexa (a live AI order-assistant app on iOS, Android, and web, designed and operated end to end by PixelPlugins), a Shopify loyalty integration built as a custom private app, and BuildFire plugins including Popup Notifications (PixelPlugins' most-used BuildFire plugin) and an AI chatbot plugin. The team's engineering history includes early platform development work on both BuildFire and Flywheel, before founding PixelPlugins. Based at 7670 Opportunity Rd Ste 255, San Diego, CA 92111.
+
+PixelPlugins has delivered custom B2B software and SaaS platforms across insurance, fintech, telecom, healthcare, food tech, e-commerce, and delivery/logistics — see the Industries section below.
 
 ## Company
 
