@@ -1,0 +1,70 @@
+# PixelPlugins
+
+> PixelPlugins is a San Diego-based product engineering company building custom SaaS platforms, AI agents and automation, BuildFire plugins, and Shopify integrations for growing and regulated businesses.
+
+PixelPlugins builds real, shipped software, not prototypes. Proof includes DMNexa (a live AI order-assistant app on iOS, Android, and web, designed and operated end to end by PixelPlugins), a Shopify loyalty integration built as a custom private app, and BuildFire plugins including Popup Notifications (PixelPlugins' most-used BuildFire plugin) and an AI chatbot plugin. The team's engineering history includes early platform development work on both BuildFire and Flywheel, before founding PixelPlugins. Based at 7670 Opportunity Rd Ste 255, San Diego, CA 92111.
+
+## Company
+
+- [About](https://pixelplugins.com/about/): Company background, San Diego office, what PixelPlugins builds
+- [Process](https://pixelplugins.com/process/): How PixelPlugins delivers — discovery, phased planning, delivery, support
+- [Contact](https://pixelplugins.com/contact/): Start a project
+- [San Diego](https://pixelplugins.com/san-diego-custom-software-development/): Local San Diego software development team and office
+
+## Services
+
+- [Custom SaaS Development](https://pixelplugins.com/services/custom-saas-development/): Multi-tenant SaaS platforms and B2B software
+- [AI Agent Development](https://pixelplugins.com/services/ai-agents/): Autonomous, decisioning AI systems, proven by DMNexa
+- [AI Automation](https://pixelplugins.com/services/ai-automation/): AI-assisted workflow automation
+- [AI Data Validation](https://pixelplugins.com/services/ai-data-validation/): AI-assisted data validation pipelines with human review
+- [Native Mobile App Development](https://pixelplugins.com/services/mobile-app-development/): Native iOS/Android, cross-platform, and AI-powered apps
+- [Platform Modernization](https://pixelplugins.com/services/platform-modernization/): Legacy system and infrastructure migrations
+- [Systems Integration](https://pixelplugins.com/services/api-integrations/): Custom API integrations between SaaS platforms, ERPs, and CRMs
+- [MongoDB Migration](https://pixelplugins.com/services/mongodb-migration/): MongoDB migrations and performance work
+- [Compliance-Ready Software](https://pixelplugins.com/services/compliance-ready-software/): SOC 2, HIPAA, and GDPR-aware software development
+
+## BuildFire
+
+- [BuildFire Development](https://pixelplugins.com/platforms/buildfire/): Platform overview and engineering history
+- [BuildFire Plugin Development](https://pixelplugins.com/services/buildfire-plugin-development/)
+- [BuildFire AI Plugins](https://pixelplugins.com/services/buildfire-ai-plugins/)
+- [BuildFire Integrations](https://pixelplugins.com/services/buildfire-integrations/)
+- [BuildFire Plugin Maintenance](https://pixelplugins.com/services/buildfire-plugin-maintenance/)
+- [BuildFire Plugin Migration](https://pixelplugins.com/services/buildfire-plugin-migration/)
+- [BuildFire Work](https://pixelplugins.com/work/buildfire/): Popup Notifications, AI Chatbot Plugin, HIPAA Dynamic Form Builder
+
+## Shopify
+
+- [Shopify Development](https://pixelplugins.com/platforms/shopify/): Platform overview
+- [Shopify App Development](https://pixelplugins.com/services/shopify-app-development/)
+- [Shopify Integrations](https://pixelplugins.com/services/shopify-integrations/)
+- [Shopify Automation](https://pixelplugins.com/services/shopify-automation/)
+- [Shopify App Maintenance](https://pixelplugins.com/services/shopify-app-maintenance/)
+- [Shopify Loyalty Integration Case Study](https://pixelplugins.com/work/shopify-loyalty-integration/): Custom private app connecting in-store loyalty to an online Shopify store
+
+## Industries
+
+- [Industries Overview](https://pixelplugins.com/industries/)
+- [Insurance](https://pixelplugins.com/industries/insurance/)
+- [Fintech](https://pixelplugins.com/industries/fintech/)
+- [Telecom](https://pixelplugins.com/industries/telecom/)
+- [Healthcare](https://pixelplugins.com/industries/healthcare/)
+- [Food Tech](https://pixelplugins.com/industries/food-tech/)
+- [E-Commerce](https://pixelplugins.com/industries/ecommerce/)
+- [Delivery & Logistics](https://pixelplugins.com/industries/delivery-logistics/)
+
+## Solutions
+
+- [Conversational Order Processing](https://pixelplugins.com/solutions/conversational-order-processing/): Turning customer conversations into structured orders
+- [Human-in-the-Loop AI](https://pixelplugins.com/solutions/human-in-the-loop-ai/): AI systems designed for human review on key decisions
+- [Multilingual AI Workflows](https://pixelplugins.com/solutions/multilingual-ai-workflows/): AI workflows built to work across languages
+
+## Products & Work
+
+- [DMNexa](https://pixelplugins.com/products/dmnexa/): AI order assistant for social sellers, live on iOS, Android, and web
+- [DMNexa Case Study](https://pixelplugins.com/work/dmnexa/): Engineering case study — from conversations to structured orders
+- [All Work](https://pixelplugins.com/work/): Case studies index
+
+## Insights
+
+- [Guides](https://pixelplugins.com/articles/): BuildFire setup guides and documentation
