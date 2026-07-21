@@ -254,6 +254,8 @@ img.client-logo { height: 30px; width: auto; display: block; }
 footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padding: 3rem 2.5rem; }
 .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; align-items: flex-start; }
 .footer-brand p { color: var(--muted); font-size: 0.94rem; margin-top: 0.8rem; font-weight: 500; }
+.footer-brand p a { color: inherit; text-decoration: none; }
+.footer-brand p a:hover { color: var(--indigo-deep); text-decoration: underline; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
 .footer-links a { font-size: 0.86rem; color: var(--ink-soft); font-weight: 600; transition: color 0.25s; }
 .footer-links a:hover { color: var(--indigo); }
