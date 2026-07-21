@@ -130,6 +130,21 @@ header nav {
 .menu-toggle.open span:nth-child(2) { opacity: 0; }
 .menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* ---- nav dropdowns ---- */
+.nav-item { position: relative; display: flex; align-items: center; }
+.nav-drop-toggle { font-family: var(--font-body); font-size: 0.86rem; font-weight: 600; color: var(--ink-soft); background: none; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem; padding: 0; transition: color 0.25s var(--ease); }
+.nav-drop-toggle::after { content: ''; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); margin-top: -3px; transition: transform 0.25s var(--ease); }
+.nav-item:hover .nav-drop-toggle, .nav-item.open .nav-drop-toggle, .nav-item:focus-within .nav-drop-toggle { color: var(--indigo-deep); }
+.nav-item.open .nav-drop-toggle::after { transform: rotate(-135deg); margin-top: 3px; }
+.nav-dropdown { list-style: none; }
+@media (min-width: 1081px) {
+    .nav-dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); min-width: 230px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 0.6rem; box-shadow: var(--shadow); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s; z-index: 50; }
+    .nav-item:hover .nav-dropdown, .nav-item.open .nav-dropdown, .nav-item:focus-within .nav-dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown li { white-space: nowrap; }
+    .nav-dropdown a { display: block; padding: 0.55rem 0.7rem; border-radius: 8px; font-size: 0.84rem; }
+    .nav-dropdown a:hover { background: var(--paper-2); color: var(--indigo-deep); }
+}
+
 /* ============================================================
    BUTTONS
    ============================================================ */
@@ -169,6 +184,7 @@ header nav {
 .cards.c3 { grid-template-columns: repeat(3, 1fr); }
 .cards.c2 { grid-template-columns: repeat(2, 1fr); }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 2.1rem; transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease); }
+a.card { display: block; text-decoration: none; }
 .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 .industry-tag { display: inline-flex; align-items: center; gap: .4rem; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--coral-d); background: rgba(255,107,87,.08); border: 1px solid var(--line); padding: .32rem .75rem; border-radius: 30px; margin-bottom: 1rem; }
 .core-tag { display: inline-flex; align-items: center; gap: .4rem; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: var(--paper-2); border: 1px solid var(--line); padding: .32rem .75rem; border-radius: 30px; margin-bottom: 1rem; }
@@ -203,10 +219,11 @@ img.client-logo { height: 30px; width: auto; display: block; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.6rem; }
 .form-group label { font-size: 0.72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
-.form-group input, .form-group textarea { background: var(--paper); border: 1.5px solid var(--line); border-radius: 10px; padding: 0.8rem 1rem; color: var(--ink); font-family: var(--font-body); font-size: 1rem; width: 100%; transition: border-color 0.3s var(--ease); }
-.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--indigo); }
+.form-group input, .form-group textarea, .form-group select { background: var(--paper); border: 1.5px solid var(--line); border-radius: 10px; padding: 0.8rem 1rem; color: var(--ink); font-family: var(--font-body); font-size: 1rem; width: 100%; transition: border-color 0.3s var(--ease); }
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--indigo); }
 .form-group input::placeholder, .form-group textarea::placeholder { color: var(--faint); }
 .form-group textarea { min-height: 110px; resize: vertical; }
+.form-row.form-row-3 { grid-template-columns: 1fr 1fr 1fr; }
 
 /* ---- products / DM Nexa ---- */
 .product-card { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); display: grid; grid-template-columns: 1.05fr 0.95fr; }
@@ -315,22 +332,29 @@ main { display: block; }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+@media (max-width: 1080px) {
+    .nav-links { display: none; position: absolute; top: 80px; left: 0; right: 0; max-height: calc(100vh - 80px); overflow-y: auto; background: rgba(255,252,246,0.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); padding: 1.5rem 2.5rem 2rem; flex-direction: column; align-items: flex-start; gap: 1.1rem; }
+    .nav-links.open { display: flex; }
+    .menu-toggle { display: flex; }
+    .nav-item { flex-direction: column; align-items: flex-start; width: 100%; }
+    .nav-drop-toggle { width: 100%; justify-content: space-between; padding: 0.2rem 0; }
+    .nav-dropdown { display: none; flex-direction: column; gap: 0.75rem; padding: 0.75rem 0 0.15rem 0.9rem; width: 100%; }
+    .nav-item.open .nav-dropdown { display: flex; }
+}
 @media (max-width: 880px) {
     .cards.c3 { grid-template-columns: 1fr 1fr; }
     .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .product-card { grid-template-columns: 1fr; }
     .product-side { border-left: none; border-top: 1px solid var(--line); }
+    .form-row.form-row-3 { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
     header nav { height: 72px; }
 }
 @media (max-width: 600px) {
     .container, .nav-inner, .hero-inner, .footer-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .nav-links { display: none; position: absolute; top: 80px; left: 0; right: 0; background: rgba(255,252,246,0.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); padding: 1.5rem 2.5rem; flex-direction: column; align-items: flex-start; gap: 1.4rem; }
-    .nav-links.open { display: flex; }
-    .menu-toggle { display: flex; }
     .cards.c3, .cards.c2 { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
+    .form-row, .form-row.form-row-3 { grid-template-columns: 1fr; }
     .hero-field { width: 460px; height: 460px; right: -160px; }
     .clients-row { gap: 2rem; }
     .product-side { display: none; }
