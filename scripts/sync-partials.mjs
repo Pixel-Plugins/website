@@ -10,6 +10,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const regions = [
     { name: "nav", partial: "partials/nav.html" },
     { name: "footer", partial: "partials/footer.html" },
+    { name: "analytics", partial: "partials/analytics.html" },
 ];
 
 function indentBlock(block, indent) {
