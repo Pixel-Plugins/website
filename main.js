@@ -101,6 +101,36 @@ document.querySelectorAll('[data-strip]').forEach(function (el) { el.innerHTML =
 })();
 
 
+/* ---- Nav dropdowns (Services, Platforms, Industries, Solutions) ---- */
+(function () {
+    const items = document.querySelectorAll('.nav-item.has-dropdown');
+    if (!items.length) return;
+
+    function closeAll() {
+        items.forEach(item => {
+            item.classList.remove('open');
+            const t = item.querySelector('.nav-drop-toggle');
+            if (t) t.setAttribute('aria-expanded', 'false');
+        });
+    }
+
+    items.forEach(item => {
+        const toggle = item.querySelector('.nav-drop-toggle');
+        if (!toggle) return;
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const willOpen = !item.classList.contains('open');
+            closeAll();
+            item.classList.toggle('open', willOpen);
+            toggle.setAttribute('aria-expanded', String(willOpen));
+        });
+    });
+
+    document.addEventListener('click', closeAll);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
+})();
+
+
 /* ---- Scroll reveal (IntersectionObserver) ---- */
 (function () {
     const els = document.querySelectorAll('.card, .sec-head, .client-logo, .contact-form, .product-card');
