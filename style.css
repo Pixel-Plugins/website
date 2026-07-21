@@ -292,6 +292,11 @@ main { display: block; }
 .prose ul ul, .prose ol ul, .prose ul ol, .prose ol ol { margin: 0.5rem 0 0; }
 .prose ul li, .prose ol li { margin-bottom: 0.5rem; line-height: 1.8; }
 .prose a { color: var(--indigo-d); text-decoration: underline; }
+.prose a.btn-primary, .prose a.btn-ghost { text-decoration: none; }
+.prose a.btn-primary { color: var(--indigo-deep); }
+.prose a.btn-primary:hover { color: #fff; }
+.prose a.btn-ghost { color: var(--ink); }
+.prose a.btn-ghost:hover { color: #fff; }
 .map-embed { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; }
 .map-embed iframe { display: block; }
 
