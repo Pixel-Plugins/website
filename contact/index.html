@@ -128,6 +128,30 @@
 
     <main>
         <div class="container" style="max-width: 760px; padding-bottom: 5rem;">
+            <div class="contact-form" style="margin-bottom: 2.5rem; text-align: center;">
+                <h3 style="margin-bottom: 0.5rem;">Book a 30-Minute Consultation</h3>
+                <p style="color: var(--muted); margin-bottom: 1.5rem;">Skip the form — grab a time that works for you and we'll talk through your project directly.</p>
+                <!-- Google Calendar Appointment Scheduling begin -->
+                <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+                <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+                <script>
+                (function() {
+                  var target = document.currentScript;
+                  window.addEventListener('load', function() {
+                    calendar.schedulingButton.load({
+                      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1gCxKRNo1FkPekcBsxnpcyTnpbgqr3-x4f1RZrkbjtn1qEJ9abqjNr7oXMJaLLmyzm7iK08-Tv?gv=true',
+                      color: '#1C5E4F',
+                      label: 'Book a 30-Minute Consultation',
+                      target,
+                    });
+                  });
+                })();
+                </script>
+                <!-- end Google Calendar Appointment Scheduling -->
+            </div>
+
+            <p style="text-align:center; color: var(--muted); font-size: 0.9rem; margin-bottom: 2.5rem;">Or tell us more about your project first, and we'll come back with a plan:</p>
+
             <form action="https://formspree.io/f/mdkgbraj" method="POST" class="contact-form">
                 <div class="form-row">
                     <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
@@ -200,9 +224,7 @@
                 </button>
             </form>
 
-            <p style="margin-top: 2.5rem; color: var(--muted); font-size: 0.95rem;">Prefer to just talk it through first? The form above works for a technical consultation too — tell us that's what you're after in the project description.</p>
-
-            <p style="margin-top: 1rem; color: var(--muted); font-size: 0.95rem;">Based in San Diego? We're at <a href="https://maps.google.com/?q=7670+Opportunity+Rd+Ste+255,+San+Diego,+CA+92111" target="_blank" rel="noopener noreferrer">7670 Opportunity Rd Ste 255, San Diego, CA 92111</a> and happy to meet in person by appointment.</p>
+            <p style="margin-top: 2.5rem; color: var(--muted); font-size: 0.95rem;">Based in San Diego? We're at <a href="https://maps.google.com/?q=7670+Opportunity+Rd+Ste+255,+San+Diego,+CA+92111" target="_blank" rel="noopener noreferrer">7670 Opportunity Rd Ste 255, San Diego, CA 92111</a> and happy to meet in person by appointment.</p>
         </div>
     </main>
 
