@@ -199,8 +199,6 @@ a.card { display: block; text-decoration: none; }
 
 /* ---- clients ---- */
 .clients { text-align: center; }
-.clients-groups { display: flex; flex-direction: column; align-items: center; gap: 2.75rem; }
-.clients-group-label { font-family: var(--font-body); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
 .clients-row { display: flex; align-items: center; justify-content: center; gap: 4.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
 .client-logo { transition: transform 0.4s var(--ease), filter 0.4s var(--ease); }
 img.client-logo { height: 30px; width: auto; display: block; }
