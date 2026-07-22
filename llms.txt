@@ -70,3 +70,4 @@ PixelPlugins has delivered custom B2B software and SaaS platforms across insuran
 ## Insights
 
 - [Guides](https://pixelplugins.com/articles/): BuildFire setup guides and documentation
+- [From AI Prototype to Production App](https://pixelplugins.com/articles/ai-prototype-to-production.html): What it takes to turn a Replit/Lovable/Bolt/v0-style AI prototype into a real, production-ready product
