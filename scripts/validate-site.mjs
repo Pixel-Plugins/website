@@ -3,7 +3,7 @@ import { dirname, join, normalize, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const origin = "https://pixelplugins.com";
+const origin = "https://www.pixelplugins.com";
 const errors = [];
 
 function walk(dir, out = []) {
@@ -49,6 +49,11 @@ const canonicals = new Map();
 for (const file of publicPages) {
     const html = readFileSync(file, "utf8");
     const canonical = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/i)?.[1];
+    const ogUrl = html.match(/<meta\s+property="og:url"\s+content="([^"]+)"/i)?.[1];
+    const ogTitle = html.match(/<meta\s+property="og:title"\s+content="([^"]+)"/i)?.[1]?.trim();
+    const ogDescription = html.match(/<meta\s+property="og:description"\s+content="([^"]+)"/i)?.[1]?.trim();
+    const ogImage = html.match(/<meta\s+property="og:image"\s+content="([^"]+)"/i)?.[1];
+    const twitterCard = html.match(/<meta\s+name="twitter:card"\s+content="([^"]+)"/i)?.[1];
     const title = html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]?.trim();
     const description = html.match(/<meta\s+name="description"\s+content="([^"]+)"/i)?.[1]?.trim();
     const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
@@ -58,6 +63,11 @@ for (const file of publicPages) {
     check(Boolean(description), file, "missing meta description");
     check(Boolean(canonical), file, "missing canonical URL");
     check(canonical === publicUrlFor(file), file, `canonical should be ${publicUrlFor(file)}, found ${canonical || "none"}`);
+    check(ogUrl === canonical, file, `og:url should match canonical, found ${ogUrl || "none"}`);
+    check(Boolean(ogTitle && ogDescription && ogImage), file, "missing required Open Graph metadata");
+    check(Boolean(twitterCard), file, "missing Twitter card metadata");
+    check(!html.includes("https://pixelplugins.com"), file, "contains the redirected non-www production origin");
+    check(!/(?:7670\s+Opportunity|Opportunity\s+Rd|92111)/i.test(html), file, "contains the retired street address");
     check((html.match(/<h1\b/gi) || []).length === 1, file, "must contain exactly one h1");
     check(html.includes("<!-- nav:start -->") && html.includes("<!-- nav:end -->"), file, "missing shared navigation");
     check(html.includes("<!-- footer:start -->") && html.includes("<!-- footer:end -->"), file, "missing shared footer");

@@ -1,6 +1,6 @@
 # PixelPlugins Website
 
-Static marketing website for [pixelplugins.com](https://pixelplugins.com), built with plain HTML, CSS, and JavaScript. Vite is used for local development and production validation.
+Static marketing website for [www.pixelplugins.com](https://www.pixelplugins.com), built with plain HTML, CSS, and JavaScript. Vite is used for local development and production validation.
 
 ## Local development
 

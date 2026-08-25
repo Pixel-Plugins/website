@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /partials/
 
-Sitemap: https://pixelplugins.com/sitemap.xml
+Sitemap: https://www.pixelplugins.com/sitemap.xml
