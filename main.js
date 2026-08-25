@@ -88,14 +88,14 @@ document.querySelectorAll('[data-strip]').forEach(function (el) { el.innerHTML =
     toggle.addEventListener('click', () => {
         const open = links.classList.toggle('open');
         toggle.classList.toggle('open', open);
-        toggle.setAttribute('aria-expanded', open);
+        toggle.setAttribute('aria-expanded', String(open));
     });
 
     links.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
             links.classList.remove('open');
             toggle.classList.remove('open');
-            toggle.setAttribute('aria-expanded', false);
+            toggle.setAttribute('aria-expanded', 'false');
         });
     });
 })();
@@ -131,6 +131,76 @@ document.querySelectorAll('[data-strip]').forEach(function (el) { el.innerHTML =
 })();
 
 
+/* ---- Analytics consent ---- */
+(function () {
+    const banner = document.getElementById('analytics-consent');
+    const analytics = window.PixelAnalytics;
+    if (!banner || !analytics) return;
+
+    const accept = banner.querySelector('[data-consent-accept]');
+    const reject = banner.querySelector('[data-consent-reject]');
+    const settings = document.querySelectorAll('[data-consent-settings]');
+
+    function showConsent(focusChoice) {
+        banner.hidden = false;
+        document.body.classList.add('consent-visible');
+        if (focusChoice && reject) reject.focus();
+    }
+
+    function hideConsent() {
+        banner.hidden = true;
+        document.body.classList.remove('consent-visible');
+    }
+
+    if (analytics.getConsent() === null) showConsent(false);
+
+    accept && accept.addEventListener('click', () => analytics.setConsent('granted'));
+    reject && reject.addEventListener('click', () => analytics.setConsent('denied'));
+    settings.forEach(button => button.addEventListener('click', () => showConsent(true)));
+    document.addEventListener('pixelplugins:consent-changed', hideConsent);
+
+    banner.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && analytics.getConsent() !== null) hideConsent();
+    });
+})();
+
+
+/* ---- Consent-aware conversion events (never includes form-field data) ---- */
+(function () {
+    document.addEventListener('click', (event) => {
+        const link = event.target.closest('a');
+        const analytics = window.PixelAnalytics;
+        if (!link || !analytics) return;
+
+        let url;
+        try { url = new URL(link.href, window.location.href); } catch (error) { return; }
+
+        if (url.hostname === 'calendar.google.com' && url.pathname.includes('/calendar/appointments/')) {
+            analytics.track('select_content', {
+                content_type: 'consultation',
+                item_id: 'book_consultation'
+            });
+            return;
+        }
+
+        if (url.origin === window.location.origin && url.pathname === '/contact/') {
+            analytics.track('select_content', {
+                content_type: 'cta',
+                item_id: 'contact'
+            });
+            return;
+        }
+
+        if (url.origin === window.location.origin && url.pathname.startsWith('/work/') && url.pathname !== '/work/') {
+            analytics.track('select_content', {
+                content_type: 'case_study',
+                item_id: url.pathname.replace(/^\/work\//, '').replace(/\/$/, '')
+            });
+        }
+    });
+})();
+
+
 /* ---- Scroll reveal (IntersectionObserver) ---- */
 (function () {
     const els = document.querySelectorAll('.card, .sec-head, .client-logo, .contact-form, .product-card');
@@ -157,6 +227,13 @@ function onSubmit(token) {
     const form = document.querySelector('.contact-form');
     if (!form) return;
     if (!form.checkValidity()) { form.reportValidity(); return; }
+    if (window.PixelAnalytics) {
+        window.PixelAnalytics.track('generate_lead', {
+            method: 'contact_form',
+            form_id: form.id || 'contact-form',
+            transport_type: 'beacon'
+        });
+    }
     form.submit();
 }
 

@@ -50,21 +50,7 @@
         }
     </script>
 <!-- analytics:start -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LD08GQX17E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LD08GQX17E');
-</script>
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xq1eetta6q");
-</script>
+<script src="/analytics.js"></script>
 <!-- analytics:end -->
 </head>
 
@@ -73,56 +59,31 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="/#top" class="logo-stack"><span class="logo-lockup"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span><span class="sub">Plugins</span></a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-navigation">
                 <li class="nav-item has-dropdown">
-                    <button class="nav-drop-toggle" type="button" aria-expanded="false">Services</button>
+                    <button class="nav-drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Services</button>
                     <ul class="nav-dropdown">
                         <li><a href="/services/custom-saas-development/">Custom SaaS Development</a></li>
-                        <li><a href="/services/ai-agents/">AI Agents</a></li>
-                        <li><a href="/services/ai-automation/">AI Automation</a></li>
-                        <li><a href="/services/ai-data-validation/">AI Data Validation</a></li>
-                        <li><a href="/services/platform-modernization/">Platform Modernization</a></li>
-                        <li><a href="/services/api-integrations/">Systems Integration</a></li>
+                        <li><a href="/services/ai-agents/">AI Agents &amp; Automation</a></li>
                         <li><a href="/services/mobile-app-development/">Mobile &amp; Web Development</a></li>
-                        <li><a href="/services/mongodb-migration/">MongoDB Migration</a></li>
+                        <li><a href="/services/api-integrations/">Systems Integration</a></li>
+                        <li><a href="/services/platform-modernization/">Modernization &amp; Migrations</a></li>
                         <li><a href="/services/compliance-ready-software/">Compliance-Ready Software</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-dropdown">
-                    <button class="nav-drop-toggle" type="button" aria-expanded="false">Platforms</button>
+                    <button class="nav-drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Platforms</button>
                     <ul class="nav-dropdown">
                         <li><a href="/platforms/buildfire/">BuildFire</a></li>
                         <li><a href="/platforms/shopify/">Shopify</a></li>
                     </ul>
                 </li>
-                <li class="nav-item has-dropdown">
-                    <button class="nav-drop-toggle" type="button" aria-expanded="false">Industries</button>
-                    <ul class="nav-dropdown">
-                        <li><a href="/industries/">All Industries</a></li>
-                        <li><a href="/industries/insurance/">Insurance</a></li>
-                        <li><a href="/industries/fintech/">Fintech</a></li>
-                        <li><a href="/industries/telecom/">Telecom</a></li>
-                        <li><a href="/industries/healthcare/">Healthcare</a></li>
-                        <li><a href="/industries/food-tech/">Food Tech</a></li>
-                        <li><a href="/industries/ecommerce/">E-Commerce</a></li>
-                        <li><a href="/industries/delivery-logistics/">Delivery &amp; Logistics</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item has-dropdown">
-                    <button class="nav-drop-toggle" type="button" aria-expanded="false">Solutions</button>
-                    <ul class="nav-dropdown">
-                        <li><a href="/solutions/conversational-order-processing/">Conversational Order Processing</a></li>
-                        <li><a href="/solutions/human-in-the-loop-ai/">Human-in-the-Loop AI</a></li>
-                        <li><a href="/solutions/multilingual-ai-workflows/">Multilingual AI Workflows</a></li>
-                    </ul>
-                </li>
-                <li><a href="/products/dmnexa/">Products</a></li>
                 <li><a href="/work/">Work</a></li>
-                <li><a href="/articles/">Insights</a></li>
+                <li><a href="/process/">Process</a></li>
                 <li><a href="/about/">About</a></li>
-                <li><a href="/contact/" class="nav-cta">Get in touch</a></li>
+                <li><a href="/contact/" class="nav-cta">Start a conversation</a></li>
             </ul>
-            <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-controls="primary-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
     </nav>
     <!-- nav:end -->
@@ -167,18 +128,37 @@
         <div class="footer-inner">
             <div class="footer-brand">
                 <a href="/#top" class="logo-stack"><span class="logo-lockup"><span class="word">Pixel</span><span class="mk" data-mk="brand"></span></span><span class="sub">Plugins</span></a>
+                <p class="footer-promise">Your technology partner—from roadmap to launch and what comes next.</p>
                 <p><a href="https://maps.google.com/?q=7670+Opportunity+Rd+Ste+255,+San+Diego,+CA+92111" target="_blank" rel="noopener noreferrer">7670 Opportunity Rd Ste 255, San Diego, CA 92111</a></p>
             </div>
             <div class="footer-links">
-                <a href="/san-diego-custom-software-development/">San Diego Software Development</a>
-                <a href="/articles/">Resources</a>
-                <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
-                <a href="/privacy-policy/">Privacy Policy</a>
-                <a href="/return-policy/">Return Policy</a>
+                <a href="/work/">Work</a>
+                <a href="/process/">Process</a>
+                <a href="/industries/">Industries</a>
+                <a href="/articles/">Insights</a>
+                <a href="/about/">About</a>
             </div>
         </div>
-        <div class="footer-bottom">© <span id="year"></span> PixelPlugins LLC. All rights reserved.</div>
+        <div class="footer-bottom">
+            <span>© <span id="year"></span> PixelPlugins LLC. All rights reserved.</span>
+            <span class="footer-legal">
+                <a href="/terms-and-conditions/">Terms</a>
+                <a href="/privacy-policy/">Privacy</a>
+                <a href="/return-policy/">Returns</a>
+                <button type="button" data-consent-settings>Cookie preferences</button>
+            </span>
+        </div>
     </footer>
+    <section class="consent-banner" id="analytics-consent" aria-labelledby="analytics-consent-title" aria-describedby="analytics-consent-description" hidden>
+        <div class="consent-copy">
+            <h2 id="analytics-consent-title">Your privacy, your choice</h2>
+            <p id="analytics-consent-description">We use optional analytics to understand what helps visitors and improve the site. Analytics starts only if you accept. Essential site features always work. <a href="/privacy-policy/">Privacy details</a></p>
+        </div>
+        <div class="consent-actions">
+            <button type="button" class="consent-reject" data-consent-reject>Reject analytics</button>
+            <button type="button" class="consent-accept" data-consent-accept>Accept analytics</button>
+        </div>
+    </section>
     <!-- footer:end -->
     <script src="/main.js"></script>
 </body>
