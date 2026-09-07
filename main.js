@@ -184,9 +184,18 @@ document.querySelectorAll('[data-strip]').forEach(function (el) { el.innerHTML =
         }
 
         if (url.origin === window.location.origin && url.pathname === '/contact/') {
+            const source = link.dataset.contactSource || url.searchParams.get('source') || 'contact';
             analytics.track('select_content', {
                 content_type: 'cta',
-                item_id: 'contact'
+                item_id: source
+            });
+            return;
+        }
+
+        if (url.origin === window.location.origin && url.pathname === '/services/website-design-development/') {
+            analytics.track('select_content', {
+                content_type: 'service',
+                item_id: 'website_design_development'
             });
             return;
         }
@@ -198,6 +207,35 @@ document.querySelectorAll('[data-strip]').forEach(function (el) { el.innerHTML =
             });
         }
     });
+})();
+
+
+/* ---- Contact context and website-service preselection ---- */
+(function () {
+    const form = document.querySelector('.contact-form');
+    if (!form) return;
+
+    const sourceField = form.querySelector('input[name="source_page"]');
+    const params = new URLSearchParams(window.location.search);
+    const requestedService = params.get('service');
+    const projectType = form.querySelector('select[name="project_type"]');
+
+    if (projectType && requestedService === 'website') {
+        projectType.value = 'website';
+    }
+
+    if (sourceField && window.location.pathname === '/contact/') {
+        let source = params.get('source') || 'contact';
+        try {
+            const referrer = new URL(document.referrer);
+            if (referrer.origin === window.location.origin && referrer.pathname !== '/contact/') {
+                source = referrer.pathname;
+            }
+        } catch (error) {
+            // Direct visits and privacy-restricted referrers keep the default source.
+        }
+        sourceField.value = source;
+    }
 })();
 
 
@@ -222,19 +260,52 @@ document.querySelectorAll('[data-strip]').forEach(function (el) { el.innerHTML =
 })();
 
 
-/* ---- reCAPTCHA callback ---- */
-function onSubmit(token) {
+/* ---- reCAPTCHA callback and confirmed form delivery ---- */
+async function onSubmit(token) {
     const form = document.querySelector('.contact-form');
     if (!form) return;
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    if (window.PixelAnalytics) {
-        window.PixelAnalytics.track('generate_lead', {
-            method: 'contact_form',
-            form_id: form.id || 'contact-form',
-            transport_type: 'beacon'
-        });
+
+    const button = form.querySelector('button[type="submit"]');
+    let status = form.querySelector('.form-status');
+    if (!status) {
+        status = document.createElement('p');
+        status.className = 'form-status';
+        status.setAttribute('role', 'status');
+        status.setAttribute('aria-live', 'polite');
+        form.appendChild(status);
     }
-    form.submit();
+
+    if (button) button.disabled = true;
+    status.className = 'form-status';
+    status.textContent = 'Sending your message…';
+
+    const data = new FormData(form);
+    if (token && !data.get('g-recaptcha-response')) data.append('g-recaptcha-response', token);
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method || 'POST',
+            body: data,
+            headers: { Accept: 'application/json' }
+        });
+        if (!response.ok) throw new Error('Form delivery failed');
+
+        if (window.PixelAnalytics) {
+            window.PixelAnalytics.track('generate_lead', {
+                method: 'contact_form',
+                form_id: form.id || 'contact-form'
+            });
+        }
+
+        form.reset();
+        status.className = 'form-status is-success';
+        status.textContent = 'Thanks—your message was sent. We’ll follow up with useful questions and a clear next step.';
+    } catch (error) {
+        status.className = 'form-status is-error';
+        status.innerHTML = 'We couldn’t send that message. Please try again or email <a href="mailto:support@pixelplugins.com">support@pixelplugins.com</a>.';
+        if (button) button.disabled = false;
+    }
 }
 
 document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());

@@ -9,15 +9,17 @@ npm install
 npm run dev
 ```
 
-Run `npm run build` before shipping. For this static site, the build command validates all 50 public pages, metadata, internal references, JSON-LD, sitemap coverage, shared partials, and analytics gates rather than producing a deployment bundle. Production is hosted from the repository through GitHub Pages; `CNAME` contains the custom domain.
+Run `npm run build` before shipping. For this static site, the build command validates every public page, metadata, internal references, JSON-LD, sitemap coverage, shared partials, and analytics gates rather than producing a deployment bundle. Production is hosted from the repository through GitHub Pages; `CNAME` contains the custom domain.
 
 ## Content strategy
 
-The primary promise is: PixelPlugins is the business-first technology partner that lets clients focus on their business while PixelPlugins owns the technology from roadmap through launch and ongoing improvement.
+The primary promise is: PixelPlugins is the business-first technology partner that lets clients focus on their business while PixelPlugins owns the technology from roadmap through launch and ongoing improvement. That promise covers both professional business websites and advanced custom software, SaaS, AI, mobile, integration, modernization, and compliance-ready work.
+
+Business websites are a first-class service, not a replacement for the advanced positioning. The site should make it immediately clear that PixelPlugins builds company websites, marketing and lead-generation sites, redesigns, SEO-ready implementations, website integrations, and ongoing website support while preserving the depth of its product-engineering capabilities.
 
 The main navigation is deliberately limited to:
 
-- Services: six broad client needs, with specialized service pages retained for search and contextual links
+- Services: a complete overview with a distinct website-design lane and the existing advanced software capabilities
 - Platforms: BuildFire and Shopify expertise
 - Work: proof and case studies
 - Process: how the partnership works
@@ -60,7 +62,7 @@ Consent-aware events are sent from `main.js`:
 
 - `page_view` through GA4's standard configuration
 - `select_content` for contact CTAs, consultation links, and case-study selections
-- `generate_lead` after a valid contact form passes reCAPTCHA and is submitted
+- `generate_lead` after a valid contact form passes reCAPTCHA and Formspree confirms delivery
 
 Mark `generate_lead` as a key event in the GA4 property. If consultation clicks should be a reporting goal, create a key event from `select_content` where `content_type` equals `consultation` and `item_id` equals `book_consultation`.
 
@@ -81,7 +83,9 @@ index.html                 Homepage and primary conversion narrative
 about/                     Partnership positioning and company background
 process/                   Delivery and ongoing-support model
 contact/                   Short inquiry form and consultation booking
-services/                  Service landing pages
+services/                  Service overview and specialized landing pages
+services/website-design-development/
+                           Company, marketing, lead-generation, redesign, integration, and support offering
 platforms/                 BuildFire and Shopify landing pages
 industries/                Industry landing pages
 solutions/                 Solution landing pages
@@ -100,6 +104,9 @@ llms.txt                   Machine-readable company and content index
 ## Content and trust guardrails
 
 - Lead with business outcomes and accountability; use technology names only when they help a buyer make a decision.
+- Present professional websites and advanced software as two strengths of the same business-first technology partner; do not recast PixelPlugins as a commodity template agency.
+- Keep "website" distinct from "web application" in navigation and service copy so buyers understand both offerings.
+- Describe SEO-ready work as a sound technical and content foundation, never as a ranking guarantee.
 - Support trust with specific, verifiable work. Do not invent testimonials, client relationships, or performance figures.
 - Keep previous-employer experience clearly attributed to the team rather than presenting it as PixelPlugins client work.
 - Do not imply that a platform logo is a direct client relationship when the work was an integration built on that platform.
