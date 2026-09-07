@@ -30,7 +30,9 @@ function findHtmlFiles(dir, out = []) {
     return out;
 }
 
-const files = findHtmlFiles(root);
+// The link-in-bio page has intentionally specialized header/footer markup.
+const specializedPages = new Set([join(root, "our-links", "index.html")]);
+const files = findHtmlFiles(root).filter((file) => !specializedPages.has(file));
 
 for (const file of files) {
     let content = readFileSync(file, "utf-8");

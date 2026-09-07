@@ -7,7 +7,7 @@
     <title>Start a Conversation With PixelPlugins | Technology Partner</title>
     <meta name="description" content="Tell PixelPlugins where your business is going and what technology is getting in the way. Start with a short form or book a 30-minute conversation.">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Pixel Plugins">
+    <meta property="og:site_name" content="PixelPlugins">
     <meta property="og:title" content="Start a Conversation With PixelPlugins | Technology Partner">
     <meta property="og:description" content="Tell PixelPlugins where your business is going and what technology is getting in the way. Start with a short form or book a 30-minute conversation.">
     <meta property="og:url" content="https://www.pixelplugins.com/contact/">
@@ -54,9 +54,11 @@
                 <li class="nav-item has-dropdown">
                     <button class="nav-drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Services</button>
                     <ul class="nav-dropdown">
+                        <li><a href="/services/">All Services</a></li>
+                        <li><a href="/services/website-design-development/">Website Design &amp; Development</a></li>
                         <li><a href="/services/custom-saas-development/">Custom SaaS Development</a></li>
                         <li><a href="/services/ai-agents/">AI Agents &amp; Automation</a></li>
-                        <li><a href="/services/mobile-app-development/">Mobile &amp; Web Development</a></li>
+                        <li><a href="/services/mobile-app-development/">Mobile &amp; Web Applications</a></li>
                         <li><a href="/services/api-integrations/">Systems Integration</a></li>
                         <li><a href="/services/platform-modernization/">Modernization &amp; Migrations</a></li>
                         <li><a href="/services/compliance-ready-software/">Compliance-Ready Software</a></li>
@@ -83,7 +85,7 @@
         <div class="container">
             <span class="eyebrow"><span class="dot"></span>Contact</span>
             <h1 class="page-title">Let's make technology your business advantage</h1>
-            <p class="page-sub">Tell us where the business is going and what is getting in the way. You do not need a finished specification—we will help make the path clear.</p>
+            <p class="page-sub">Whether you need a professional website or an advanced software system, tell us where the business is going and what is getting in the way. You do not need a finished specification.</p>
         </div>
     </section>
 
@@ -101,6 +103,7 @@
 
             <form action="https://formspree.io/f/mdkgbraj" method="POST" class="contact-form" id="lead-form-contact" name="lead-form">
                 <input type="hidden" name="_subject" value="New PixelPlugins project conversation">
+                <input type="hidden" name="source_page" value="contact">
                 <div class="form-row">
                     <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
                     <div class="form-group"><label for="email">Work email</label><input type="email" id="email" name="email" placeholder="you@company.com" required></div>
@@ -111,6 +114,11 @@
                         <label for="project_type">What can we help with? <span class="optional-label">(optional)</span></label>
                         <select id="project_type" name="project_type">
                             <option value="">Select one</option>
+                            <option value="website">Professional company website</option>
+                            <option value="website-marketing">Marketing or lead-generation website</option>
+                            <option value="website-redesign">Website redesign</option>
+                            <option value="website-integration">Website, CRM, or form integration</option>
+                            <option value="website-support">Ongoing website support</option>
                             <option>Custom software or SaaS</option>
                             <option>AI agent or automation</option>
                             <option>Mobile or web product</option>
@@ -120,6 +128,10 @@
                             <option>Not sure yet</option>
                         </select>
                     </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label for="current_website">Current website <span class="optional-label">(optional)</span></label><input type="url" id="current_website" name="current_website" placeholder="https://yourcompany.com"></div>
+                    <div class="form-group"><label for="target_launch">Target launch <span class="optional-label">(optional)</span></label><input type="text" id="target_launch" name="target_launch" placeholder="A date, month, or timeframe"></div>
                 </div>
                 <div class="form-group"><label for="message">What are you trying to achieve?</label><textarea id="message" name="message" placeholder="A short description of the goal, the current situation, and what is getting in the way is plenty." required></textarea></div>
                 <button type="submit" class="btn-primary g-recaptcha"
@@ -144,11 +156,14 @@
                 <p>San Diego, CA</p>
             </div>
             <div class="footer-links">
+                <a href="/services/">Services</a>
+                <a href="/services/website-design-development/">Website Design</a>
                 <a href="/work/">Work</a>
                 <a href="/process/">Process</a>
                 <a href="/industries/">Industries</a>
                 <a href="/articles/">Insights</a>
                 <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
             </div>
         </div>
         <div class="footer-bottom">

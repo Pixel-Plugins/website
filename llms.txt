@@ -1,22 +1,26 @@
 # PixelPlugins
 
-> PixelPlugins is a San Diego-based, business-first technology partner that helps companies plan, build, integrate, modernize, and grow dependable SaaS platforms, AI systems, mobile and web products, BuildFire plugins, and Shopify solutions.
+> PixelPlugins is a San Diego-based, business-first technology partner that helps companies plan, design, build, integrate, modernize, and grow professional business websites, dependable SaaS platforms, AI systems, mobile and web applications, BuildFire plugins, and Shopify solutions.
 
 PixelPlugins builds real, shipped software, not prototypes. Its core team brings hands-on technology experience dating back to 2009, spanning early platform work at BuildFire and Flywheel, custom systems built on Shopify, and products built and operated in-house. Proof includes DMNexa (a live AI order-assistant app on iOS, Android, and web, designed and operated end to end by PixelPlugins), a Shopify loyalty integration built as a custom private app, and BuildFire plugins including Popup Notifications (PixelPlugins' most-used BuildFire plugin) and an AI chatbot plugin. Based in San Diego, CA.
 
 PixelPlugins has delivered custom B2B software and SaaS platforms across insurance, fintech, telecom, healthcare, food tech, e-commerce, and delivery/logistics — see the Industries section below.
 
-The working model is partnership rather than a one-time technical handoff: PixelPlugins starts with the business goal, recommends a phased roadmap, owns implementation, and can maintain and improve the technology after launch.
+PixelPlugins also designs and develops professional company websites, marketing websites, lead-generation websites, and website redesigns. Website engagements can include custom design, SEO-ready technical foundations, content-management workflows, forms, CRM and scheduling integrations, analytics, launch support, and ongoing maintenance.
+
+The working model is partnership rather than a one-time technical handoff: PixelPlugins starts with the business goal, recommends a right-sized roadmap, owns implementation, and can maintain and improve the website or software after launch.
 
 ## Company
 
 - [About](https://www.pixelplugins.com/about/): Company background, San Diego office, what PixelPlugins builds
 - [Process](https://www.pixelplugins.com/process/): How PixelPlugins delivers — discovery, phased planning, delivery, support
 - [Contact](https://www.pixelplugins.com/contact/): Start a project
-- [San Diego](https://www.pixelplugins.com/san-diego-custom-software-development/): Local San Diego software development team and office
+- [San Diego](https://www.pixelplugins.com/san-diego-custom-software-development/): Local San Diego website and software development team
 
 ## Services
 
+- [All Services](https://www.pixelplugins.com/services/): Website, software, AI, application, integration, modernization, and compliance-ready capabilities
+- [Website Design & Development](https://www.pixelplugins.com/services/website-design-development/): Professional company, marketing, lead-generation, and redesign websites with integrations and ongoing support
 - [Custom SaaS Development](https://www.pixelplugins.com/services/custom-saas-development/): Multi-tenant SaaS platforms and B2B software
 - [AI Agent Development](https://www.pixelplugins.com/services/ai-agents/): Autonomous, decisioning AI systems, proven by DMNexa
 - [AI Automation](https://www.pixelplugins.com/services/ai-automation/): AI-assisted workflow automation
@@ -69,7 +73,13 @@ The working model is partnership rather than a one-time technical handoff: Pixel
 - [DMNexa Case Study](https://www.pixelplugins.com/work/dmnexa/): Engineering case study — from conversations to structured orders
 - [All Work](https://www.pixelplugins.com/work/): Case studies index
 
-## Insights
+## Insights & Guides
 
-- [Guides](https://www.pixelplugins.com/articles/): BuildFire setup guides and documentation
+- [Insights & Guides](https://www.pixelplugins.com/articles/): Business website, product engineering, AI, integration, and BuildFire guidance
+- [When Should a Company Redesign Its Website?](https://www.pixelplugins.com/articles/when-to-redesign-company-website.html): Business, content, technical, and conversion signals that point to a redesign
+- [What Makes a Website SEO-Ready?](https://www.pixelplugins.com/articles/what-makes-a-website-seo-ready.html): Technical and content foundations for search readiness
+- [Website Builder or Custom Website?](https://www.pixelplugins.com/articles/website-builder-vs-custom-website.html): Choosing the right approach based on goals, constraints, and operating cost
+- [Connecting Website Forms to a CRM](https://www.pixelplugins.com/articles/connecting-website-forms-to-a-crm.html): Reliable lead capture, routing, ownership, and recovery
+- [What Ongoing Website Maintenance Should Include](https://www.pixelplugins.com/articles/ongoing-website-maintenance.html): Content, security, integration, performance, accessibility, SEO, and conversion ownership
+- [How Long Does a Business Website Take?](https://www.pixelplugins.com/articles/how-long-does-a-business-website-take.html): Decisions and dependencies that shape a responsible website timeline
 - [From AI Prototype to Production App](https://www.pixelplugins.com/articles/ai-prototype-to-production.html): What it takes to turn a Replit/Lovable/Bolt/v0-style AI prototype into a real, production-ready product
