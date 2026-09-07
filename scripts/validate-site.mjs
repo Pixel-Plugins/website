@@ -45,6 +45,7 @@ const excluded = new Set([
 ]);
 const publicPages = htmlFiles.filter((file) => !excluded.has(file));
 const canonicals = new Map();
+const noindexCanonicals = new Set();
 
 for (const file of publicPages) {
     const html = readFileSync(file, "utf8");
@@ -56,6 +57,7 @@ for (const file of publicPages) {
     const twitterCard = html.match(/<meta\s+name="twitter:card"\s+content="([^"]+)"/i)?.[1];
     const title = html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]?.trim();
     const description = html.match(/<meta\s+name="description"\s+content="([^"]+)"/i)?.[1]?.trim();
+    const isNoindex = /<meta\s+name="robots"\s+content="[^"]*\bnoindex\b/i.test(html);
     const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
     const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
 
@@ -80,6 +82,7 @@ for (const file of publicPages) {
         const existing = canonicals.get(canonical);
         check(!existing, file, `duplicate canonical also used by ${existing || "unknown"}`);
         canonicals.set(canonical, relative(root, file));
+        if (isNoindex) noindexCanonicals.add(canonical);
     }
 
     for (const match of html.matchAll(/(?:href|src)="([^"]+)"/gi)) {
@@ -101,6 +104,10 @@ const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
 const sitemapUrls = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]));
 
 for (const canonical of canonicals.keys()) {
+    if (noindexCanonicals.has(canonical)) {
+        if (sitemapUrls.has(canonical)) errors.push(`sitemap.xml: noindex URL should not be listed: ${canonical}`);
+        continue;
+    }
     if (!sitemapUrls.has(canonical)) errors.push(`sitemap.xml: missing ${canonical}`);
 }
 for (const url of sitemapUrls) {
