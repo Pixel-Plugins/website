@@ -507,6 +507,7 @@ main { display: block; }
 .logo-badge { position: absolute; left: 12px; bottom: 12px; z-index: 2; display: inline-flex; align-items: center; justify-content: center; max-width: 62%; padding: .45rem .75rem; border-radius: 10px; background: rgba(255,252,246,.92); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); box-shadow: 0 8px 20px -10px rgba(20,16,10,.4); }
 .logo-badge.on-dark { background: rgba(20,16,10,.78); }
 .logo-badge img { display: block; max-width: 100%; max-height: 22px; width: auto; height: auto; object-fit: contain; }
+.logo-badge.is-large img { max-height: 38px; }
 .filmstrip-body { display: flex; flex-direction: column; padding: 1.3rem 1.4rem 1.5rem; }
 .filmstrip-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .8rem; }
 .filmstrip-tag { display: inline-flex; font-size: .62rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); background: var(--paper-2); border: 1px solid var(--line); padding: .28rem .6rem; border-radius: 30px; }
