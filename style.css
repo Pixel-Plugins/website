@@ -592,18 +592,32 @@ main { display: block; }
    cards and showcase grid above them instead of sitting flat/neutral. */
 .capability-cards .card { border-width: 1.5px; }
 .cap-c1 { border-color: rgba(95,190,133,.4); }
-.cap-c1 .ic { color: var(--indigo-deep); border-color: rgba(95,190,133,.5); background: rgba(149,221,172,.16); }
 .cap-c1:hover { border-color: rgba(95,190,133,.7); }
 .cap-c2 { border-color: rgba(255,107,87,.4); }
-.cap-c2 .ic { color: var(--coral-d); border-color: rgba(255,107,87,.5); background: rgba(255,107,87,.12); }
 .cap-c2:hover { border-color: rgba(255,107,87,.7); }
 .cap-c3 { border-color: rgba(255,176,32,.45); }
-.cap-c3 .ic { color: var(--amber-d); border-color: rgba(255,176,32,.55); background: rgba(255,176,32,.14); }
 .cap-c3:hover { border-color: rgba(255,176,32,.75); }
-.capability-cards .card:hover .ic { color: #fff; }
-.cap-c1:hover .ic { background: var(--indigo-deep); }
-.cap-c2:hover .ic { background: var(--coral-d); }
-.cap-c3:hover .ic { background: var(--amber-d); }
+
+/* Freehand-illustrator-style icon badges: a hand-drawn wobbly blob
+   behind a loose, imperfect line-art glyph, instead of the sterile
+   circle-outline Phosphor icon used by .card elsewhere on the site.
+   Scoped to .capability-cards only. */
+.capability-cards .ic { width: 64px; height: 64px; border: none; background: none; border-radius: 0; margin-bottom: 1.2rem; transition: transform .5s var(--ease); }
+.capability-cards .ic svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.capability-cards .card:hover .ic { transform: rotate(-6deg) scale(1.08); background: none; border: none; color: inherit; }
+.capability-cards .ic .blob { transition: fill .4s var(--ease); }
+.capability-cards .card:hover .ic .glyph { animation: capWiggle .6s ease-in-out; }
+.capability-cards .ic .spark { transition: opacity .4s var(--ease), transform .4s var(--ease); opacity: 0; transform: scale(.4); transform-origin: center; }
+.capability-cards .card:hover .ic .spark { opacity: 1; transform: scale(1); }
+@keyframes capWiggle {
+    0%, 100% { transform: rotate(0deg); }
+    30% { transform: rotate(-7deg); }
+    65% { transform: rotate(6deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .capability-cards .card:hover .ic { transform: none; }
+    .capability-cards .card:hover .ic .glyph { animation: none; }
+}
 
 /* ============================================================
    RESPONSIVE
