@@ -67,11 +67,17 @@
                 end: function () { return '+=' + scrollAmount(); },
                 scrub: 0.6,
                 pin: stage,
+                anticipatePin: 1,
                 invalidateOnRefresh: true
             }
         });
-
-        window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+        // No manual ScrollTrigger.refresh() here — GSAP already registers
+        // its own window "load" refresh internally. A second manual call
+        // (especially one that can land mid-scroll on a slow connection)
+        // was the likely cause of the pin getting stuck mid-transition —
+        // recalculating `end` while the pin is active can desync the
+        // fixed-position stage from ScrollTrigger's own bookkeeping,
+        // leaving it stuck above content it should have un-pinned below.
     })();
 
     /* ---- elevated entrance for every section's cards, batched ---- */
@@ -102,12 +108,6 @@
         // Reduced-motion: elements are already visible by default (no CSS
         // hides them pre-JS), so there is nothing to do in that branch —
         // fail-open by construction.
-
-        // Images (with fixed width/height + aspect-ratio, so no layout
-        // shift) can still finish decoding after ScrollTrigger's first
-        // measurement pass — refresh once more after full load so trigger
-        // positions for anything further down the page stay accurate.
-        window.addEventListener('load', function () { ScrollTrigger.refresh(); });
     })();
 
     /* ---- Websites We've Built: filter pills + grid ---- */
