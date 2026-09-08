@@ -493,9 +493,15 @@ main { display: block; }
    page scrolls. Not a full-viewport takeover.
    ============================================================ */
 .filmstrip-section { padding: 2.5rem 0 3rem; }
-.filmstrip-stage { overflow: hidden; min-height: 420px; display: flex; align-items: center; }
+/* Base state works with zero JS: a native swipeable/scrollable row.
+   The pinned scroll-scrub is a JS enhancement — see .is-pinned below —
+   applied only once GSAP actually confirms it initialized, so a CDN
+   failure or blocked script degrades to "still usable" instead of
+   "stuck on the first card with no way to see the rest." */
+.filmstrip-stage { overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; min-height: 420px; display: flex; align-items: center; }
+.filmstrip-section.is-pinned .filmstrip-stage { overflow: hidden; scroll-snap-type: none; }
 .filmstrip-track { display: flex; align-items: stretch; gap: 1.75rem; padding: 0 2.5rem; will-change: transform; }
-.filmstrip-card { flex: none; width: 320px; display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; text-decoration: none; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+.filmstrip-card { flex: none; width: 320px; scroll-snap-align: start; display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; text-decoration: none; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
 .filmstrip-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
 .filmstrip-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--paper-2); }
 .filmstrip-media img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .6s var(--ease); }
@@ -516,9 +522,12 @@ main { display: block; }
 .filmstrip-body p { font-size: .86rem; color: var(--muted); line-height: 1.6; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; min-height: calc(1.6em * 2); }
 
 @media (max-width: 880px), (prefers-reduced-motion: reduce) {
-    .filmstrip-stage { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+    /* Overflow/scroll-snap mechanism now lives in the base rule above —
+       this just sizes cards for touch/small viewports. .is-pinned never
+       gets added on these (filmstrip() bails out before reaching it for
+       both isSmall and prefersReduced), so these always stay scrollable. */
     .filmstrip-track { padding: 0 1.5rem; }
-    .filmstrip-card { width: 76vw; max-width: 320px; scroll-snap-align: start; }
+    .filmstrip-card { width: 76vw; max-width: 320px; }
 }
 
 /* ============================================================
@@ -576,6 +585,25 @@ main { display: block; }
 .showcase-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: auto; margin-bottom: .9rem; }
 .showcase-tag { font-size: .64rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); background: var(--paper-2); border: 1px solid var(--line); padding: .28rem .65rem; border-radius: 30px; }
 .showcase-link { display: inline-flex; align-items: center; gap: .4rem; color: var(--indigo-d); font-weight: 800; font-size: .8rem; }
+
+/* Capability cards (work/index.html "Find the relevant capability") —
+   scoped modifiers, not touching the shared .card used across the rest
+   of the site. Gives them the same Prism-palette energy as the stat
+   cards and showcase grid above them instead of sitting flat/neutral. */
+.capability-cards .card { border-width: 1.5px; }
+.cap-c1 { border-color: rgba(95,190,133,.4); }
+.cap-c1 .ic { color: var(--indigo-deep); border-color: rgba(95,190,133,.5); background: rgba(149,221,172,.16); }
+.cap-c1:hover { border-color: rgba(95,190,133,.7); }
+.cap-c2 { border-color: rgba(255,107,87,.4); }
+.cap-c2 .ic { color: var(--coral-d); border-color: rgba(255,107,87,.5); background: rgba(255,107,87,.12); }
+.cap-c2:hover { border-color: rgba(255,107,87,.7); }
+.cap-c3 { border-color: rgba(255,176,32,.45); }
+.cap-c3 .ic { color: var(--amber-d); border-color: rgba(255,176,32,.55); background: rgba(255,176,32,.14); }
+.cap-c3:hover { border-color: rgba(255,176,32,.75); }
+.capability-cards .card:hover .ic { color: #fff; }
+.cap-c1:hover .ic { background: var(--indigo-deep); }
+.cap-c2:hover .ic { background: var(--coral-d); }
+.cap-c3:hover .ic { background: var(--amber-d); }
 
 /* ============================================================
    RESPONSIVE
