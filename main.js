@@ -4,14 +4,14 @@
 
 /* ---- logo mark: mint chevrons + amber pixel ---- */
 function markSVG(variant) {
-    var C = { brand: { s: '#5FBE85', f: '#FFB020' }, paper: { s: '#FFFCF6', f: '#FFB020' } }[variant] || { s: '#5FBE85', f: '#FFB020' };
+    var C = { brand: { s: '#5FBE85', f: '#FFB01F' }, paper: { s: '#FFFCF6', f: '#FFB01F' } }[variant] || { s: '#5FBE85', f: '#FFB01F' };
     return '<svg viewBox="17.5 27.5 85 65" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display:block" xmlns="http://www.w3.org/2000/svg"><polyline points="48,32 22,60 48,88" fill="none" stroke="' + C.s + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><polyline points="72,32 98,60 72,88" fill="none" stroke="' + C.s + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><rect x="52" y="52" width="16" height="16" rx="3.5" fill="' + C.f + '"/></svg>';
 }
 document.querySelectorAll('[data-mk]').forEach(function (el) { el.innerHTML = markSVG(el.getAttribute('data-mk')); });
 
 /* ---- Pixel Bloom: floating, twinkling pixel field ---- */
 function mulberry(s) { return function () { s |= 0; s = s + 0x6D2B79F5 | 0; var t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
-var PRISM = ['#95DDAC', '#FF6B57', '#14B88A', '#FFB020'];
+var PRISM = ['#95DDAC', '#FF6B57', '#14B88A', '#FFB01F'];
 function generateFloatField(el, opts) {
     opts = opts || {};
     var count = opts.count || 32, seed = opts.seed || 7, r = mulberry(seed);
@@ -48,7 +48,7 @@ function aboutBloom() {
     return watercolor('cba', 560, 420, [
         { c: '#95DDAC', cx: 220, cy: 220, rx: 200, ry: 170, op: 0.22, seed: 6, scale: 40, rot: -8 },
         { c: '#14B88A', cx: 330, cy: 260, rx: 160, ry: 140, op: 0.2, seed: 14, scale: 36, rot: 10 },
-        { c: '#FFB020', cx: 270, cy: 180, rx: 110, ry: 95, op: 0.18, seed: 22, scale: 32, rot: 0 }
+        { c: '#FFB01F', cx: 270, cy: 180, rx: 110, ry: 95, op: 0.18, seed: 22, scale: 32, rot: 0 }
     ]);
 }
 function contactBloom() {
@@ -241,7 +241,7 @@ document.querySelectorAll('[data-strip]').forEach(function (el) { el.innerHTML =
 
 /* ---- Scroll reveal (IntersectionObserver) ---- */
 (function () {
-    const els = document.querySelectorAll('.card, .sec-head, .client-logo, .contact-form, .product-card');
+    const els = document.querySelectorAll('.card, .sec-head, .client-logo, .contact-form, .product-card, .showcase-card');
     if (!els.length) return;
 
     els.forEach(el => el.classList.add('reveal'));
