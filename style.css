@@ -25,7 +25,7 @@
     --coral-d:  #E5503C;
     --emerald:  #14B88A;
     --emerald-d:#0E9670;
-    --amber:    #FFB020;
+    --amber:    #FFB01F;
     --amber-d:  #DB8F0C;
     --nexa:     #EC4767;
 
@@ -165,6 +165,8 @@ header nav {
 .eyebrow { display: inline-flex; align-items: center; gap: 0.8rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; color: var(--indigo-d); text-transform: uppercase; margin-bottom: 2rem; }
 .eyebrow::before { content: ''; width: 26px; height: 3px; border-radius: 2px; background: var(--coral); }
 .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }
+.hero .eyebrow::before { content: none; }
+.hero .eyebrow .dot { display: none; }
 .hero h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.8rem, 7vw, 5rem); line-height: 1.06; letter-spacing: -0.03em; color: var(--ink); max-width: 15ch; }
 .hero h1 .hl { color: var(--indigo); }
 .hero-sub { color: var(--ink-soft); font-size: 1.16rem; line-height: 1.7; max-width: 520px; margin-top: 1.8rem; }
@@ -197,7 +199,11 @@ a.card { display: block; text-decoration: none; }
 .section-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
 
 /* ---- website design and service architecture ---- */
-.website-service-callout { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; padding: 1.7rem 1.8rem; color: var(--ink); background: var(--ink); border: 1px solid var(--ink); border-radius: var(--radius-lg); box-shadow: var(--shadow); text-decoration: none; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+.website-service-callout {
+    position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; padding: 1.7rem 1.8rem;
+    color: var(--ink); border: 1.5px solid transparent; border-radius: var(--radius-lg); box-shadow: var(--shadow); text-decoration: none; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    background: linear-gradient(var(--ink), var(--ink)) padding-box, linear-gradient(90deg, var(--indigo), var(--emerald), var(--amber), var(--coral)) border-box;
+}
 .website-service-callout:hover { color: var(--ink); transform: translateY(-3px); box-shadow: 0 24px 52px -24px rgba(33,27,18,.5); }
 .website-callout-icon { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: var(--indigo); color: var(--ink); font-size: 1.7rem; }
 .website-callout-copy { display: grid; gap: .35rem; }
@@ -261,13 +267,26 @@ a.card { display: block; text-decoration: none; }
 
 /* ---- clients ---- */
 .clients { text-align: center; }
-.clients-row { display: flex; align-items: center; justify-content: center; gap: 4.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
 .client-logo { transition: transform 0.4s var(--ease), filter 0.4s var(--ease); }
 img.client-logo { height: 30px; width: auto; display: block; }
 .client-logo:hover { transform: translateY(-3px); filter: brightness(0.85); }
 .client-logo.fw { display: inline-flex; align-items: center; gap: 0.7rem; }
 .client-logo.fw img { height: 44px; width: auto; display: block; }
 .client-logo.fw span { font-family: var(--font-logo); font-weight: 700; font-size: 1.5rem; color: var(--ink); letter-spacing: -0.025em; }
+
+/* Clients marquee — continuous drift instead of a static row, same
+   spirit as the /work/ page's filmstrip but simple CSS (no scroll-pin
+   needed for a handful of logos). Track is the 3 logos duplicated once;
+   animating exactly -50% loops seamlessly. Pauses on hover so a visitor
+   can actually read a logo, and sits still under reduced-motion. */
+.clients-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.clients-track { display: flex; align-items: center; gap: 4.5rem; width: max-content; animation: clientsDrift 34s linear infinite; }
+.clients-marquee:hover .clients-track { animation-play-state: paused; }
+@keyframes clientsDrift { from { transform: translateX(0); } to { transform: translateX(-25%); } }
+@media (prefers-reduced-motion: reduce) {
+    .clients-track { animation: none; flex-wrap: wrap; justify-content: center; width: auto; }
+    .clients-track [aria-hidden="true"] { display: none; }
+}
 .dot-div { width: 100%; height: 32px; margin: 0 auto 3rem; max-width: 520px; }
 .dot-div svg { width: 100%; height: 100%; }
 
@@ -296,16 +315,37 @@ img.client-logo { height: 30px; width: auto; display: block; }
 .form-status a { color: inherit; text-decoration: underline; }
 
 /* ---- products / DM Nexa ---- */
-.product-card { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); display: grid; grid-template-columns: 1.05fr 0.95fr; }
+.products .container { perspective: 1400px; }
+.product-card { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); display: grid; grid-template-columns: 1.05fr 0.95fr; transform-style: preserve-3d; will-change: transform; }
 .product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--nexa), var(--coral)); z-index: 3; }
 .product-main { padding: 3rem 3rem 3rem; }
-.product-side { padding: 3rem; background: var(--paper-2); border-left: 1px solid var(--line); position: relative; }
+.product-side { position: relative; overflow: hidden; min-height: 460px; background: #b30f3a; }
+.product-feature-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; animation: productFloat 6s ease-in-out infinite; }
+@keyframes productFloat { 0%, 100% { transform: scale(1) translateY(0); } 50% { transform: scale(1.03) translateY(-8px); } }
+.product-side .live-badge { position: absolute; top: 1.5rem; right: 1.5rem; z-index: 2; margin-bottom: 0; background: rgba(255,252,246,.92); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); box-shadow: 0 8px 20px -10px rgba(20,16,10,.4); }
+.product-nav-bar { position: absolute; left: 1.2rem; right: 1.2rem; bottom: 1.2rem; z-index: 2; display: flex; justify-content: space-between; gap: .3rem; padding: .7rem .5rem; border-radius: 16px; background: rgba(20,16,10,.72); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 12px 30px -14px rgba(0,0,0,.5); }
+.pnb-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: .25rem; font-size: .62rem; font-weight: 600; color: rgba(255,252,246,.6); }
+.pnb-item i { font-size: 1.15rem; }
+.pnb-item.pnb-active { color: #fff; }
+@media (prefers-reduced-motion: reduce) {
+    .product-feature-media { animation: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .product-feature-media { animation: none; }
+    .product-side::before { animation: none; }
+}
 .dmnexa-logo { height: 46px; width: auto; margin-bottom: 1.4rem; }
 .product-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--nexa); margin-bottom: 1.1rem; }
 .product-main p.desc { font-size: 1.05rem; color: var(--ink-soft); line-height: 1.7; max-width: 42ch; margin-bottom: 1.8rem; }
 .feat-list { list-style: none; display: grid; gap: 0.85rem; margin-bottom: 2rem; }
 .feat-list li { display: flex; align-items: center; gap: 0.85rem; font-size: 0.96rem; color: var(--ink-soft); }
 .feat-list li i { font-size: 1.25rem; color: var(--indigo); flex: none; }
+.works-with { display: flex; align-items: center; flex-wrap: wrap; gap: .7rem; margin-bottom: 1.5rem; }
+.works-with-label { font-size: .74rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.works-with-pill { display: inline-flex; align-items: center; gap: .4rem; font-size: .82rem; font-weight: 700; color: var(--ink); background: var(--paper-2); border: 1px solid var(--line); padding: .4rem .85rem; border-radius: 30px; transition: transform .3s var(--ease), border-color .3s var(--ease); }
+.works-with-pill:hover { transform: translateY(-2px); border-color: var(--nexa); }
+.works-with-pill i { font-size: 1.05rem; color: var(--nexa); }
+.works-with-pill img { height: 16px; width: auto; display: block; }
 .btn-nexa { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.95rem 2rem; background: var(--nexa); color: #fff; font-weight: 700; font-size: 0.86rem; border: none; border-radius: 30px; cursor: pointer; transition: background 0.3s var(--ease), transform 0.3s var(--ease); }
 .btn-nexa:hover { background: #d23456; transform: translateY(-2px); }
 .live-badge { display: inline-flex; align-items: center; gap: 0.6rem; white-space: nowrap; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--emerald-d); border: 1px solid var(--line); background: var(--card); padding: 0.45rem 1.1rem; border-radius: 30px; margin-bottom: 1.6rem; }
@@ -560,6 +600,23 @@ main { display: block; }
 .filter-pill:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
 
 .showcase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+/* Scattered-polaroid tilt — a small, deliberate rest-state rotation per
+   card that straightens on hover. Only on the homepage's sample-of-work
+   grid (.scatter-grid); /work/'s own grid stays clean/untilted. */
+.scatter-grid.showcase-grid { gap: 2rem 1.5rem; }
+.scatter-grid .showcase-card { transition: transform .45s var(--ease), box-shadow .45s var(--ease); }
+.scatter-grid .tilt-1 { transform: rotate(-2.2deg); }
+.scatter-grid .tilt-2 { transform: rotate(1.8deg) translateY(10px); }
+.scatter-grid .tilt-3 { transform: rotate(-1.4deg) translateY(-6px); }
+.scatter-grid .tilt-4 { transform: rotate(2.4deg); }
+.scatter-grid .showcase-card:hover { transform: rotate(0deg) translateY(-8px) scale(1.02); box-shadow: var(--shadow); z-index: 2; }
+@media (max-width: 880px) {
+    .scatter-grid .showcase-card { transform: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .scatter-grid .showcase-card, .scatter-grid .showcase-card:hover { transform: none; }
+}
 .showcase-card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; text-decoration: none; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
 .showcase-card[hidden] { display: none; } /* [hidden] alone loses to the .showcase-card{display:flex} rule above at equal specificity — this wins */
 .showcase-card:hover { transform: translateY(-7px) rotate(-0.4deg); box-shadow: var(--shadow); }
@@ -590,33 +647,62 @@ main { display: block; }
    scoped modifiers, not touching the shared .card used across the rest
    of the site. Gives them the same Prism-palette energy as the stat
    cards and showcase grid above them instead of sitting flat/neutral. */
-.capability-cards .card { border-width: 1.5px; }
-.cap-c1 { border-color: rgba(95,190,133,.4); }
-.cap-c1:hover { border-color: rgba(95,190,133,.7); }
-.cap-c2 { border-color: rgba(255,107,87,.4); }
-.cap-c2:hover { border-color: rgba(255,107,87,.7); }
-.cap-c3 { border-color: rgba(255,176,32,.45); }
-.cap-c3:hover { border-color: rgba(255,176,32,.75); }
+.capability-cards .card, .icon-card { border-width: 1.5px; }
+.cap-c1, .icon-mint { border-color: rgba(95,190,133,.4); }
+.cap-c1:hover, .icon-mint:hover { border-color: rgba(95,190,133,.7); }
+.cap-c2, .icon-coral { border-color: rgba(255,107,87,.4); }
+.cap-c2:hover, .icon-coral:hover { border-color: rgba(255,107,87,.7); }
+.cap-c3, .icon-amber { border-color: rgba(255,176,32,.45); }
+.cap-c3:hover, .icon-amber:hover { border-color: rgba(255,176,32,.75); }
+.icon-emerald { border-color: rgba(20,184,138,.4); }
+.icon-emerald:hover { border-color: rgba(20,184,138,.7); }
+.icon-nexa { border-color: rgba(236,71,103,.4); }
+.icon-nexa:hover { border-color: rgba(236,71,103,.7); }
+
+/* Artistic card treatment (homepage icon cards only — .icon-mint etc.
+   are not used by /work/'s cap-c1/c2/c3 cards, so this never touches
+   those). A quiet, deep-toned rest state — no rainbow, no blur-blob —
+   plus one deliberate scroll-triggered moment: the border traces
+   itself in as the card enters view, driven by JS setting --draw
+   (0% to 100%) on the element (see home.js cardBorderDraw). Built with
+   the classic padding-box/border-box mask-composite ring trick, so
+   it's a crisp 1.5px line, not a glow. Rest state (--draw defaults to
+   100% via the fallback below) is a fully-drawn quiet border if JS
+   never runs — fails open to "looks intentional," never half-drawn. */
+.icon-mint, .icon-coral, .icon-amber, .icon-emerald, .icon-nexa { position: relative; border: 1px solid var(--line); background: var(--card); }
+.icon-mint::before, .icon-coral::before, .icon-amber::before, .icon-emerald::before, .icon-nexa::before {
+    content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit;
+    padding: 1.5px;
+    background: conic-gradient(from 0deg, var(--card-c1) var(--draw, 100%), transparent var(--draw, 100%));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+}
+.icon-mint { --card-c1: var(--indigo-deep); }
+.icon-coral { --card-c1: var(--coral-d); }
+.icon-amber { --card-c1: var(--amber); }
+.icon-emerald { --card-c1: var(--emerald-d); }
+.icon-nexa { --card-c1: #C22851; }
 
 /* Freehand-illustrator-style icon badges: a hand-drawn wobbly blob
    behind a loose, imperfect line-art glyph, instead of the sterile
    circle-outline Phosphor icon used by .card elsewhere on the site.
-   Scoped to .capability-cards only. */
-.capability-cards .ic { width: 64px; height: 64px; border: none; background: none; border-radius: 0; margin-bottom: 1.2rem; transition: transform .5s var(--ease); }
-.capability-cards .ic svg { width: 100%; height: 100%; display: block; overflow: visible; }
-.capability-cards .card:hover .ic { transform: rotate(-6deg) scale(1.08); background: none; border: none; color: inherit; }
-.capability-cards .ic .blob { transition: fill .4s var(--ease); }
-.capability-cards .card:hover .ic .glyph { animation: capWiggle .6s ease-in-out; }
-.capability-cards .ic .spark { transition: opacity .4s var(--ease), transform .4s var(--ease); opacity: 0; transform: scale(.4); transform-origin: center; }
-.capability-cards .card:hover .ic .spark { opacity: 1; transform: scale(1); }
+   .blob-icon is the general-purpose class (any page); .capability-cards
+   .ic is kept as an alias so the existing /work/ markup still matches. */
+.capability-cards .ic, .blob-icon { width: 64px; height: 64px; border: none; background: none; border-radius: 0; margin-bottom: 1.2rem; transition: transform .5s var(--ease); }
+.capability-cards .ic svg, .blob-icon svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.capability-cards .card:hover .ic, .card:hover .blob-icon { transform: rotate(-6deg) scale(1.08); background: none; border: none; color: inherit; }
+.capability-cards .ic .blob, .blob-icon .blob { transition: fill .4s var(--ease); }
+.capability-cards .card:hover .ic .glyph, .card:hover .blob-icon .glyph { animation: capWiggle .6s ease-in-out; }
+.capability-cards .ic .spark, .blob-icon .spark { transition: opacity .4s var(--ease), transform .4s var(--ease); opacity: 0; transform: scale(.4); transform-origin: center; }
+.capability-cards .card:hover .ic .spark, .card:hover .blob-icon .spark { opacity: 1; transform: scale(1); }
 @keyframes capWiggle {
     0%, 100% { transform: rotate(0deg); }
     30% { transform: rotate(-7deg); }
     65% { transform: rotate(6deg); }
 }
 @media (prefers-reduced-motion: reduce) {
-    .capability-cards .card:hover .ic { transform: none; }
-    .capability-cards .card:hover .ic .glyph { animation: none; }
+    .capability-cards .card:hover .ic, .card:hover .blob-icon { transform: none; }
+    .capability-cards .card:hover .ic .glyph, .card:hover .blob-icon .glyph { animation: none; }
 }
 
 /* ============================================================

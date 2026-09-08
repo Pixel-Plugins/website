@@ -109,7 +109,7 @@
       <div class="swatch copy" data-copy="#95DDAC"><div class="chip" style="background:#95DDAC"></div><div class="meta"><div class="name">Mint</div><div class="hex">#95DDAC <i class="ph-light ph-copy"></i></div></div></div>
       <div class="swatch copy" data-copy="#FF6B57"><div class="chip" style="background:#FF6B57"></div><div class="meta"><div class="name">Coral</div><div class="hex">#FF6B57 <i class="ph-light ph-copy"></i></div></div></div>
       <div class="swatch copy" data-copy="#14B88A"><div class="chip" style="background:#14B88A"></div><div class="meta"><div class="name">Emerald</div><div class="hex">#14B88A <i class="ph-light ph-copy"></i></div></div></div>
-      <div class="swatch copy" data-copy="#FFB020"><div class="chip" style="background:#FFB020"></div><div class="meta"><div class="name">Amber</div><div class="hex">#FFB020 <i class="ph-light ph-copy"></i></div></div></div>
+      <div class="swatch copy" data-copy="#FFB01F"><div class="chip" style="background:#FFB01F"></div><div class="meta"><div class="name">Amber</div><div class="hex">#FFB01F <i class="ph-light ph-copy"></i></div></div></div>
     </div>
 
     <div class="sub-label">Canvas &amp; ink</div>
@@ -271,13 +271,13 @@
 /* ---- logo mark: indigo chevrons + coral pixel ---- */
 function markSVG(variant, tight) {
   var C = {
-    brand:  { stroke: '#5FBE85', fill: '#FFB020' },
-    amber:  { stroke: '#FFB020', fill: '#FFB020' },
+    brand:  { stroke: '#5FBE85', fill: '#FFB01F' },
+    amber:  { stroke: '#FFB01F', fill: '#FFB01F' },
     ink:    { stroke: '#211B12', fill: '#211B12' },
-    paper:  { stroke: '#FFFCF6', fill: '#FFB020' },
+    paper:  { stroke: '#FFFCF6', fill: '#FFB01F' },
     onfill: { stroke: '#ffffff', fill: '#ffffff' },
     wrong:  { stroke: '#7BA05B', fill: '#C99BC0' }
-  }[variant] || { stroke: '#5FBE85', fill: '#FFB020' };
+  }[variant] || { stroke: '#5FBE85', fill: '#FFB01F' };
   var vb = tight ? '17.5 27.5 85 65' : '0 0 120 120';
   return '<svg viewBox="' + vb + '" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display:block" xmlns="http://www.w3.org/2000/svg">'
     + '<polyline points="48,32 22,60 48,88" fill="none" stroke="' + C.stroke + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>'
@@ -291,7 +291,7 @@ document.querySelectorAll('[data-mk]').forEach(function (el) {
 
 /* ---- Pixel Bloom: floating, twinkling pixel field ---- */
 function mulberry(s) { return function () { s |= 0; s = s + 0x6D2B79F5 | 0; var t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
-var PRISM = ['#95DDAC', '#FF6B57', '#14B88A', '#FFB020'];
+var PRISM = ['#95DDAC', '#FF6B57', '#14B88A', '#FFB01F'];
 function generateFloatField(el, opts) {
   opts = opts || {};
   var count = opts.count || 32, seed = opts.seed || 7, r = mulberry(seed);
@@ -333,7 +333,7 @@ function colorBloom() {
     { c: '#95DDAC', cx: 260, cy: 150, rx: 260, ry: 170, op: 0.28, seed: 8, scale: 44, rot: -6 },
     { c: '#FF6B57', cx: 560, cy: 170, rx: 220, ry: 150, op: 0.24, seed: 14, scale: 40, rot: 10 },
     { c: '#14B88A', cx: 830, cy: 140, rx: 210, ry: 150, op: 0.22, seed: 22, scale: 40, rot: -8 },
-    { c: '#FFB020', cx: 660, cy: 210, rx: 140, ry: 100, op: 0.2,  seed: 30, scale: 34, rot: 0 }
+    { c: '#FFB01F', cx: 660, cy: 210, rx: 140, ry: 100, op: 0.2,  seed: 30, scale: 34, rot: 0 }
   ]);
 }
 document.querySelectorAll('[data-cb]').forEach(function (el) { el.innerHTML = colorBloom(); });
