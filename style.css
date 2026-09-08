@@ -564,7 +564,7 @@ main { display: block; }
 .showcase-media.tint-d, .filmstrip-media.tint-d { background: linear-gradient(135deg, rgba(255,176,32,.28), rgba(255,107,87,.14)); }
 .showcase-media.tint-e, .filmstrip-media.tint-e { background: linear-gradient(135deg, rgba(236,71,103,.24), rgba(20,184,138,.14)); }
 .showcase-media.tint-dark, .filmstrip-media.tint-dark { background: linear-gradient(135deg, rgba(33,27,18,.94), rgba(74,66,50,.88)); }
-.showcase-media.bg-ink, .filmstrip-media.bg-ink { background: #101010; }
+.showcase-media.bg-ink, .filmstrip-media.bg-ink { background: #292929; }
 .showcase-media.is-placeholder .placeholder-logo, .filmstrip-media.is-placeholder .placeholder-logo { max-width: 62%; max-height: 52%; width: auto; height: auto; object-fit: contain; }
 .showcase-body { display: flex; flex-direction: column; flex: 1; padding: 1.5rem 1.6rem 1.7rem; }
 .showcase-client { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--ink); margin-bottom: .4rem; }
