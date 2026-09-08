@@ -37,51 +37,38 @@
         if (sub) tl.to(sub, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.5');
     })();
 
-    /* ---- featured reel: pinned, scroll-scrubbed crossfade through
-       projects. This is the one place on the page where scroll position
-       is doing real work (advancing which project you're looking at),
-       not decoration — everything else stays fast one-time reveals. ---- */
-    (function featuredReel() {
-        var section = document.querySelector('.reel-section');
-        if (!section) return;
-        var slides = Array.prototype.slice.call(section.querySelectorAll('.reel-slide'));
-        var dots = Array.prototype.slice.call(section.querySelectorAll('.reel-dot'));
-        if (slides.length < 2) return;
+    /* ---- filmstrip: pinned, scroll-scrubbed horizontal card row.
+       Scroll position drives which cards are in view (real work, not
+       decoration) but the section itself stays a normal-height part of
+       the page — only the row scrubs sideways, nothing takes over the
+       viewport. Degrades to a native swipeable row (CSS scroll-snap) on
+       small screens / reduced motion. ---- */
+    (function filmstrip() {
+        var section = document.querySelector('.filmstrip-section');
+        var stage = section && section.querySelector('.filmstrip-stage');
+        var track = section && section.querySelector('.filmstrip-track');
+        if (!section || !stage || !track) return;
 
         var isSmall = window.matchMedia('(max-width: 880px)').matches;
         if (!hasGsap || prefersReduced() || isSmall) {
-            return; // CSS media query already stacks every slide, fully visible, no pin
+            return; // CSS handles this as a native horizontal scroll-snap row
         }
 
-        gsap.set(slides, { opacity: 0 });
-        gsap.set(slides[0], { opacity: 1 });
+        var scrollAmount = function () {
+            return Math.max(0, track.scrollWidth - stage.clientWidth);
+        };
 
-        var current = 0;
-        function setActiveDot(i) {
-            if (i === current) return;
-            current = i;
-            dots.forEach(function (d, di) { d.classList.toggle('is-active', di === i); });
-        }
-
-        var tl = gsap.timeline({
+        gsap.to(track, {
+            x: function () { return -scrollAmount(); },
+            ease: 'none',
             scrollTrigger: {
                 trigger: section,
-                start: 'top top',
-                end: 'bottom bottom',
-                pin: section.querySelector('.reel-stage'),
-                scrub: 0.7,
-                onUpdate: function (self) {
-                    var idx = Math.min(slides.length - 1, Math.round(self.progress * (slides.length - 1)));
-                    setActiveDot(idx);
-                }
+                start: 'top top+=84',
+                end: function () { return '+=' + scrollAmount(); },
+                scrub: 0.6,
+                pin: stage,
+                invalidateOnRefresh: true
             }
-        });
-
-        slides.forEach(function (slide, i) {
-            if (i === 0) return;
-            var pos = i - 1;
-            tl.to(slides[i - 1], { opacity: 0, duration: 1 }, pos)
-              .to(slide, { opacity: 1, duration: 1 }, pos);
         });
 
         window.addEventListener('load', function () { ScrollTrigger.refresh(); });

@@ -487,35 +487,28 @@ main { display: block; }
 .ol-foot button:hover { color: var(--ink); }
 
 /* ============================================================
-   FEATURED REEL  (work/index.html — pinned scroll-driven showreel)
+   FILMSTRIP  (work/index.html — pinned horizontal scroll-scrub)
+   Section sits in normal page flow (container width, page bg visible
+   above/below) — only the card row itself scrubs horizontally as the
+   page scrolls. Not a full-viewport takeover.
    ============================================================ */
-.reel-section { position: relative; height: calc(100vh * 6); }
-.reel-stage { position: sticky; top: 0; height: 100vh; overflow: hidden; background: var(--ink); }
-.reel-slides { position: relative; width: 100%; height: 100%; }
-.reel-slide { position: absolute; inset: 0; opacity: 0; }
-.reel-slide.is-active { opacity: 1; }
-.reel-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.reel-scrim { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20,16,10,.94) 0%, rgba(20,16,10,.4) 46%, rgba(20,16,10,.12) 72%); }
-.reel-copy { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: clamp(2rem,5vw,4.5rem); max-width: 760px; color: var(--paper); }
-.reel-index { display: block; font-family: var(--font-mono); font-size: .8rem; letter-spacing: .1em; color: var(--indigo); margin-bottom: 1.1rem; }
-.reel-tag { display: inline-flex; font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--paper); background: rgba(255,252,246,.14); border: 1px solid rgba(255,252,246,.28); padding: .35rem .8rem; border-radius: 30px; margin-bottom: 1.1rem; }
-.reel-title { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.4rem,6vw,4.5rem); line-height: 1.02; letter-spacing: -.03em; margin-bottom: 1rem; }
-.reel-desc { font-size: 1.05rem; line-height: 1.6; color: rgba(255,252,246,.84); max-width: 55ch; margin-bottom: 1.7rem; }
-.reel-link { display: inline-flex; align-items: center; gap: .5rem; color: var(--indigo-deep); background: var(--indigo); font-weight: 800; font-size: .85rem; padding: .9rem 1.7rem; border-radius: 30px; transition: background .3s var(--ease), transform .3s var(--ease); }
-.reel-link:hover { background: #fff; transform: translateY(-2px); }
-
-.reel-dots { position: absolute; right: clamp(1.2rem,3vw,3rem); top: 50%; transform: translateY(-50%); z-index: 3; display: flex; flex-direction: column; gap: .9rem; }
-.reel-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,252,246,.32); transition: all .35s var(--ease); }
-.reel-dot.is-active { background: var(--indigo); transform: scale(1.7); }
-
-.reel-scroll-hint { position: absolute; left: 50%; bottom: 1.6rem; transform: translateX(-50%); z-index: 3; display: inline-flex; align-items: center; gap: .5rem; color: rgba(255,252,246,.65); font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; animation: pbFloat 2.2s ease-in-out infinite; --o: .8; }
+.filmstrip-section { overflow: hidden; }
+.filmstrip-stage { overflow: hidden; margin-top: 1rem; }
+.filmstrip-track { display: flex; gap: 1.75rem; padding: 0 2.5rem; will-change: transform; }
+.filmstrip-card { flex: none; width: 300px; display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; text-decoration: none; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+.filmstrip-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.filmstrip-media { aspect-ratio: 3 / 4; overflow: hidden; background: var(--paper-2); }
+.filmstrip-media img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .6s var(--ease); }
+.filmstrip-card:hover .filmstrip-media img { transform: scale(1.06); }
+.filmstrip-body { padding: 1.3rem 1.4rem 1.5rem; }
+.filmstrip-tag { display: inline-flex; font-size: .64rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--coral-d); background: rgba(255,107,87,.08); border: 1px solid var(--line); padding: .3rem .7rem; border-radius: 30px; margin-bottom: .8rem; }
+.filmstrip-body h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.08rem; color: var(--ink); margin-bottom: .4rem; }
+.filmstrip-body p { font-size: .86rem; color: var(--muted); line-height: 1.6; }
 
 @media (max-width: 880px), (prefers-reduced-motion: reduce) {
-    .reel-section { height: auto; }
-    .reel-stage { position: relative; height: auto; }
-    .reel-slides { position: static; display: flex; flex-direction: column; gap: 2px; }
-    .reel-slide { position: relative; opacity: 1 !important; height: 68vh; min-height: 420px; }
-    .reel-dots, .reel-scroll-hint { display: none; }
+    .filmstrip-stage { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+    .filmstrip-track { padding: 0 1.5rem; }
+    .filmstrip-card { width: 76vw; max-width: 300px; scroll-snap-align: start; }
 }
 
 /* ============================================================
