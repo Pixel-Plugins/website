@@ -27,13 +27,64 @@
         }
 
         var split = new SplitText(h1, { type: 'words,chars' });
-        gsap.set([eyebrow, sub].filter(Boolean), { opacity: 0, y: 14 });
-        gsap.set(split.chars, { opacity: 0, y: '0.6em' });
+        gsap.set([eyebrow, sub].filter(Boolean), { opacity: 0, y: 20 });
+        gsap.set(split.chars, { opacity: 0, y: '1.1em', rotateZ: 6 });
+        gsap.set(h1, { perspective: 400 });
 
-        var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-        if (eyebrow) tl.to(eyebrow, { opacity: 1, y: 0, duration: 0.5 });
-        tl.to(split.chars, { opacity: 1, y: 0, duration: 0.6, stagger: 0.012 }, '-=0.25');
-        if (sub) tl.to(sub, { opacity: 1, y: 0, duration: 0.5 }, '-=0.3');
+        var tl = gsap.timeline({ defaults: { ease: 'back.out(1.6)' } });
+        if (eyebrow) tl.to(eyebrow, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
+        tl.to(split.chars, { opacity: 1, y: 0, rotateZ: 0, duration: 0.9, stagger: 0.022 }, '-=0.3');
+        if (sub) tl.to(sub, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.5');
+    })();
+
+    /* ---- featured reel: pinned, scroll-scrubbed crossfade through
+       projects. This is the one place on the page where scroll position
+       is doing real work (advancing which project you're looking at),
+       not decoration — everything else stays fast one-time reveals. ---- */
+    (function featuredReel() {
+        var section = document.querySelector('.reel-section');
+        if (!section) return;
+        var slides = Array.prototype.slice.call(section.querySelectorAll('.reel-slide'));
+        var dots = Array.prototype.slice.call(section.querySelectorAll('.reel-dot'));
+        if (slides.length < 2) return;
+
+        var isSmall = window.matchMedia('(max-width: 880px)').matches;
+        if (!hasGsap || prefersReduced() || isSmall) {
+            return; // CSS media query already stacks every slide, fully visible, no pin
+        }
+
+        gsap.set(slides, { opacity: 0 });
+        gsap.set(slides[0], { opacity: 1 });
+
+        var current = 0;
+        function setActiveDot(i) {
+            if (i === current) return;
+            current = i;
+            dots.forEach(function (d, di) { d.classList.toggle('is-active', di === i); });
+        }
+
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: 'top top',
+                end: 'bottom bottom',
+                pin: section.querySelector('.reel-stage'),
+                scrub: 0.7,
+                onUpdate: function (self) {
+                    var idx = Math.min(slides.length - 1, Math.round(self.progress * (slides.length - 1)));
+                    setActiveDot(idx);
+                }
+            }
+        });
+
+        slides.forEach(function (slide, i) {
+            if (i === 0) return;
+            var pos = i - 1;
+            tl.to(slides[i - 1], { opacity: 0, duration: 1 }, pos)
+              .to(slide, { opacity: 1, duration: 1 }, pos);
+        });
+
+        window.addEventListener('load', function () { ScrollTrigger.refresh(); });
     })();
 
     /* ---- elevated entrance for every section's cards, batched ---- */
@@ -43,18 +94,33 @@
         var mm = gsap.matchMedia();
         mm.add('(prefers-reduced-motion: no-preference)', function () {
             ScrollTrigger.batch('.card, .showcase-card, .product-card', {
-                start: 'top 90%',
+                start: 'top 92%',
                 once: true,
                 onEnter: function (batch) {
                     gsap.fromTo(batch,
-                        { opacity: 0, y: 26, scale: 0.97 },
-                        { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: 'power3.out', stagger: 0.07 });
+                        { opacity: 0, y: 64, scale: 0.86, rotateZ: -1.5 },
+                        { opacity: 1, y: 0, scale: 1, rotateZ: 0, duration: 0.8, ease: 'back.out(1.5)', stagger: 0.1 });
+                }
+            });
+            ScrollTrigger.batch('.stat-item', {
+                start: 'top 92%',
+                once: true,
+                onEnter: function (batch) {
+                    gsap.fromTo(batch,
+                        { opacity: 0, y: 24, scale: 0.8 },
+                        { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'back.out(1.8)', stagger: 0.12 });
                 }
             });
         });
         // Reduced-motion: elements are already visible by default (no CSS
         // hides them pre-JS), so there is nothing to do in that branch —
         // fail-open by construction.
+
+        // Images (with fixed width/height + aspect-ratio, so no layout
+        // shift) can still finish decoding after ScrollTrigger's first
+        // measurement pass — refresh once more after full load so trigger
+        // positions for anything further down the page stay accurate.
+        window.addEventListener('load', function () { ScrollTrigger.refresh(); });
     })();
 
     /* ---- Websites We've Built: filter pills + grid ---- */
@@ -92,18 +158,18 @@
             var tl = gsap.timeline({ onComplete: function () { animating = false; } });
 
             if (toHide.length) {
-                tl.to(toHide, { opacity: 0, y: 8, scale: 0.96, duration: 0.18, ease: 'power2.in', stagger: 0.012 });
+                tl.to(toHide, { opacity: 0, y: 14, scale: 0.92, duration: 0.2, ease: 'power2.in', stagger: 0.015 });
             }
             tl.call(function () {
                 toHide.forEach(function (c) { c.hidden = true; });
                 toShow.forEach(function (c) {
                     c.hidden = false;
-                    gsap.set(c, { opacity: 0, y: 8, scale: 0.96 });
+                    gsap.set(c, { opacity: 0, y: 20, scale: 0.9 });
                 });
                 announce(showSet.length);
             });
             if (toShow.length) {
-                tl.to(toShow, { opacity: 1, y: 0, scale: 1, duration: 0.32, ease: 'power2.out', stagger: 0.03 });
+                tl.to(toShow, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(1.4)', stagger: 0.045 });
             }
         }
 
