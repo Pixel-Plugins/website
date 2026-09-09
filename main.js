@@ -11,7 +11,7 @@ document.querySelectorAll('[data-mk]').forEach(function (el) { el.innerHTML = ma
 
 /* ---- Pixel Bloom: floating, twinkling pixel field ---- */
 function mulberry(s) { return function () { s |= 0; s = s + 0x6D2B79F5 | 0; var t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
-var PRISM = ['#95DDAC', '#FF6B57', '#14B88A', '#FFB01F'];
+var PRISM = ['#95DDAC', '#3E8FA8', '#14B88A', '#FFB01F', '#FF6B57'];
 function generateFloatField(el, opts) {
     opts = opts || {};
     var count = opts.count || 32, seed = opts.seed || 7, r = mulberry(seed);
