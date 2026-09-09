@@ -556,8 +556,8 @@ main { display: block; }
 .logo-badge img { display: block; max-width: 100%; max-height: 22px; width: auto; height: auto; object-fit: contain; }
 .logo-badge.is-large img { max-height: 38px; }
 .filmstrip-body { display: flex; flex-direction: column; padding: 1.3rem 1.4rem 1.5rem; }
-.filmstrip-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .8rem; }
-.filmstrip-tag { display: inline-flex; font-size: .62rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); background: var(--paper-2); border: 1px solid var(--line); padding: .28rem .6rem; border-radius: 30px; }
+.filmstrip-tags { display: flex; flex-wrap: wrap; gap: .3rem; margin-bottom: .8rem; }
+.filmstrip-tag { display: inline-flex; font-size: .56rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); background: var(--paper-2); border: 1px solid var(--line); padding: .22rem .5rem; border-radius: 30px; }
 .filmstrip-tag:first-child { color: var(--coral-d); background: rgba(255,107,87,.08); }
 .filmstrip-body h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.08rem; color: var(--ink); margin-bottom: .4rem; min-height: 1.4em; }
 .filmstrip-body p { font-size: .86rem; color: var(--muted); line-height: 1.6; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; min-height: calc(1.6em * 2); }
@@ -640,8 +640,8 @@ main { display: block; }
 .showcase-body { display: flex; flex-direction: column; flex: 1; padding: 1.5rem 1.6rem 1.7rem; }
 .showcase-client { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--ink); margin-bottom: .4rem; }
 .showcase-desc { font-size: .9rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; min-height: calc(1.65em * 3); }
-.showcase-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: auto; margin-bottom: .9rem; }
-.showcase-tag { font-size: .64rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); background: var(--paper-2); border: 1px solid var(--line); padding: .28rem .65rem; border-radius: 30px; }
+.showcase-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: auto; margin-bottom: .9rem; }
+.showcase-tag { font-size: .58rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); background: var(--paper-2); border: 1px solid var(--line); padding: .22rem .55rem; border-radius: 30px; }
 .showcase-link { display: inline-flex; align-items: center; gap: .4rem; color: var(--indigo-d); font-weight: 800; font-size: .8rem; }
 
 /* Capability cards (work/index.html "Find the relevant capability") —
