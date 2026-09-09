@@ -27,6 +27,7 @@
     --emerald-d:#0E9670;
     --amber:    #FFB01F;
     --amber-d:  #DB8F0C;
+    --teal:     #3E8FA8;
     --nexa:     #EC4767;
 
     --accent: var(--indigo);
@@ -202,7 +203,7 @@ a.card { display: block; text-decoration: none; }
 .website-service-callout {
     position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; padding: 1.7rem 1.8rem;
     color: var(--ink); border: 1.5px solid transparent; border-radius: var(--radius-lg); box-shadow: var(--shadow); text-decoration: none; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
-    background: linear-gradient(var(--ink), var(--ink)) padding-box, linear-gradient(90deg, var(--indigo), var(--emerald), var(--amber), var(--coral)) border-box;
+    background: linear-gradient(var(--ink), var(--ink)) padding-box, linear-gradient(90deg, var(--indigo), var(--teal), var(--emerald), var(--amber), var(--coral)) border-box;
 }
 .website-service-callout:hover { color: var(--ink); transform: translateY(-3px); box-shadow: 0 24px 52px -24px rgba(33,27,18,.5); }
 .website-callout-icon { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: var(--indigo); color: var(--ink); font-size: 1.7rem; }
