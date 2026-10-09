@@ -718,9 +718,17 @@ main { display: block; }
 .orbit-ring-1 { inset: 0; }
 .orbit-ring-2 { inset: 14%; border-color: var(--faint); animation-duration: 34s; animation-direction: reverse; }
 .orbit-ring-2::before { background: var(--amber); }
-.orbit-ring-3 { inset: 28%; animation-duration: 22s; }
+.orbit-ring-3 { inset: 26%; animation-duration: 22s; }
 .orbit-ring-3::before { background: var(--emerald); }
-.orbit-core { position: absolute; inset: 39%; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: var(--paper); font-family: var(--font-logo); font-weight: 700; font-size: .95rem; letter-spacing: -.01em; box-shadow: 0 0 0 10px var(--glow); }
+.orbit-core { position: absolute; inset: 36%; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: var(--indigo); box-shadow: 0 0 0 10px var(--glow); }
+.orbit-core .orbit-mark { width: 62%; height: 62%; }
+/* Orbit's own logo: the mark plus a lowercase wordmark. The wordmark is set
+   in Arial/Helvetica because that is the face the product itself uses, so it
+   deliberately does not follow the site's font tokens. */
+.orbit-logo { display: flex; align-items: center; gap: .6rem; margin-bottom: 1.4rem; color: var(--ink); line-height: 1; }
+.orbit-logo .orbit-mark { flex: none; width: 44px; height: 44px; color: var(--indigo-deep); }
+.orbit-logo-name { font-family: Arial, Helvetica, sans-serif; font-size: 2.4rem; font-weight: 700; letter-spacing: -.05em; }
+.website-callout-icon .orbit-mark { width: 34px; height: 34px; }
 @keyframes orbitSpin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) {
     .orbit-ring { animation: none; }
