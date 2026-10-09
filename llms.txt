@@ -70,6 +70,7 @@ The working model is partnership rather than a one-time technical handoff: Pixel
 ## Products & Work
 
 - [DMNexa](https://www.pixelplugins.com/products/dmnexa/): AI order assistant for social sellers, live on iOS, Android, and web
+- [Orbit](https://www.pixelplugins.com/products/orbit/): PixelPlugins' own website platform — custom design per website, draft-then-publish editing, hosting, custom domains, search setup, and AI-assistant access
 - [DMNexa Case Study](https://www.pixelplugins.com/work/dmnexa/): Engineering case study — from conversations to structured orders
 - [All Work](https://www.pixelplugins.com/work/): Case studies index
 
