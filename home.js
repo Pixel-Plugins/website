@@ -5,7 +5,7 @@
    entrance (upgrades main.js's plain CSS fade to the punchier
    pop-in used on /work/ when GSAP is available — main.js's own
    system is untouched and still runs, so this always fails open),
-   and a cursor-follow 3D tilt on the DMNexa product card.
+   and a cursor-follow 3D tilt on the product cards.
    Loaded only on index.html, after gsap, ScrollTrigger, SplitText.
    ============================================================ */
 (function () {
@@ -74,44 +74,45 @@
         });
     })();
 
-    /* ---- DMNexa product card: cursor-follow 3D tilt. Desktop/hover-
+    /* ---- Product cards (DMNexa, Orbit): cursor-follow 3D tilt. Desktop/hover-
        capable pointers only — matchMedia handles teardown if the
        pointer type changes (rare, but free correctness via the same
        gsap.matchMedia pattern used above and in work/work.js). ---- */
     (function productTilt() {
-        var card = document.querySelector('.product-card');
-        if (!card || !hasGsap) return;
+        if (!hasGsap) return;
 
-        var mm = gsap.matchMedia();
-        mm.add('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)', function () {
-            var rotX, rotY;
-            try {
-                rotX = gsap.quickTo(card, 'rotateX', { duration: 0.6, ease: 'power3.out' });
-                rotY = gsap.quickTo(card, 'rotateY', { duration: 0.6, ease: 'power3.out' });
-            } catch (e) {
-                return undefined;
-            }
+        gsap.utils.toArray('.product-card').forEach(function (card) {
+            var mm = gsap.matchMedia();
+            mm.add('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)', function () {
+                var rotX, rotY;
+                try {
+                    rotX = gsap.quickTo(card, 'rotateX', { duration: 0.6, ease: 'power3.out' });
+                    rotY = gsap.quickTo(card, 'rotateY', { duration: 0.6, ease: 'power3.out' });
+                } catch (e) {
+                    return undefined;
+                }
 
-            function onMove(e) {
-                var r = card.getBoundingClientRect();
-                var px = (e.clientX - r.left) / r.width - 0.5;
-                var py = (e.clientY - r.top) / r.height - 0.5;
-                rotY(px * 10);
-                rotX(py * -10);
-            }
-            function onLeave() {
-                rotX(0);
-                rotY(0);
-            }
+                function onMove(e) {
+                    var r = card.getBoundingClientRect();
+                    var px = (e.clientX - r.left) / r.width - 0.5;
+                    var py = (e.clientY - r.top) / r.height - 0.5;
+                    rotY(px * 10);
+                    rotX(py * -10);
+                }
+                function onLeave() {
+                    rotX(0);
+                    rotY(0);
+                }
 
-            card.addEventListener('mousemove', onMove);
-            card.addEventListener('mouseleave', onLeave);
+                card.addEventListener('mousemove', onMove);
+                card.addEventListener('mouseleave', onLeave);
 
-            return function () {
-                card.removeEventListener('mousemove', onMove);
-                card.removeEventListener('mouseleave', onLeave);
-                gsap.set(card, { clearProps: 'transform' });
-            };
+                return function () {
+                    card.removeEventListener('mousemove', onMove);
+                    card.removeEventListener('mouseleave', onLeave);
+                    gsap.set(card, { clearProps: 'transform' });
+                };
+            });
         });
     })();
 
