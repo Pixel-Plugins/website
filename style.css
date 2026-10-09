@@ -162,7 +162,7 @@ header nav {
 .hero { position: relative; overflow: hidden; }
 .hero-field { position: absolute; top: -100px; right: -140px; width: 720px; height: 720px; z-index: 0; pointer-events: none; overflow: hidden; }
 @keyframes pbFloat { 0%,100% { transform: translateY(0); opacity: var(--o,0.6); } 50% { transform: translateY(-10px); opacity: calc(var(--o,0.6) * 0.5); } }
-.hero-inner { position: relative; z-index: 2; max-width: 1140px; margin: 0 auto; padding: 7rem 2.5rem 6rem; }
+.hero-inner { position: relative; z-index: 2; max-width: 1140px; margin: 0 auto; padding: 4.5rem 2.5rem 6rem; }
 .eyebrow { display: inline-flex; align-items: center; gap: 0.8rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; color: var(--indigo-d); text-transform: uppercase; margin-bottom: 2rem; }
 .eyebrow::before { content: ''; width: 26px; height: 3px; border-radius: 2px; background: var(--coral); }
 .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }
