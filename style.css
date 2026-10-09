@@ -35,6 +35,9 @@
     --orbit-mint:   #AFEBE0;
     --orbit-text:   #F3F8F7;
     --orbit-muted:  #ACBEC5;
+    --orbit-teal:   #087E8B;
+    --orbit-deep:   #173B45;
+    --orbit-deep-2: #245460;
 
     --accent: var(--indigo);
 
@@ -741,6 +744,39 @@ main { display: block; }
 .orbit-logo { display: flex; align-items: center; gap: .6rem; margin-bottom: 1.4rem; color: var(--orbit-text); line-height: 1; }
 .orbit-logo .orbit-mark { flex: none; width: 44px; height: 44px; color: var(--orbit-mint); }
 .orbit-logo-name { font-family: Arial, Helvetica, sans-serif; font-size: 2.4rem; font-weight: 700; letter-spacing: -.05em; }
+/* Homepage product card (index.html "Our products"), a sibling of the DMNexa card */
+.product-card-orbit { margin-top: 2rem; }
+.product-card-orbit::before { background: linear-gradient(90deg, var(--orbit-teal), var(--orbit-mint)); }
+.product-card-orbit .orbit-logo { color: var(--orbit-navy); }
+.product-card-orbit .orbit-logo .orbit-mark { color: var(--orbit-teal); }
+.product-card-orbit .product-tag, .product-card-orbit .feat-list li i { color: var(--orbit-teal); }
+.product-card-orbit .works-with-pill:hover { border-color: var(--orbit-teal); }
+.btn-orbit { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.95rem 2rem; background: var(--orbit-deep); color: var(--orbit-text); font-weight: 700; font-size: 0.86rem; border: none; border-radius: 30px; cursor: pointer; transition: background 0.3s var(--ease), transform 0.3s var(--ease); }
+.btn-orbit:hover { background: var(--orbit-deep-2); color: var(--orbit-text); transform: translateY(-2px); }
+.orbit-side { background: radial-gradient(ellipse at 50% 55%, var(--orbit-navy-2), transparent 62%), var(--orbit-navy); color: var(--orbit-text); }
+.orbit-side .live-badge { color: var(--orbit-navy); }
+.orbit-side .live-badge .dot { background: var(--orbit-teal); animation: none; }
+.orbit-system { position: absolute; inset: 0; }
+.orbit-path { position: absolute; left: 50%; top: 45%; border: 1px solid color-mix(in srgb, var(--orbit-mint) 20%, transparent); border-radius: 50%; transform: translate(-50%, -50%) rotate(-24deg); }
+.orbit-path-1 { width: 118%; height: 56%; }
+.orbit-path-2 { width: 88%; height: 38%; border-style: dashed; border-color: color-mix(in srgb, var(--orbit-mint) 32%, transparent); }
+.orbit-system-core { position: absolute; left: 50%; top: 45%; width: 104px; height: 104px; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--orbit-mint) 24%, transparent); border-radius: 28px; background: linear-gradient(145deg, var(--orbit-navy-2), var(--orbit-navy)); color: var(--orbit-mint); transform: translate(-50%, -50%) rotate(-8deg); box-shadow: 0 0 80px color-mix(in srgb, var(--orbit-mint) 12%, transparent), 0 24px 48px rgba(0,0,0,.25); }
+.orbit-system-core .orbit-mark { width: 58px; height: 58px; }
+.orbit-node { position: absolute; display: flex; align-items: center; gap: .8rem; padding: .8rem 1.1rem .8rem .8rem; border: 1px solid color-mix(in srgb, var(--orbit-mint) 16%, transparent); border-radius: 12px; background: linear-gradient(120deg, var(--orbit-navy-2), color-mix(in srgb, var(--orbit-navy-2) 55%, var(--orbit-navy))); box-shadow: 0 16px 32px -14px rgba(0,0,0,.45); animation: orbitNodeFloat 7s ease-in-out infinite; }
+.orbit-node strong { display: block; font-size: .9rem; font-weight: 600; line-height: 1.3; }
+.orbit-node small { display: block; color: var(--orbit-muted); font-size: .72rem; line-height: 1.4; white-space: nowrap; }
+.orbit-node-ic { flex: none; width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--orbit-mint) 16%, transparent); border-radius: 9px; color: var(--orbit-mint); font-size: 1.15rem; }
+.orbit-node-1 { left: 7%; top: 19%; }
+.orbit-node-2 { right: 6%; top: 63%; animation-delay: -2.3s; }
+.orbit-node-3 { left: 10%; bottom: 8%; animation-delay: -4.6s; }
+@keyframes orbitNodeFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@media (min-width: 881px) {
+    .product-card-orbit { grid-template-columns: 0.95fr 1.05fr; }
+    .product-card-orbit .product-side { order: -1; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .orbit-node { animation: none; }
+}
 .website-callout-icon .orbit-mark { width: 34px; height: 34px; }
 .website-callout-icon:has(.orbit-mark) { background: var(--orbit-mint); color: var(--orbit-navy); }
 @keyframes orbitSpin { to { transform: rotate(360deg); } }
