@@ -29,6 +29,12 @@
     --amber-d:  #DB8F0C;
     --teal:     #3E8FA8;
     --nexa:     #EC4767;
+    /* Orbit's own product colors (products/orbit/ hero and Orbit callouts) */
+    --orbit-navy:   #0C202B;
+    --orbit-navy-2: #25434C;
+    --orbit-mint:   #AFEBE0;
+    --orbit-text:   #F3F8F7;
+    --orbit-muted:  #ACBEC5;
 
     --accent: var(--indigo);
 
@@ -704,6 +710,46 @@ main { display: block; }
 @media (prefers-reduced-motion: reduce) {
     .capability-cards .card:hover .ic, .card:hover .blob-icon { transform: none; }
     .capability-cards .card:hover .ic .glyph, .card:hover .blob-icon .glyph { animation: none; }
+}
+
+/* ============================================================
+   ORBIT PRODUCT PAGE  (products/orbit/ only)
+   ============================================================ */
+.orbit-hero { overflow: hidden; padding: 4.5rem 0 4rem; border-bottom-color: var(--orbit-navy); color: var(--orbit-text); background: radial-gradient(ellipse at 78% 60%, color-mix(in srgb, var(--orbit-navy-2) 70%, transparent), transparent 60%), var(--orbit-navy); }
+.orbit-hero .container { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: center; gap: 3rem; }
+.orbit-hero .eyebrow { color: var(--orbit-muted); }
+.orbit-hero .eyebrow::before, .orbit-hero .eyebrow .dot { background: var(--orbit-mint); }
+.orbit-hero .page-title { color: var(--orbit-text); }
+.orbit-hero .page-title span { color: var(--orbit-mint); }
+.orbit-hero .page-sub { max-width: 620px; color: var(--orbit-muted); }
+.orbit-hero .btn-primary { background: var(--orbit-mint); color: var(--orbit-navy); }
+.orbit-hero .btn-primary:hover { background: var(--orbit-text); color: var(--orbit-navy); }
+.orbit-hero .btn-ghost { color: var(--orbit-text); border-color: color-mix(in srgb, var(--orbit-text) 45%, transparent); }
+.orbit-hero .btn-ghost:hover { background: var(--orbit-text); border-color: var(--orbit-text); color: var(--orbit-navy); }
+.orbit-visual { position: relative; width: 100%; max-width: 340px; aspect-ratio: 1; margin-left: auto; }
+.orbit-ring { position: absolute; border: 1px solid color-mix(in srgb, var(--orbit-mint) 22%, transparent); border-radius: 50%; animation: orbitSpin 48s linear infinite; }
+.orbit-ring::before { content: ''; position: absolute; top: -6px; left: 50%; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--orbit-mint); box-shadow: 0 0 0 5px color-mix(in srgb, var(--orbit-mint) 14%, transparent); }
+.orbit-ring-1 { inset: 0; }
+.orbit-ring-2 { inset: 14%; border-style: dashed; animation-duration: 34s; animation-direction: reverse; }
+.orbit-ring-2::before { background: var(--orbit-text); }
+.orbit-ring-3 { inset: 26%; animation-duration: 22s; }
+.orbit-core { position: absolute; inset: 36%; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--orbit-mint) 24%, transparent); border-radius: 28%; background: linear-gradient(145deg, var(--orbit-navy-2), var(--orbit-navy)); color: var(--orbit-mint); transform: rotate(-8deg); box-shadow: 0 24px 48px -12px rgba(0,0,0,.35); }
+.orbit-core .orbit-mark { width: 62%; height: 62%; }
+/* Orbit's own logo: the mark plus a lowercase wordmark. The wordmark is set
+   in Arial/Helvetica because that is the face the product itself uses, so it
+   deliberately does not follow the site's font tokens. */
+.orbit-logo { display: flex; align-items: center; gap: .6rem; margin-bottom: 1.4rem; color: var(--orbit-text); line-height: 1; }
+.orbit-logo .orbit-mark { flex: none; width: 44px; height: 44px; color: var(--orbit-mint); }
+.orbit-logo-name { font-family: Arial, Helvetica, sans-serif; font-size: 2.4rem; font-weight: 700; letter-spacing: -.05em; }
+.website-callout-icon .orbit-mark { width: 34px; height: 34px; }
+.website-callout-icon:has(.orbit-mark) { background: var(--orbit-mint); color: var(--orbit-navy); }
+@keyframes orbitSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+    .orbit-ring { animation: none; }
+}
+@media (max-width: 880px) {
+    .orbit-hero .container { grid-template-columns: 1fr; }
+    .orbit-visual { display: none; }
 }
 
 /* ============================================================
