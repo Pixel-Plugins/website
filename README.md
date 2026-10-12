@@ -91,7 +91,7 @@ industries/                Industry landing pages
 solutions/                 Solution landing pages
 products/dmnexa/           DMNexa product page
 products/orbit/            Orbit product page (our website platform, written for non-technical readers)
-orbit/pricing/             Orbit website care pricing and annual/monthly checkout link selection
+products/orbit/pricing/             Orbit website care pricing and annual/monthly checkout link selection
 work/                      Case studies and proof
 articles/                  Guides and insight content
 privacy-policy/            Privacy and analytics disclosures
@@ -127,15 +127,15 @@ llms.txt                   Machine-readable company and content index
 
 ## Orbit pricing and Stripe checkout links
 
-`/orbit/pricing/` is the public care-plan comparison page. It uses the site's shared Prism styles,
+`/products/orbit/pricing/` is the public care-plan comparison page. It uses the site's shared Prism styles,
 navigation, consent controls, and Orbit palette. It presents the four ongoing website care
 plans with monthly (cancel month to month) or annual (15% off, prepaid for one year) billing.
 One-time website builds and bespoke contracts are quoted separately.
 
 **Checkout activation:** the eight live Stripe Payment Links are configured in
-`orbit/pricing/checkout-links.json`. That manifest is intentionally empty until the
-live Stripe CSV is imported. While a link is unavailable, its CTA opens the website
-contact form rather than sending clients to an invalid checkout. Never commit an
+`products/orbit/pricing/checkout-links.json`. The manifest now contains eight production Stripe Payment Links imported from
+Stripe. If a link becomes unavailable, its CTA opens the website contact form
+rather than sending clients to an invalid checkout. Never commit an
 API secret or a Stripe CLI authentication file. Public Payment Link URLs are not secrets.
 
 After generating `orbit_checkout_links_live.csv` with the Stripe bootstrap script:
