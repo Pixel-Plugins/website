@@ -855,3 +855,146 @@ main { display: block; }
     .ol-f-cta { flex-direction: column; align-items: stretch; }
     .ol-f-note { text-align: left; }
 }
+
+
+/* ============================================================
+   ORBIT PRICING  (/orbit/pricing/)
+   Reuses the shared Prism tokens and Orbit product colors.
+   ============================================================ */
+.orbit-pricing-hero {
+    position: relative; isolation: isolate; overflow: hidden; padding: 5rem 0 5.5rem;
+    background: radial-gradient(ellipse at 82% 42%, var(--orbit-navy-2), transparent 56%), var(--orbit-navy);
+    color: var(--orbit-text); border-color: var(--orbit-navy);
+}
+.orbit-pricing-hero-grid { display: grid; grid-template-columns: minmax(0, 1.24fr) minmax(0, .76fr); gap: 3rem; align-items: center; }
+.orbit-pricing-hero .eyebrow { color: var(--orbit-muted); margin-bottom: 1.6rem; }
+.orbit-pricing-hero .eyebrow::before { display: none; }
+.orbit-pricing-hero .eyebrow .dot { background: var(--orbit-mint); }
+.orbit-pricing-hero .orbit-logo { margin-bottom: 1.3rem; }
+.orbit-pricing-hero .page-title { color: var(--orbit-text); font-size: clamp(2.55rem, 4.8vw, 4rem); max-width: 700px; line-height: 1.08; }
+.orbit-pricing-hero .page-title span { color: var(--orbit-mint); }
+.orbit-pricing-hero .page-sub { color: var(--orbit-muted); font-size: 1.08rem; max-width: 580px; line-height: 1.75; }
+.orbit-pricing-hero-actions { display: flex; align-items: center; gap: .85rem; flex-wrap: wrap; margin-top: 2rem; }
+.orbit-pricing-hero .btn-primary { background: var(--orbit-mint); color: var(--orbit-navy); }
+.orbit-pricing-hero .btn-primary:hover { background: var(--orbit-text); color: var(--orbit-navy); }
+.orbit-pricing-hero .btn-ghost { color: var(--orbit-text); border-color: color-mix(in srgb, var(--orbit-text) 44%, transparent); }
+.orbit-pricing-hero .btn-ghost:hover { background: var(--orbit-text); color: var(--orbit-navy); }
+.orbit-pricing-hero-proof { display: flex; flex-wrap: wrap; gap: .75rem 1.3rem; margin-top: 2.15rem; font-size: .78rem; font-weight: 650; color: var(--orbit-muted); }
+.orbit-pricing-hero-proof span { display: inline-flex; align-items: center; gap: .4rem; }
+.orbit-pricing-hero-proof i { color: var(--orbit-mint); font-size: 1.1rem; }
+.orbit-pricing-hero-art { width: min(100%, 370px); aspect-ratio: 1; position: relative; margin-inline: auto; }
+.orbit-pricing-orbit { position: absolute; border: 1px solid color-mix(in srgb, var(--orbit-mint) 35%, transparent); border-radius: 50%; animation: orbitSpin 42s linear infinite; }
+.orbit-pricing-orbit-one { inset: 3%; }
+.orbit-pricing-orbit-two { inset: 17%; border-style: dashed; animation-direction: reverse; animation-duration: 32s; }
+.orbit-pricing-orbit-three { inset: 30%; animation-duration: 26s; }
+.orbit-pricing-orbit::before { position: absolute; content: ''; width: 10px; height: 10px; border-radius: 50%; top: -5px; left: 50%; background: var(--orbit-mint); box-shadow: 0 0 0 6px color-mix(in srgb, var(--orbit-mint) 12%, transparent); }
+.orbit-pricing-orbit-two::before { background: var(--orbit-text); }
+.orbit-pricing-orbit-three::before { width: 8px; height: 8px; }
+.orbit-pricing-art-core { position: absolute; inset: 38%; display: grid; place-items: center; border-radius: 27%; transform: rotate(-12deg); background: linear-gradient(150deg, var(--orbit-navy-2), var(--orbit-navy)); border: 1px solid color-mix(in srgb, var(--orbit-mint) 35%, transparent); color: var(--orbit-mint); box-shadow: 0 22px 54px color-mix(in srgb, var(--orbit-navy) 85%, transparent); }
+.orbit-pricing-art-core svg { width: 66%; height: 66%; }
+.orbit-pricing-satellite { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: var(--orbit-mint); }
+.orbit-pricing-satellite-one { top: 8%; right: 17%; } .orbit-pricing-satellite-two { bottom: 20%; left: 3%; }
+
+.orbit-pricing-plans-section { padding-top: 5.5rem; background: var(--paper); }
+.orbit-pricing-section-intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; margin-bottom: 2.25rem; }
+.orbit-pricing-section-intro .sec-head { margin: 0; }
+.orbit-pricing-section-intro .sec-head h2 { font-size: clamp(2rem, 3.7vw, 2.8rem); }
+.orbit-pricing-period-wrap { flex: none; text-align: center; }
+.orbit-pricing-period { display: flex; gap: .3rem; padding: .3rem; border: 1px solid var(--line); border-radius: 30px; background: var(--paper-2); }
+.orbit-pricing-period button { cursor: pointer; border: 0; background: transparent; padding: .7rem .95rem; color: var(--ink-soft); font: 700 .82rem var(--font-body); border-radius: 26px; white-space: nowrap; transition: background .2s var(--ease), color .2s var(--ease); }
+.orbit-pricing-period button.is-current { color: var(--orbit-text); background: var(--orbit-deep); }
+.orbit-pricing-period button span { font-size: .68rem; margin-left: .15rem; padding: .22rem .4rem; color: var(--orbit-navy); border-radius: 20px; background: var(--orbit-mint); }
+.orbit-pricing-period button:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+#orbit-pricing-billing-summary { margin-top: .4rem; color: var(--muted); font-size: .72rem; max-width: 265px; }
+.orbit-pricing-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .95rem; align-items: stretch; }
+.orbit-pricing-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 1.65rem 1.32rem 1.3rem; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.orbit-pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.orbit-pricing-card.is-featured { background: color-mix(in srgb, var(--orbit-mint) 8%, var(--card)); border: 2px solid var(--orbit-teal); padding: calc(1.65rem - 1px) calc(1.32rem - 1px) calc(1.3rem - 1px); box-shadow: 0 16px 35px -28px var(--orbit-navy); }
+.orbit-pricing-popular { position: absolute; top: -16px; left: 1rem; display: flex; align-items: center; gap: .3rem; border-radius: 50px; background: var(--orbit-navy); color: var(--orbit-mint); font-weight: 700; font-size: .68rem; padding: .35rem .7rem; box-shadow: var(--shadow); }
+.orbit-pricing-card-kicker { font-family: var(--font-mono); font-weight: 700; color: var(--orbit-teal); letter-spacing: .07em; font-size: .6rem; }
+.orbit-pricing-card-top h3 { font-family: var(--font-display); color: var(--ink); font-weight: 800; font-size: clamp(1.2rem, 1.6vw, 1.52rem); letter-spacing: -.025em; margin-top: .55rem; line-height: 1.2; }
+.orbit-pricing-card-tag { font-size: .82rem; color: var(--muted); margin-top: .5rem; line-height: 1.5; min-height: 2.4em; }
+.orbit-pricing-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: .3rem; margin-top: 1.6rem; color: var(--orbit-navy); white-space: nowrap; }
+.orbit-pricing-price strong { font-family: var(--font-display); font-size: clamp(2.05rem, 2.65vw, 2.75rem); letter-spacing: -.06em; font-weight: 800; line-height: 1.1; }
+.orbit-pricing-price span { color: var(--muted); font-size: .75rem; white-space: nowrap; }
+.orbit-pricing-billing-detail { color: var(--orbit-teal); font-size: .75rem; font-weight: 650; line-height: 1.5; min-height: 2.25rem; margin-top: .5rem; }
+.orbit-pricing-card-copy { font-size: .84rem; color: var(--ink-soft); margin: 1rem 0 1.3rem; min-height: 5.2em; line-height: 1.6; }
+.orbit-pricing-features { list-style: none; display: grid; align-content: start; gap: .9rem; margin-bottom: 2rem; flex: 1; }
+.orbit-pricing-features li { font-size: .78rem; line-height: 1.45; color: var(--ink-soft); display: flex; gap: .45rem; align-items: flex-start; }
+.orbit-pricing-features i { color: var(--orbit-teal); font-size: 1rem; line-height: 1.35; flex: none; }
+.orbit-pricing-choose { width: 100%; display: flex; justify-content: center; text-align: center; min-height: 46px; white-space: normal; padding: .75rem .8rem; border-radius: 30px; font-size: .78rem; }
+.orbit-pricing-card.is-featured .orbit-pricing-choose { background: var(--orbit-navy); color: var(--orbit-mint); }
+.orbit-pricing-card.is-featured .orbit-pricing-choose:hover { background: var(--orbit-deep-2); }
+.orbit-pricing-choose:focus-visible, .orbit-pricing-build-card a:focus-visible, .orbit-pricing-text-link:focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
+.orbit-pricing-card-fine { font-size: .68rem; line-height: 1.5; color: var(--muted); margin-top: .75rem; text-align: center; }
+.orbit-pricing-summary-note { display: flex; align-items: flex-start; gap: .7rem; padding: 1.1rem 1.3rem; margin-top: 1.5rem; border: 1px solid var(--line); background: var(--paper-2); border-radius: var(--radius); color: var(--ink-soft); }
+.orbit-pricing-summary-note i { font-size: 1.2rem; flex: none; color: var(--orbit-teal); }
+.orbit-pricing-summary-note p { font-size: .82rem; line-height: 1.65; }
+
+.orbit-pricing-build-section { background: var(--paper-2); }
+.orbit-pricing-split-title { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; margin-bottom: 2rem; }
+.orbit-pricing-split-title .sec-head { margin: 0; }
+.orbit-pricing-split-title .btn-ghost { flex: none; }
+.orbit-pricing-build-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.2rem; }
+.orbit-pricing-build-card { display: flex; flex-direction: column; padding: 1.7rem; background: var(--card); border-radius: var(--radius-lg); border: 1px solid var(--line); }
+.orbit-pricing-build-card.is-highlighted { border-color: var(--orbit-teal); }
+.orbit-pricing-build-head h3 { font-family: var(--font-display); font-size: 1.17rem; font-weight: 800; }
+.orbit-pricing-build-price { color: var(--orbit-navy); font-family: var(--font-display); font-size: 1.8rem; line-height: 1.25; font-weight: 800; letter-spacing: -.04em; margin: .55rem 0; }
+.orbit-pricing-build-price span { font-family: var(--font-body); color: var(--muted); font-size: .72rem; font-weight: 500; letter-spacing: 0; }
+.orbit-pricing-build-card > p { color: var(--muted); font-size: .88rem; }
+.orbit-pricing-build-card ul { padding-left: 1.15rem; margin: 1.3rem 0; flex: 1; color: var(--ink-soft); font-size: .85rem; line-height: 1.8; }
+.orbit-pricing-text-link { display: inline-flex; align-items: center; gap: .4rem; color: var(--orbit-deep); font-weight: 750; font-size: .83rem; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--orbit-deep) 30%, transparent); text-underline-offset: .25rem; }
+.orbit-pricing-text-link:hover { color: var(--orbit-teal); }
+.orbit-pricing-build-note { display: flex; align-items: flex-start; gap: .5rem; font-size: .82rem; color: var(--ink-soft); line-height: 1.65; margin-top: 1.45rem; }
+.orbit-pricing-build-note i { color: var(--orbit-teal); flex: none; font-size: 1.2rem; }
+
+.orbit-pricing-faq-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 4rem; }
+.orbit-pricing-faq-grid .sec-head { margin: 0; }
+.orbit-pricing-faq-grid .orbit-pricing-text-link { margin-top: 1.3rem; }
+.orbit-pricing-faq-grid .faq-list { gap: .65rem; align-content: start; }
+
+.orbit-pricing-contact-section { padding-top: 3rem; }
+.orbit-pricing-contact-panel { display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-radius: var(--radius-lg); padding: 2.5rem; background: radial-gradient(ellipse at 92% 16%, var(--orbit-navy-2), transparent 65%), var(--orbit-navy); color: var(--orbit-text); }
+.orbit-pricing-contact-panel .sec-label { color: var(--orbit-mint); margin-bottom: .75rem; }
+.orbit-pricing-contact-panel .sec-label .n { color: var(--orbit-muted); }
+.orbit-pricing-contact-panel h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.45rem); font-weight: 800; letter-spacing: -.03em; }
+.orbit-pricing-contact-panel p { margin-top: .7rem; max-width: 590px; color: var(--orbit-muted); font-size: .92rem; line-height: 1.75; }
+.orbit-pricing-contact-panel .btn-primary { flex: none; background: var(--orbit-mint); color: var(--orbit-navy); white-space: nowrap; }
+.orbit-pricing-contact-panel .btn-primary:hover { background: var(--orbit-text); color: var(--orbit-navy); }
+.orbit-pricing-legal { margin-top: 1.3rem; color: var(--muted); line-height: 1.7; font-size: .76rem; }
+.orbit-pricing-legal a { color: var(--orbit-deep); text-decoration: underline; text-underline-offset: 2px; }
+
+@media (max-width: 1100px) {
+    .orbit-pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem; }
+    .orbit-pricing-card-copy { min-height: 0; }
+    .orbit-pricing-card-tag { min-height: 0; }
+}
+@media (max-width: 880px) {
+    .orbit-pricing-hero-grid { grid-template-columns: 1fr; }
+    .orbit-pricing-hero-art { display: none; }
+    .orbit-pricing-section-intro, .orbit-pricing-split-title { align-items: flex-start; flex-direction: column; gap: 1.4rem; }
+    .orbit-pricing-period-wrap { text-align: left; }
+    .orbit-pricing-build-grid { grid-template-columns: 1fr; }
+    .orbit-pricing-faq-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .orbit-pricing-contact-panel { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 600px) {
+    .orbit-pricing-hero { padding: 3.2rem 0 3.7rem; }
+    .orbit-pricing-hero .page-title { font-size: clamp(2.3rem, 10vw, 3.25rem); }
+    .orbit-pricing-hero-actions { align-items: stretch; flex-direction: column; }
+    .orbit-pricing-hero-actions .btn-primary, .orbit-pricing-hero-actions .btn-ghost { justify-content: center; }
+    .orbit-pricing-grid { grid-template-columns: 1fr; gap: 1.7rem; }
+    .orbit-pricing-card { padding: 1.8rem; }
+    .orbit-pricing-card.is-featured { padding: calc(1.8rem - 1px); }
+    .orbit-pricing-plans-section { padding-top: 4.5rem; }
+    .orbit-pricing-contact-panel { padding: 1.65rem; }
+    .orbit-pricing-contact-panel .btn-primary { white-space: normal; justify-content: center; }
+    .orbit-pricing-section-intro .sec-head p { font-size: .98rem; }
+    .orbit-pricing-period button { padding: .67rem .85rem; }
+    .orbit-pricing-summary-note { padding: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .orbit-pricing-orbit { animation: none; }
+    .orbit-pricing-card { transition: none; }
+    .orbit-pricing-card:hover { transform: none; }
+}
