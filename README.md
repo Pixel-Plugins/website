@@ -91,6 +91,7 @@ industries/                Industry landing pages
 solutions/                 Solution landing pages
 products/dmnexa/           DMNexa product page
 products/orbit/            Orbit product page (our website platform, written for non-technical readers)
+orbit/pricing/             Orbit website care pricing and annual/monthly checkout link selection
 work/                      Case studies and proof
 articles/                  Guides and insight content
 privacy-policy/            Privacy and analytics disclosures
