@@ -123,3 +123,32 @@ llms.txt                   Machine-readable company and content index
 4. Add the canonical URL to `sitemap.xml` and the appropriate section in `llms.txt`.
 5. Run `npm run sync:partials` and `npm run build`.
 6. Check the page at desktop and mobile widths and verify keyboard navigation, focus states, forms, and consent behavior.
+
+
+## Orbit pricing and Stripe checkout links
+
+`/orbit/pricing/` is the public care-plan comparison page. It uses the site's shared Prism styles,
+navigation, consent controls, and Orbit palette. It presents the four ongoing website care
+plans with monthly (cancel month to month) or annual (15% off, prepaid for one year) billing.
+One-time website builds and bespoke contracts are quoted separately.
+
+**Checkout activation:** the eight live Stripe Payment Links are configured in
+`orbit/pricing/checkout-links.json`. That manifest is intentionally empty until the
+live Stripe CSV is imported. While a link is unavailable, its CTA opens the website
+contact form rather than sending clients to an invalid checkout. Never commit an
+API secret or a Stripe CLI authentication file. Public Payment Link URLs are not secrets.
+
+After generating `orbit_checkout_links_live.csv` with the Stripe bootstrap script:
+
+```bash
+node scripts/import-orbit-stripe-links.mjs /path/to/orbit_checkout_links_live.csv
+npm run validate
+```
+
+The importer validates all eight plan/cadence pairs, expected USD amounts, Stripe price
+ID shape, and live `buy.stripe.com` URL origins before writing the JSON. Review the
+resulting changes, confirm live checkout settings (promotion codes, terms, tax, and
+cancellation disclosures), and test at desktop/mobile sizes **before merging/publishing**.
+Subscriptions charge when checkout completes, so new-build clients should only use
+their link at the agreed website launch date. Discounts are entered in Stripe Checkout,
+not collected by this static site.
