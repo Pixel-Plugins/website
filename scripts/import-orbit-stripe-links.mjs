@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* Imports Stripe's LIVE orbit_checkout_links_live.csv into the public,
-   non-secret Payment Link manifest for /orbit/pricing/.
+   non-secret Payment Link manifest for /products/orbit/pricing/.
    Nothing is sent to Stripe, and the source CSV is never committed. */
 
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -35,7 +35,7 @@ for (const [slug, monthly] of monthlyCents) {
     expected.set(`orbit_v1_${slug}_monthly`, monthly);
     expected.set(`orbit_v1_${slug}_annual`, Math.round(monthly * 12 * 0.85));
 }
-const outputPath = resolve(fileURLToPath(new URL('../orbit/pricing/checkout-links.json', import.meta.url)));
+const outputPath = resolve(fileURLToPath(new URL('../products/orbit/pricing/checkout-links.json', import.meta.url)));
 
 function parseCsv(input) {
     const rows = [];

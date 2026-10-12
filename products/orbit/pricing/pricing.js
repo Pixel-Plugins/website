@@ -91,7 +91,7 @@
     });
 
     updateBilling('monthly');
-    fetch('/orbit/pricing/checkout-links.json', { cache: 'no-store', credentials: 'same-origin' })
+    fetch('/products/orbit/pricing/checkout-links.json', { cache: 'no-store', credentials: 'same-origin' })
         .then((response) => {
             if (!response.ok) throw new Error('Checkout link configuration unavailable');
             return response.json();
